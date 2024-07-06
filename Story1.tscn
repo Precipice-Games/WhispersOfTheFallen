@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bb52vfdbto1ph"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pilu"]
+
+[node name="StartStory" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
+sprite_frames = SubResource("SpriteFrames_0pilu")
