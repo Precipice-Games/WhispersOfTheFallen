@@ -52,5 +52,4 @@ func _process(_delta):
 	if Input.is_action_pressed("main_attack"):
 		$AnimationPlayer.play("Attack")
 		
-		
 

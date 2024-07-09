@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d122qgesm2yqy"]
+[gd_scene load_steps=4 format=3 uid="uid://d122qgesm2yqy"]
 
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_adng7"]
-[ext_resource type="PackedScene" path="res://DungeonBrian.tscn" id="2_odvi8"]
+[ext_resource type="PackedScene" uid="uid://bnemhocy5wayf" path="res://DungeonBrian.tscn" id="2_odvi8"]
+[ext_resource type="PackedScene" uid="uid://c5hj7gomfnn7a" path="res://enemy.tscn" id="3_0vr86"]
 
 [node name="TestArena" type="Node2D"]
 position = Vector2(111, 65)
@@ -26,3 +27,5 @@ polygon = PackedVector2Array(113, 699, 112, 634, 506, 828, 500, 889)
 [node name="Stopper2" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(28, -14)
 polygon = PackedVector2Array(672, 739, 674, 815, 468, 917, 471, 837)
+
+[node name="Enemy" parent="." instance=ExtResource("3_0vr86")]
