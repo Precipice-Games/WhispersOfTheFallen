@@ -5,4 +5,9 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_t86tm")]
+position = Vector2(-1, -23)
 layer_0/tile_data = PackedInt32Array(2162732, 0, 0, 2162745, 65536, 0, 2555973, 65536, 0, 2949201, 65536, 0, 2555936, 0, 0, 2949140, 0, 0, 2818098, 6, 0, 3604554, 6, 0, 3211326, 6, 0)
+
+[node name="TileMap2" parent="." instance=ExtResource("1_t86tm")]
+position = Vector2(1, -2)
+layer_0/tile_data = PackedInt32Array(3539019, 6, 0)
