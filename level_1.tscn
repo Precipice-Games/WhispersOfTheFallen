@@ -22,3 +22,16 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(20, -20)
 zoom = Vector2(2, 2)
 process_callback = 0
+
+[node name="Border2" type="StaticBody2D" parent="."]
+position = Vector2(647, -72)
+scale = Vector2(1, 1)
+collision_layer = 2
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Border2"]
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(65, 1378, 57, 1330, 833, 938, 833, 994)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border2"]
+scale = Vector2(1.00254, 1)
+polygon = PackedVector2Array(-709.2, 994, -709.2, 946, 56.8558, 1322, 56.8558, 1378)
