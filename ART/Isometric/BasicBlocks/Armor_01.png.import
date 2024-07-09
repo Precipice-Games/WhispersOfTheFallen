@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7k2bhttoa1o6"
-path="res://.godot/imported/SmallChest_Top_02.png-2e6616b83f17df141490b86216025a73.ctex"
+uid="uid://8b2k3uutshvf"
+path="res://.godot/imported/Armor_01.png-f9f771e5778bc767a17a2bbfd96300f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Free Sample/SmallChest_Top_02.png"
-dest_files=["res://.godot/imported/SmallChest_Top_02.png-2e6616b83f17df141490b86216025a73.ctex"]
+source_file="res://ART/Isometric/BasicBlocks/Armor_01.png"
+dest_files=["res://.godot/imported/Armor_01.png-f9f771e5778bc767a17a2bbfd96300f1.ctex"]
 
 [params]
 

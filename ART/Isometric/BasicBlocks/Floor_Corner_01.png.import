@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cydlk5b0cud4n"
-path="res://.godot/imported/DungeonCrawler_Example.png-ca5147157a286d1b7ef35a2c2557d516.ctex"
+uid="uid://cs7i0otimy3o2"
+path="res://.godot/imported/Floor_Corner_01.png-ce3e7a3dc3df2dc0b285ed83830453f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Free Sample/DungeonCrawler_Example.png"
-dest_files=["res://.godot/imported/DungeonCrawler_Example.png-ca5147157a286d1b7ef35a2c2557d516.ctex"]
+source_file="res://ART/Isometric/BasicBlocks/Floor_Corner_01.png"
+dest_files=["res://.godot/imported/Floor_Corner_01.png-ce3e7a3dc3df2dc0b285ed83830453f0.ctex"]
 
 [params]
 
