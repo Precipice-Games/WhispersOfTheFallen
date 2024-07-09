@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://DungeonBrian.gd" id="1_d74oo"]
 [ext_resource type="Texture2D" uid="uid://ciswx7miyti0v" path="res://ART/BrianCombatAssets/Brian_Combat_Stand.png" id="1_udbv2"]
-[ext_resource type="PackedScene" uid="uid://3odee5v6h45t" path="res://scythe.tscn" id="3_1hv5r"]
+[ext_resource type="PackedScene" path="res://scythe.tscn" id="3_1hv5r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2fn2e"]
 animations = [{
@@ -55,7 +55,7 @@ _data = {
 "RESET": SubResource("Animation_5uxxb")
 }
 
-[node name="DungeonBrian" type="CharacterBody2D"]
+[node name="DungeonBrian" type="CharacterBody2D" groups=["player"]]
 position = Vector2(152, 184)
 collision_mask = 2
 script = ExtResource("1_d74oo")
