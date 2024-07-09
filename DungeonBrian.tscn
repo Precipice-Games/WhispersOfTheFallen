@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gvvg8"]
-size = Vector2(80, 33)
+size = Vector2(60, 33)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilamg"]
 radius = 64.0
@@ -31,11 +31,12 @@ sprite_frames = SubResource("SpriteFrames_2fn2e")
 animation = &"BrianStand"
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
-position = Vector2(688, 624)
+position = Vector2(690, 624)
 shape = SubResource("RectangleShape2D_gvvg8")
 one_way_collision_margin = 0.0
 
 [node name="AttackCollider" type="Area2D" parent="."]
+visible = false
 
 [node name="FIXTHIS" type="CollisionShape2D" parent="AttackCollider"]
 position = Vector2(680, 552)
