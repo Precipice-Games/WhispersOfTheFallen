@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://crsb8gh0qttat"]
+[gd_scene load_steps=4 format=3 uid="uid://cjvohwactraar"]
 
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_u8uq2"]
-[ext_resource type="PackedScene" path="res://accesories.tscn" id="2_jox57"]
-[ext_resource type="PackedScene" uid="uid://x58aru4mmlup" path="res://DungeonBrian.tscn" id="3_38rye"]
+[ext_resource type="PackedScene" uid="uid://br1y8qluywt4m" path="res://accesories.tscn" id="2_jox57"]
+[ext_resource type="PackedScene" path="res://DungeonBrian.tscn" id="3_38rye"]
 
 [node name="Level 1" type="Node2D"]
 
@@ -18,6 +18,8 @@ layer_0/z_index = 1
 layer_0/tile_data = PackedInt32Array(1769523, 65536, 0, 2162751, 65540, 0)
 
 [node name="Accesories" parent="Map" instance=ExtResource("2_jox57")]
+layer_0/z_index = 2
+layer_0/tile_data = PackedInt32Array(2686984, 65537, 0, 2818060, 65537, 0)
 
 [node name="Floor1" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/z_index = 1
