@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjvohwactraar"]
+[gd_scene load_steps=6 format=3 uid="uid://cjvohwactraar"]
 
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_u8uq2"]
 [ext_resource type="PackedScene" uid="uid://ct5okf6whlhaa" path="res://accesories.tscn" id="2_jox57"]
 [ext_resource type="PackedScene" path="res://DungeonBrian.tscn" id="3_38rye"]
+[ext_resource type="PackedScene" uid="uid://ef8cs0xk2t0s" path="res://mob_test.tscn" id="4_xgiep"]
+[ext_resource type="Script" path="res://mob_test.gd" id="5_qgckm"]
 
 [node name="Level 1" type="Node2D"]
+position = Vector2(48, -72)
 metadata/_edit_group_ = true
 
 [node name="Map" type="Node2D" parent="."]
@@ -48,9 +51,15 @@ layer_0/tile_data = PackedInt32Array(2228287, 196611, 0, 1441831, 196611, 0, 229
 [node name="DungeonBrian" parent="Map" instance=ExtResource("3_38rye")]
 z_index = 4
 y_sort_enabled = true
-position = Vector2(221, 512)
+position = Vector2(-95, -150)
 scale = Vector2(0.790869, 0.797847)
 
 [node name="Camera2D" type="Camera2D" parent="Map/DungeonBrian"]
 scale = Vector2(1, 0.954786)
 zoom = Vector2(2, 2)
+
+[node name="MobTest" parent="Map" instance=ExtResource("4_xgiep")]
+position = Vector2(833, -238)
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("5_qgckm")
