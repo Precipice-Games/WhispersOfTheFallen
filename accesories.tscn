@@ -3945,16 +3945,19 @@ texture_region_size = Vector2i(109, 95)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33, 32, 27.2236, 28.2843, 49.851, 18.7383, 49.1439, 10.6066, -48, 6)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-38.8909, 23.3345, -5.65685, 37.4767, 13.0815, 39.9515, 27.2236, 27.5772, 22.6274, 13.435, -29.6985, 6.36396)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-30.052, 32.8805, 1.06066, 38.1838, 24.7487, 29.3449, 48.4368, 18.3848, 50.5581, 8.13173, -42.78, 6.01041, -49.4975, 19.0919)
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.3345, 28.9914, 12.0208, 40.3051, 37.4767, 20.5061, 35.0018, 8.83884, -23.3345, 11.3137)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j852p"]
 texture = ExtResource("5_x6mi3")
