@@ -1,39 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjvohwactraar"]
+[gd_scene load_steps=4 format=3 uid="uid://crsb8gh0qttat"]
 
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_u8uq2"]
-[ext_resource type="PackedScene" uid="uid://br1y8qluywt4m" path="res://accesories.tscn" id="2_jox57"]
+[ext_resource type="PackedScene" path="res://accesories.tscn" id="2_jox57"]
+[ext_resource type="PackedScene" uid="uid://x58aru4mmlup" path="res://DungeonBrian.tscn" id="3_38rye"]
 
 [node name="Level 1" type="Node2D"]
 
-[node name="Wall1" parent="." instance=ExtResource("1_u8uq2")]
+[node name="Map" type="Node2D" parent="."]
+position = Vector2(647, -74)
+
+[node name="Wall1" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/z_index = 1
 layer_0/tile_data = PackedInt32Array(983054, 0, 0, 983067, 65536, 0, 1376258, 131072, 0, 1834998, 131072, 0, 2228202, 4, 0, 1376295, 65540, 0)
 
-[node name="Wall2" parent="." instance=ExtResource("1_u8uq2")]
+[node name="Wall2" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/z_index = 1
 layer_0/tile_data = PackedInt32Array(1769523, 65536, 0, 2162751, 65540, 0)
 
-[node name="Accesories" parent="." instance=ExtResource("2_jox57")]
+[node name="Accesories" parent="Map" instance=ExtResource("2_jox57")]
 
-[node name="Floor1" parent="." instance=ExtResource("1_u8uq2")]
+[node name="Floor1" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/z_index = 1
 layer_0/tile_data = PackedInt32Array(1638421, 6, 0, 2031624, 131078, 0, 2490364, 131078, 0)
 
-[node name="Floor2" parent="." instance=ExtResource("1_u8uq2")]
+[node name="Floor2" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/z_index = 1
 layer_0/tile_data = PackedInt32Array(2031649, 65542, 0, 2424877, 6, 0, 2883568, 6, 0, 2424853, 65542, 0, 2818057, 131078, 0)
 
-[node name="Floor3" parent="." instance=ExtResource("1_u8uq2")]
+[node name="Floor3" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/z_index = 2
 layer_0/tile_data = PackedInt32Array(2818105, 196614, 0, 3211309, 196614, 0, 2818081, 131078, 0, 3276796, 196614, 0, 3211285, 196614, 0)
 
-[node name="Floor4" parent="." instance=ExtResource("1_u8uq2")]
+[node name="Floor4" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/z_index = 2
 layer_0/tile_data = PackedInt32Array(3604488, 6, 0, 3604513, 6, 0)
 
-[node name="Floor5" parent="." instance=ExtResource("1_u8uq2")]
+[node name="Floor5" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/z_index = 3
 layer_0/tile_data = PackedInt32Array(3997717, 6, 0)
 
-[node name="Door" parent="." instance=ExtResource("1_u8uq2")]
+[node name="Door" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/tile_data = PackedInt32Array(2228287, 196611, 0, 1441831, 196611, 0, 2293738, 131075, 0)
+
+[node name="DungeonBrian" parent="." instance=ExtResource("3_38rye")]
+z_index = 3
+position = Vector2(939, 430)
