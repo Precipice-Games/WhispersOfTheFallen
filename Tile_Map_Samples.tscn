@@ -10478,7 +10478,7 @@ texture_region_size = Vector2i(127, 91)
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-61.25, 16, -60.875, -10.25, 5.125, -43, 57.375, -16.25, 58.75, 10.625, -6.625, 42.875)
 
 [sub_resource type="TileSet" id="TileSet_b3edr"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_g0ilj")
 sources/1 = SubResource("TileSetAtlasSource_r23cw")
 sources/2 = SubResource("TileSetAtlasSource_dcdd4")
