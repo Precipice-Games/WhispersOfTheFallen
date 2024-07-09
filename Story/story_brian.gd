@@ -40,3 +40,8 @@ func _process(_delta):
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
+
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	else:
+		$AnimatedSprite2D.flip_h = false

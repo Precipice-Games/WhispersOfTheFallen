@@ -12,9 +12,6 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_c2p55")
-}, {
-"duration": 1.0,
 "texture": ExtResource("2_eh7gp")
 }, {
 "duration": 1.0,
@@ -28,10 +25,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_ww4xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_c2p55")
 }],
 "loop": true,
 "name": &"Walk",
-"speed": 6.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xdher"]
@@ -43,7 +43,7 @@ script = ExtResource("1_sitfj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0kh84")
 animation = &"Walk"
-frame_progress = 0.327464
+frame_progress = 0.691723
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, 96)

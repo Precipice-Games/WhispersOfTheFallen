@@ -52,8 +52,5 @@ func _process(_delta):
 	if Input.is_action_pressed("main_attack"):
 		$AnimationPlayer.play("Attack")
 		
-	if velocity.x < 0:
-		$AnimatedSprite2D.flip_h = true
-	else:
-		$AnimatedSprite2D.flip_h = false
+		
 

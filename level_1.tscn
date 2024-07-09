@@ -25,11 +25,9 @@ process_callback = 0
 
 [node name="Border2" type="StaticBody2D" parent="."]
 position = Vector2(647, -72)
-scale = Vector2(1, 1)
 collision_layer = 2
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Border2"]
-scale = Vector2(1, 1)
 polygon = PackedVector2Array(65, 1378, 57, 1330, 833, 938, 833, 994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border2"]
