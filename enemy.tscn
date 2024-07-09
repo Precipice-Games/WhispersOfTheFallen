@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5hj7gomfnn7a"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_pd72w"]
+[ext_resource type="Texture2D" uid="uid://pwru3k7wwd34" path="res://ART/DungeonMobs/d56gk4z-7de82b77-71a2-4cff-be13-ca553d5faf1c.png" id="1_wg4ub"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wthmk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wg4ub")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gw30"]
+radius = 452.46
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ucc5"]
+radius = 229.81
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_pd72w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1424, 152)
+scale = Vector2(0.188727, 0.185647)
+sprite_frames = SubResource("SpriteFrames_wthmk")
+
+[node name="Detection_Area" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]
+position = Vector2(1424, 136)
+shape = SubResource("CircleShape2D_5gw30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1408, 176)
+shape = SubResource("CircleShape2D_4ucc5")
+
+[connection signal="area_entered" from="Detection_Area" to="." method="_on_detection_area_area_entered"]
