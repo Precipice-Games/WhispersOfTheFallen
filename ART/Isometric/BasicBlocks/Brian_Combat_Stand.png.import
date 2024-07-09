@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bokugf6y28s83"
-path="res://.godot/imported/Door_05.png-968ebf7d2c81b488ae697d69e7476cbf.ctex"
+uid="uid://d4n0voewr7yrj"
+path="res://.godot/imported/Brian_Combat_Stand.png-3a8831be6ac53cec3787f3cc5060f91a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Free Sample/Door_05.png"
-dest_files=["res://.godot/imported/Door_05.png-968ebf7d2c81b488ae697d69e7476cbf.ctex"]
+source_file="res://ART/Isometric/BasicBlocks/Brian_Combat_Stand.png"
+dest_files=["res://.godot/imported/Brian_Combat_Stand.png-3a8831be6ac53cec3787f3cc5060f91a.ctex"]
 
 [params]
 

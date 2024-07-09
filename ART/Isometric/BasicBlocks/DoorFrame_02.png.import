@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byv0csb1bhing"
-path="res://.godot/imported/DoorFrame_02.png-e2b332b9da430f0b140671e166b0d692.ctex"
+path="res://.godot/imported/DoorFrame_02.png-a889fc7c846d170472a9211ede6a2988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Free Sample/DoorFrame_02.png"
-dest_files=["res://.godot/imported/DoorFrame_02.png-e2b332b9da430f0b140671e166b0d692.ctex"]
+source_file="res://ART/Isometric/BasicBlocks/DoorFrame_02.png"
+dest_files=["res://.godot/imported/DoorFrame_02.png-a889fc7c846d170472a9211ede6a2988.ctex"]
 
 [params]
 
