@@ -26,6 +26,10 @@ func _physics_process(_delta):
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
+	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	velocity = input_direction * speed
+	
 	move_and_slide()
 
 func _process(_delta):
