@@ -6,6 +6,7 @@
 [node name="TestArena" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource("1_adng7")]
+position = Vector2(-8, 0)
 layer_0/tile_data = PackedInt32Array(2752556, 6, 0, 3145784, 6, 0, 2359328, 6, 0, 2752531, 6, 0, 3145759, 6, 0, 2097165, 0, 0, 1703961, 0, 0, 1638437, 65536, 0, 2031665, 65536, 0, 2424893, 65536, 0)
 
 [node name="DungeonBrian" parent="." instance=ExtResource("2_odvi8")]
