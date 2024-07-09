@@ -16,6 +16,9 @@ layer_0/tile_data = PackedInt32Array(2818051, 6, 0, 3276791, 6, 0, 3669995, 6, 0
 
 [node name="DungeonBrian" parent="." instance=ExtResource("3_38rye")]
 position = Vector2(648, 792)
+scale = Vector2(0.8, 0.8)
 
 [node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
+position = Vector2(20, -20)
 zoom = Vector2(2, 2)
+process_callback = 0

@@ -67,7 +67,6 @@ sprite_frames = SubResource("SpriteFrames_2fn2e")
 animation = &"BrianStand"
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
-visible = false
 rotation = 1.25664
 shape = SubResource("CapsuleShape2D_6oilk")
 one_way_collision_margin = 0.0
