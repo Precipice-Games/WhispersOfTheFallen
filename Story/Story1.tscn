@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb52vfdbto1ph"]
+[gd_scene load_steps=4 format=3 uid="uid://bb52vfdbto1ph"]
+
+[ext_resource type="Texture2D" uid="uid://cs7i0otimy3o2" path="res://ART/Isometric/BasicBlocks/Floor_Corner_01.png" id="1_ox4m0"]
+[ext_resource type="PackedScene" uid="uid://nknwk70pfxlf" path="res://Story/story_brian.tscn" id="2_mhmjo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0pilu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ox4m0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="StartStory" type="Node2D"]
 
@@ -9,4 +21,9 @@
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1007, 1018.75)
+scale = Vector2(1.2176, 0.973896)
 sprite_frames = SubResource("SpriteFrames_0pilu")
+
+[node name="StoryBrian" parent="." instance=ExtResource("2_mhmjo")]
+position = Vector2(321, 802)

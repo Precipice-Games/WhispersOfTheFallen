@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://nknwk70pfxlf"]
+
+[ext_resource type="Texture2D" uid="uid://uo8d75ds0fc3" path="res://ART/WALKCYCLE/Walk1.png" id="1_c2p55"]
+[ext_resource type="Script" path="res://Story/story_brian.gd" id="1_sitfj"]
+[ext_resource type="Texture2D" uid="uid://c1udt8t53fvl5" path="res://ART/WALKCYCLE/Walk2.png" id="2_eh7gp"]
+[ext_resource type="Texture2D" uid="uid://na73rfo78coa" path="res://ART/WALKCYCLE/Walk3.png" id="3_1mpod"]
+[ext_resource type="Texture2D" uid="uid://85svbsk0q4ms" path="res://ART/WALKCYCLE/Walk4.png" id="4_6ihub"]
+[ext_resource type="Texture2D" uid="uid://cusxtiuar2vhx" path="res://ART/WALKCYCLE/Walk5.png" id="5_0cx0m"]
+[ext_resource type="Texture2D" uid="uid://t2vm8381y8i1" path="res://ART/WALKCYCLE/Walk6.png" id="6_ww4xl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kh84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c2p55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_eh7gp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1mpod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ihub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0cx0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ww4xl")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xdher"]
+size = Vector2(105, 80)
+
+[node name="StoryBrian" type="CharacterBody2D"]
+script = ExtResource("1_sitfj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0kh84")
+animation = &"Walk"
+frame_progress = 0.327464
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 96)
+shape = SubResource("RectangleShape2D_xdher")
