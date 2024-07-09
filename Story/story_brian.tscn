@@ -43,7 +43,8 @@ script = ExtResource("1_sitfj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0kh84")
 animation = &"Walk"
-frame_progress = 0.691723
+frame = 5
+frame_progress = 0.725868
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5, 96)
