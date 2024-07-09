@@ -16,14 +16,19 @@ animations = [{
 
 [node name="StartStory" type="Node2D"]
 
+[node name="StoryBrian" parent="." instance=ExtResource("2_mhmjo")]
+position = Vector2(314, 808)
+
+[node name="Camera2D" type="Camera2D" parent="StoryBrian"]
+zoom = Vector2(2, 2)
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_offset = Vector2(10, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(1007, 1018.75)
 scale = Vector2(1.2176, 0.973896)
 sprite_frames = SubResource("SpriteFrames_0pilu")
-
-[node name="StoryBrian" parent="." instance=ExtResource("2_mhmjo")]
-position = Vector2(321, 802)
