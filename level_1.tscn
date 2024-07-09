@@ -20,7 +20,7 @@ layer_0/tile_data = PackedInt32Array(1769523, 65536, 0, 2162751, 65540, 0)
 
 [node name="Accesories" parent="Map" instance=ExtResource("2_jox57")]
 layer_0/z_index = 4
-layer_0/tile_data = PackedInt32Array(2949107, 131078, 0, 2883636, 131078, 0, 1179672, 65544, 0, 2490413, 12, 0, 2097161, 12, 0, 3276821, 12, 0, 2883617, 12, 0, 2555901, 12, 0, 1703957, 12, 0)
+layer_0/tile_data = PackedInt32Array(2949107, 131078, 0, 2883636, 131078, 0, 1179672, 65544, 0, 2555901, 12, 0)
 
 [node name="Floor1" parent="Map" instance=ExtResource("1_u8uq2")]
 layer_0/z_index = 1
