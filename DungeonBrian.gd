@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 	
 func _physics_process(delta):
-	var direction = Vector3.ZERO
+	var _direction = Vector3.ZERO
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -29,7 +29,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func _process(delta):
+func _process(_delta):
 	var velocity = Vector2.ZERO 
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -45,3 +45,9 @@ func _process(delta):
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
+		
+
+func attack(): #broken?
+	if Input.is_action_pressed("attack"):
+		$Scythe.play
+		print("test")

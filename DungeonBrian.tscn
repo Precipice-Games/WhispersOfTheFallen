@@ -1,22 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://x58aru4mmlup"]
+[gd_scene load_steps=9 format=3 uid="uid://x58aru4mmlup"]
 
 [ext_resource type="Script" path="res://DungeonBrian.gd" id="1_d74oo"]
 [ext_resource type="Texture2D" uid="uid://ciswx7miyti0v" path="res://ART/BrianCombatAssets/Brian_Combat_Stand.png" id="1_udbv2"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8rq1t"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_udbv2")
-}],
-"loop": true,
-"name": &"Attack",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilamg"]
-radius = 64.0
-height = 208.0
+[ext_resource type="Texture2D" uid="uid://c60gk60ueub3k" path="res://ART/BrianCombatAssets/ScythePlaceHolder2.png" id="3_5anj2"]
+[ext_resource type="Texture2D" uid="uid://c7cgtmafffcbh" path="res://ART/BrianCombatAssets/ScythePlaceHolder.png" id="4_oxlk0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2fn2e"]
 animations = [{
@@ -29,6 +16,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rq1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5anj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oxlk0")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilamg"]
+radius = 64.0
+height = 208.0
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6oilk"]
 radius = 25.2975
 height = 70.7562
@@ -38,12 +43,19 @@ position = Vector2(152, 184)
 collision_mask = 2
 script = ExtResource("1_d74oo")
 
+[node name="BrianAnim" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -29)
+scale = Vector2(1, 0.995)
+sprite_frames = SubResource("SpriteFrames_2fn2e")
+animation = &"BrianStand"
+
 [node name="Scythe" type="AnimatedSprite2D" parent="."]
-position = Vector2(64, -32)
+position = Vector2(11, -18)
 rotation = -1.02974
-scale = Vector2(0.77, 0.77)
+scale = Vector2(0.693918, 0.76671)
 sprite_frames = SubResource("SpriteFrames_8rq1t")
 animation = &"Attack"
+frame_progress = 0.457597
 
 [node name="AttackCollider" type="Area2D" parent="Scythe"]
 visible = false
@@ -51,12 +63,6 @@ visible = false
 [node name="FIXTHIS" type="CollisionShape2D" parent="Scythe/AttackCollider"]
 position = Vector2(680, 552)
 shape = SubResource("CapsuleShape2D_ilamg")
-
-[node name="BrianAnim" type="AnimatedSprite2D" parent="."]
-position = Vector2(8, -40)
-scale = Vector2(1, 0.995)
-sprite_frames = SubResource("SpriteFrames_2fn2e")
-animation = &"BrianStand"
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
 rotation = 1.25664
