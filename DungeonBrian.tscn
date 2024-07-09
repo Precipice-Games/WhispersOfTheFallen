@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://famj62dy3dxi"]
+
+[ext_resource type="Texture2D" uid="uid://ciswx7miyti0v" path="res://ART/BrianCombatAssets/Brian_Combat_Stand.png" id="1_udbv2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2fn2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_udbv2")
+}],
+"loop": true,
+"name": &"BrianStand",
+"speed": 5.0
+}]
+
+[node name="DungeonBrian" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(694, 575)
+scale = Vector2(1, 0.995)
+sprite_frames = SubResource("SpriteFrames_2fn2e")
+animation = &"BrianStand"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
