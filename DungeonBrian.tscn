@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://x58aru4mmlup"]
+[gd_scene load_steps=6 format=3 uid="uid://x58aru4mmlup"]
 
 [ext_resource type="Script" path="res://DungeonBrian.gd" id="1_d74oo"]
 [ext_resource type="Texture2D" uid="uid://ciswx7miyti0v" path="res://ART/BrianCombatAssets/Brian_Combat_Stand.png" id="1_udbv2"]
@@ -14,20 +14,36 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lhv5v"]
-radius = 37.0
-height = 168.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvvg8"]
+size = Vector2(80, 33)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilamg"]
+radius = 64.0
+height = 208.0
 
 [node name="DungeonBrian" type="CharacterBody2D"]
 script = ExtResource("1_d74oo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(694, 575)
+position = Vector2(696, 584)
 scale = Vector2(1, 0.995)
 sprite_frames = SubResource("SpriteFrames_2fn2e")
 animation = &"BrianStand"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(694, 553)
-shape = SubResource("CapsuleShape2D_lhv5v")
+[node name="WallCollider" type="CollisionShape2D" parent="."]
+position = Vector2(688, 624)
+shape = SubResource("RectangleShape2D_gvvg8")
 one_way_collision_margin = 0.0
+
+[node name="AttackCollider" type="Area2D" parent="."]
+
+[node name="FIXTHIS" type="CollisionShape2D" parent="AttackCollider"]
+position = Vector2(680, 552)
+shape = SubResource("CapsuleShape2D_ilamg")
+
+[node name="EnemyCollider" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnemyCollider"]
+position = Vector2(688, 632)
+polygon = PackedVector2Array(8, -168.5, -8, -160.5, -40, 15.5, 48, 7.5)
