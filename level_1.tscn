@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" path="res://DungeonBrian.tscn" id="3_38rye"]
 
 [node name="Level 1" type="Node2D"]
+metadata/_edit_group_ = true
 
 [node name="Map" type="Node2D" parent="."]
 position = Vector2(647, -74)
@@ -47,3 +48,8 @@ layer_0/tile_data = PackedInt32Array(2228287, 196611, 0, 1441831, 196611, 0, 229
 [node name="DungeonBrian" parent="." instance=ExtResource("3_38rye")]
 z_index = 3
 position = Vector2(939, 430)
+scale = Vector2(0.8, 0.8)
+
+[node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
+scale = Vector2(1, 0.954786)
+zoom = Vector2(2, 2)
