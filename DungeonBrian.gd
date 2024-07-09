@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
+const speed = 300.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -10,6 +11,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 	
 func _physics_process(delta):
+	var direction = Vector3.ZERO
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var directionx = Input.get_axis("move_left", "move_right")
@@ -40,3 +43,5 @@ func _process(delta):
 	var directionx = Vector3.ZERO
 	var directiony = Vector3.ZERO
 	
+	if velocity.length() > 0:
+		velocity = velocity.normalized() * speed

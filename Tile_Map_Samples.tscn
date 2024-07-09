@@ -3451,7 +3451,7 @@ texture_region_size = Vector2i(91, 234)
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-37.5, -115.125, 43.875, -74.625, 41.189, 84.4993, -47.375, 46.625, -47.125, -84.625, -43.75, -112.25)
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-37.5, -115.125, 43.875, -74.625, 42.625, 114.625, 37.25, 115.25, -44.75, 74.375, -47.375, 46.625, -47.125, -84.625, -43.75, -112.25)
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
@@ -4391,15 +4391,15 @@ texture_region_size = Vector2i(91, 234)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-43, -73.25, 40.125, -114.625, 45.5, -112.375, 42.9567, 50.5581, -35.8857, 89.0955, -42.2496, 89.0955)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-43, -73.25, 40.125, -114.625, 45.5, -112.375, 44.375, 74.75, -37.375, 115.875, -42.75, 114.125)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-38, -111.25, 42.125, -68.875, 46.375, -45.75, 43.6638, 82.0244, 33.7644, 84.1457, -44.0174, 51.6188, -45.625, -107.625)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-38, -111.25, 42.125, -68.875, 46.375, -45.75, 45.125, 91.5, 42, 117.75, 35.625, 119.625, -45.375, 80.125, -45.625, -107.625)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-41.75, -70, 39.75, -111.125, 46.875, -107.125, 48.5, 39, -39.5625, 77.125, -46.25, 8.625)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-41.75, -70, 39.75, -111.125, 46.875, -107.125, 47.25, 79.5, -34, 119.75, -41.625, 118.5, -46.25, 8.625)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6mb2k"]
 texture = ExtResource("5_t7i3x")
