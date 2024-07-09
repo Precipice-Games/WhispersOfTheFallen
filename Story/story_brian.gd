@@ -1,13 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 350.0
 const JUMP_VELOCITY = -400.0
 
-
-
-
-func _physics_process(delta):
+func _physics_process(_delta):
 
 
 	# Get the input direction and handle the movement/deceleration.
@@ -21,6 +18,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(_delta):
+	@warning_ignore("shadowed_variable_base_class")
 	var velocity = Vector2.ZERO 
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1

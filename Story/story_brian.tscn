@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://nknwk70pfxlf"]
+[gd_scene load_steps=10 format=3 uid="uid://dvby23e5m3fm7"]
 
 [ext_resource type="Texture2D" uid="uid://uo8d75ds0fc3" path="res://ART/WALKCYCLE/Walk1.png" id="1_c2p55"]
 [ext_resource type="Script" path="res://Story/story_brian.gd" id="1_sitfj"]
