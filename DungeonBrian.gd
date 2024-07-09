@@ -33,6 +33,7 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _process(_delta):
+	@warning_ignore("shadowed_variable_base_class")
 	var velocity = Vector2.ZERO 
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
