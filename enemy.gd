@@ -1,16 +1,12 @@
 extends CharacterBody2D
 
-var run_speed = 25
-var player = null
+@onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 
+var player_direction = Vector2()
 
-func _physics_process(_delta):
-	velocity = Vector2.ZERO
-	if player:
-		velocity = position.direction_to(player.position) * run_speed
+var speed = 250 ##TODO setup movement variables
+
+func _physics_process(delta):
+	player_direction = player.global_position - self.global_position
+	velocity = player_direction  * speed
 	move_and_slide()
-
-
-
-func _on_detection_area_area_entered(area):
-	player = true
