@@ -47,8 +47,8 @@ func _process(_delta):
 		
 	if Input.is_action_pressed("main_attack"):
 		$AnimationPlayer.play("Attack")
-	# DONE
 	
+	#DIRECTIONAL RUNNING
 	if Input.is_action_pressed("move_up"):
 		if Input.is_action_pressed("move_left"):
 			$BrianAnim.play('UL')
@@ -69,7 +69,6 @@ func _process(_delta):
 		else:
 			$BrianAnim.play('D')
 			
-	
 	if Input.is_action_pressed("move_left"):
 		if Input.is_action_pressed("move_down"):
 			$BrianAnim.play('DL')

@@ -62,7 +62,6 @@ sprite_frames = SubResource("SpriteFrames_w8fhk")
 animation = &"PORTAL"
 
 [node name="Area2D" type="Area2D" parent="Portal"]
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal/Area2D"]
 position = Vector2(-29.2732, 16.141)
