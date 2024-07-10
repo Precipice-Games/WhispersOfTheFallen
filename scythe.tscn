@@ -14,10 +14,9 @@ animations = [{
 }]
 
 [node name="Scythe" type="Area2D"]
-position = Vector2(72, -96)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-48, 112)
+position = Vector2(-32, 72)
 sprite_frames = SubResource("SpriteFrames_1wlj0")
 animation = &"attack"
 
