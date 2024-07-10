@@ -8230,6 +8230,8 @@ sources/14 = SubResource("TileSetAtlasSource_co7p4")
 sources/15 = SubResource("TileSetAtlasSource_ywniw")
 
 [node name="Accesories" type="TileMap"]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_dbh7y")
 format = 2
+layer_0/y_sort_enabled = true
 script = ExtResource("13_q1vdf")

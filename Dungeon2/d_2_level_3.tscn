@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://b05gqqbibubct"]
 
 [node name="D2 Level 3" type="Node2D"]
+y_sort_enabled = true
+scale = Vector2(0.992647, 1.00499)
