@@ -36,7 +36,7 @@ motion_mirroring = Vector2(928, 793)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
 texture_repeat = 3
-position = Vector2(441, 584)
+position = Vector2(460, 588)
 texture = ExtResource("2_nueko")
 
 [node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
