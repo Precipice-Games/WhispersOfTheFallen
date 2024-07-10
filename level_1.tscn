@@ -1,6 +1,8 @@
-[gd_scene format=3 uid="uid://cjvohwactraar"]
+[gd_scene load_steps=2 format=3 uid="uid://cjvohwactraar"]
+
+[ext_resource type="PackedScene" uid="uid://ef7wuo7convj" path="res://garden.tscn" id="1_4ur37"]
 
 [node name="level1" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
+[node name="garden" parent="." instance=ExtResource("1_4ur37")]
+layer_0/tile_data = PackedInt32Array(851991, 6, 0, 1245195, 6, 0, 1638424, 65542, 0, 1245219, 65542, 0, 852015, 65542, 0, 1245243, 131078, 0, 1638471, 196614, 0, 1245267, 196614, 0, 852063, 196614, 0, 393300, 6, 0, 393323, 6, 0, 1966149, 131079, 0, 1966157, 196615, 0, 786543, 196615, 0, 1966102, 131079, 0, 1310721, 131079, 0, 1572902, 7, 0, 1507381, 131079, 0, 1310815, 196615, 0, 2228302, 196616, 0, 2031652, 8, 0, 2228245, 196616, 0, 2293838, 131080, 0, 1572961, 131080, 0, 1245257, 65551, 0, -130991, 196623, 0, 196631, 65552, 0, 65632, 196624, 0, 1441821, 196624, 0)
