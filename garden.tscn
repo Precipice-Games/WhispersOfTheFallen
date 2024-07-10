@@ -27509,22 +27509,18 @@ texture_region_size = Vector2i(408, 258)
 0:0/0/z_index = 1
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.353554, -125.865, 202.586, -17.3241, 201.525, 28.2843, -0.353554, 131.522, -203.647, 28.9914, -203.647, -19.4454)
 1:0/0 = 0
 1:0/0/z_index = 2
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -122, 204, -23, 203, 31, 2.5, 131.5, -202.5, 33, -203.5, -20)
 2:0/0 = 0
 2:0/0/z_index = 3
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -124.451, 204, -20, 202, 34, -1, 133, -199.758, 28.2843, -200.465, -18.0312)
 3:0/0 = 0
 3:0/0/z_index = 4
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -130, 203.647, -22.6274, 202.233, 29.6985, 2.82843, 133.643, -196.576, 30.4056, -196.576, -19.0919)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_66afl"]
 texture = ExtResource("13_d30ct")
@@ -28418,7 +28414,8 @@ texture_region_size = Vector2i(55, 102)
 3:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_7jfx0"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 7
+physics_layer_0/collision_mask = 7
 sources/0 = SubResource("TileSetAtlasSource_2pt3g")
 sources/1 = SubResource("TileSetAtlasSource_15jve")
 sources/2 = SubResource("TileSetAtlasSource_2lbdn")
