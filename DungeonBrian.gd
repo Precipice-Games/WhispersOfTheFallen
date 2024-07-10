@@ -84,6 +84,7 @@ func _input(event):
 			$DashTimer.start()
 			velocity *= DASHSPEED
 			canDash = false
+		
 
 func _on_dash_timer_timeout():
 	dashing = false
