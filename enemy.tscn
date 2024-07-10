@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5hj7gomfnn7a"]
+[gd_scene load_steps=7 format=3 uid="uid://c5hj7gomfnn7a"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_pd72w"]
 [ext_resource type="Texture2D" uid="uid://pwru3k7wwd34" path="res://ART/DungeonMobs/d56gk4z-7de82b77-71a2-4cff-be13-ca553d5faf1c.png" id="1_wg4ub"]
@@ -19,6 +19,9 @@ radius = 1682.28
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ucc5"]
 radius = 55.3624
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xble2"]
+radius = 487.8
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -41,5 +44,10 @@ shape = SubResource("CircleShape2D_5gw30")
 position = Vector2(0, 8)
 scale = Vector2(-0.417718, -0.635273)
 shape = SubResource("CircleShape2D_4ucc5")
+
+[node name="Attack Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
+shape = SubResource("CircleShape2D_xble2")
 
 [connection signal="area_entered" from="Detection_Area" to="." method="_on_detection_area_area_entered"]

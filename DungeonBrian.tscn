@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://DungeonBrian.gd" id="1_d74oo"]
 [ext_resource type="Texture2D" uid="uid://dlr7ecxm57dvc" path="res://ART/BrianCombatAssets/Brian1D.png" id="2_qisx4"]
-[ext_resource type="PackedScene" path="res://scythe.tscn" id="3_1hv5r"]
+[ext_resource type="PackedScene" uid="uid://3odee5v6h45t" path="res://scythe.tscn" id="3_1hv5r"]
 [ext_resource type="Texture2D" uid="uid://33jx47xaeg1c" path="res://ART/BrianCombatAssets/Brian2D.png" id="3_ddr62"]
 [ext_resource type="Texture2D" uid="uid://iyeha8k2r17b" path="res://ART/BrianCombatAssets/Brian3D.png" id="4_j110p"]
 [ext_resource type="Texture2D" uid="uid://d055q3b8wwd1k" path="res://ART/BrianCombatAssets/Brian4D.png" id="5_agdc5"]
@@ -154,3 +154,11 @@ rotation = -0.277507
 libraries = {
 "": SubResource("AnimationLibrary_pmjxl")
 }
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="DashCooldown" type="Timer" parent="DashTimer"]
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashTimer/DashCooldown" to="." method="_on_dash_cooldown_timeout"]

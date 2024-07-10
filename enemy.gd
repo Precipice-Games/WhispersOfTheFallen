@@ -10,7 +10,7 @@ func _physics_process(delta):
 		move_and_collide(Vector2(0,0)) 
 
 
-func _on_detection_area_area_entered(body):
+func _on_detection_area_area_entered(_body):
 	player =  $"../DungeonBrian"
 	player_chase = true
 	print("hii")

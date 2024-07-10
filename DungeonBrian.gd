@@ -2,29 +2,16 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const speed = 300.0
-
-
+const DASHSPEED = 4
+@export var dashing = false 
+var canDash = true 
 
 	
 func _physics_process(_delta):
-	var _direction = Vector3.ZERO
-	
-	var directionx = Input.get_axis("move_left", "move_right")
-	if directionx:
-		velocity.x = directionx * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	var directiony = Input.get_axis("move_up", "move_down")
-	if directiony:
-		velocity.y = directiony * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
-	velocity = input_direction * speed
+	if not dashing:
+		velocity = input_direction * SPEED
 	
 	move_and_slide()
 
@@ -43,7 +30,7 @@ func _process(_delta):
 	var _directiony = Vector3.ZERO
 	
 	if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
+		velocity = velocity.normalized() * SPEED
 		
 	if Input.is_action_pressed("main_attack"):
 		$AnimationPlayer.play("Attack")
@@ -72,7 +59,6 @@ func _process(_delta):
 	if Input.is_action_pressed("move_left"):
 		if Input.is_action_pressed("move_down"):
 			$BrianAnim.play('DL')
-
 		elif Input.is_action_pressed("move_up"):
 			$BrianAnim.play('UL')
 
@@ -88,3 +74,23 @@ func _process(_delta):
 
 		else:
 			$BrianAnim.play('R')
+
+func _input(event):
+	if dashing:
+		return
+	if event.is_action_pressed('dash'):
+		if canDash:
+			dashing = true 
+			$DashTimer.start()
+			velocity *= DASHSPEED
+		if not canDash:
+			dashing = false
+			print('hllo')
+
+func _on_dash_timer_timeout():
+	dashing = false
+	canDash = false
+	$DashTimer/DashCooldown.start()
+
+func _on_dash_cooldown_timeout():
+	canDash = true 
