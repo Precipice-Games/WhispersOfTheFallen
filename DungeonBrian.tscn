@@ -76,6 +76,35 @@ animations = [{
 "loop": true,
 "name": &"UR",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_j110p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ddr62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qisx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_brxqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_joxf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1ndmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g67ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_agdc5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6oilk"]
@@ -136,7 +165,7 @@ position = Vector2(-0.139737, 8.00554)
 position = Vector2(8, -72)
 scale = Vector2(1, 0.995)
 sprite_frames = SubResource("SpriteFrames_2fn2e")
-animation = &"DR"
+animation = &"walk"
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
 rotation = 1.25664

@@ -13,4 +13,3 @@ func _physics_process(delta):
 func _on_detection_area_area_entered(_body):
 	player =  $"../DungeonBrian"
 	player_chase = true
-	print("hii")

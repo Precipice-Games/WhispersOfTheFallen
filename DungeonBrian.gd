@@ -90,8 +90,7 @@ func _input(event):
 		var mouse_direction: Vector2 = (get_global_mouse_position() - self.global_position).normalized()
 		scythe.rotation = mouse_direction.angle()
 
-		if mouse_direction.angle():
-			null
+			
 
 func _on_dash_timer_timeout():
 	dashing = false
