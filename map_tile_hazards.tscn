@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://chia48ghh47o5"]
+[gd_scene load_steps=10 format=3 uid="uid://bb3m7efjwlg5r"]
 
 [ext_resource type="Texture2D" uid="uid://bq54hqd0gy87k" path="res://ART/Isometric/IsometricProps/Trap_Wall_01.png" id="1_fnviv"]
 [ext_resource type="Texture2D" uid="uid://cnr1mmgq0c73b" path="res://ART/Isometric/IsometricProps/Trap_Floor_01.png" id="2_n8kfq"]
