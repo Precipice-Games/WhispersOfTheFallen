@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
-var speed = 175
+var speed = 150
 var player_chase = false
 var player = null
 
 func _physics_process(delta):
 	if player_chase:
-		position += (player.position - position).normalized() * speed * delta
+		position += (player.position - self.position).normalized() * speed * delta
 		move_and_collide(Vector2(0,0)) 
 
 

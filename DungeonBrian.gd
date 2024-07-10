@@ -6,7 +6,7 @@ const DASHSPEED = 4
 @export var dashing = false 
 var canDash = true 
 @onready var scythe: Node2D = get_node("Weapon/Scythe")
-	
+
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
@@ -16,9 +16,6 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _process(_delta):
-	
-	var mouse_direction: Vector2 = (get_global_mouse_position() - global_position).normalized()
-	scythe.rotation = mouse_direction.angle()
 		
 	var velocity = Vector2.ZERO 
 	if Input.is_action_pressed("move_right"):
@@ -36,8 +33,8 @@ func _process(_delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * SPEED
 		
-	if Input.is_action_pressed("main_attack"):
-		$AnimationPlayer.play("Attack")
+	# if Input.is_action_pressed("main_attack"):
+		#$AnimationPlayer.play("Attack")
 	
 	#DIRECTIONAL RUNNING
 	if Input.is_action_pressed("move_up"):
@@ -88,10 +85,13 @@ func _input(event):
 			$DashTimer.start()
 			velocity *= DASHSPEED
 			canDash = false
-		
+	
+	if event.is_action_pressed('main_attack'):
+		var mouse_direction: Vector2 = (get_global_mouse_position() - self.global_position).normalized()
+		scythe.rotation = mouse_direction.angle()
 
-		
-
+		if mouse_direction.angle():
+			null
 
 func _on_dash_timer_timeout():
 	dashing = false
