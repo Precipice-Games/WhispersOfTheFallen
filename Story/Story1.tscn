@@ -1,19 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://bb52vfdbto1ph"]
 
-[ext_resource type="Texture2D" uid="uid://cs7i0otimy3o2" path="res://ART/Isometric/BasicBlocks/Floor_Corner_01.png" id="1_ox4m0"]
+[ext_resource type="Texture2D" uid="uid://ht25txpilac8" path="res://ART/Free Pixel Art Forest/PNG/Background layers/Layer_0000_9.png" id="2_4atju"]
 [ext_resource type="PackedScene" uid="uid://dvby23e5m3fm7" path="res://Story/story_brian.tscn" id="2_mhmjo"]
+[ext_resource type="Texture2D" uid="uid://b1liir5pl02j4" path="res://ART/Free Pixel Art Forest/PNG/Background layers/Layer_0011_0.png" id="2_nueko"]
 [ext_resource type="Texture2D" uid="uid://pwru3k7wwd34" path="res://ART/DungeonMobs/d56gk4z-7de82b77-71a2-4cff-be13-ca553d5faf1c.png" id="3_5k62i"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0pilu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_ox4m0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w8fhk"]
 animations = [{
@@ -29,21 +19,38 @@ animations = [{
 [node name="StartStory" type="Node2D"]
 
 [node name="StoryBrian" parent="." instance=ExtResource("2_mhmjo")]
-position = Vector2(314, 808)
+position = Vector2(314, 749)
+scale = Vector2(1.5, 1.5)
 
 [node name="Camera2D" type="Camera2D" parent="StoryBrian"]
-zoom = Vector2(2, 2)
+position = Vector2(0, -58)
+zoom = Vector2(1.7, 1.7)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 texture_repeat = 2
-motion_offset = Vector2(10, 0)
+position = Vector2(0, 1)
+motion_offset = Vector2(100, 2.08165e-12)
+motion_mirroring = Vector2(928, 793)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1007, 1018.75)
-scale = Vector2(1.2176, 0.973896)
-sprite_frames = SubResource("SpriteFrames_0pilu")
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+texture_repeat = 3
+position = Vector2(441, 584)
+texture = ExtResource("2_nueko")
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+position = Vector2(0, 1)
+motion_offset = Vector2(10, 0)
+motion_mirroring = Vector2(928, 793)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Ground"]
+texture_repeat = 2
+position = Vector2(-50, 192)
+texture = ExtResource("2_4atju")
+centered = false
+region_rect = Rect2(-2, 715.5, 935, 98)
 
 [node name="Portal" type="AnimatedSprite2D" parent="."]
 position = Vector2(1756, 764)
