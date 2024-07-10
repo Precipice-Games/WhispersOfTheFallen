@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bb52vfdbto1ph"]
+[gd_scene load_steps=6 format=3 uid="uid://bb52vfdbto1ph"]
 
 [ext_resource type="Texture2D" uid="uid://cs7i0otimy3o2" path="res://ART/Isometric/BasicBlocks/Floor_Corner_01.png" id="1_ox4m0"]
-[ext_resource type="PackedScene" uid="uid://nknwk70pfxlf" path="res://Story/story_brian.tscn" id="2_mhmjo"]
+[ext_resource type="PackedScene" uid="uid://dvby23e5m3fm7" path="res://Story/story_brian.tscn" id="2_mhmjo"]
+[ext_resource type="Texture2D" uid="uid://pwru3k7wwd34" path="res://ART/DungeonMobs/d56gk4z-7de82b77-71a2-4cff-be13-ca553d5faf1c.png" id="3_5k62i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0pilu"]
 animations = [{
@@ -11,6 +12,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w8fhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5k62i")
+}],
+"loop": true,
+"name": &"PORTAL",
 "speed": 5.0
 }]
 
@@ -32,3 +44,9 @@ motion_offset = Vector2(10, 0)
 position = Vector2(1007, 1018.75)
 scale = Vector2(1.2176, 0.973896)
 sprite_frames = SubResource("SpriteFrames_0pilu")
+
+[node name="Portal" type="AnimatedSprite2D" parent="."]
+position = Vector2(1756, 764)
+scale = Vector2(0.102484, 0.123909)
+sprite_frames = SubResource("SpriteFrames_w8fhk")
+animation = &"PORTAL"
