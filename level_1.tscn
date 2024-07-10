@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://x58aru4mmlup" path="res://DungeonBrian.tscn" id="1_ftkk4"]
 
 [node name="level1" type="Node2D"]
+y_sort_enabled = true
 
 [node name="DungeonBrian" parent="." instance=ExtResource("1_ftkk4")]
 z_index = 10
@@ -18,8 +19,10 @@ layer_0/tile_data = PackedInt32Array(852063, 196614, 0, 393300, 6, 0, 786543, 19
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -10
+y_sort_enabled = true
 offset_left = -1096.0
 offset_top = -168.0
 offset_right = 1320.0
 offset_bottom = 1048.0
+scale = Vector2(1.52193, 10.4779)
 color = Color(0.508062, 0.715774, 0.86404, 1)
