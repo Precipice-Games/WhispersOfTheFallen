@@ -14,11 +14,11 @@ animations = [{
 }]
 
 [node name="Scythe" type="Area2D"]
+position = Vector2(72, -96)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(32, -80, -104, 24, -24, 104, 40, -56, 40, -80)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionPolygon2D"]
-position = Vector2(-8, 8)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-48, 112)
 sprite_frames = SubResource("SpriteFrames_1wlj0")
 animation = &"attack"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
