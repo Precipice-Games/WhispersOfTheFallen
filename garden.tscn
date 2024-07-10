@@ -33095,3 +33095,4 @@ sources/24 = SubResource("TileSetAtlasSource_vd3ms")
 position = Vector2(-880, 234)
 tile_set = SubResource("TileSet_7jfx0")
 format = 2
+layer_0/y_sort_enabled = true
