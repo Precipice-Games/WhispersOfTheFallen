@@ -127,10 +127,10 @@ script = ExtResource("1_d74oo")
 position = Vector2(7, -29)
 scale = Vector2(1, 0.995)
 sprite_frames = SubResource("SpriteFrames_2fn2e")
-animation = &"U"
-frame_progress = 0.533161
+animation = &"DR"
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
+position = Vector2(8, 24)
 rotation = 1.25664
 shape = SubResource("CapsuleShape2D_6oilk")
 one_way_collision_margin = 0.0
@@ -147,7 +147,7 @@ position = Vector2(16, -32)
 rotation = 0.621337
 
 [node name="Scythe" parent="Weapon" instance=ExtResource("3_1hv5r")]
-position = Vector2(7.21262, 24.2483)
+position = Vector2(-1.84783, 11.1618)
 rotation = -0.277507
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
