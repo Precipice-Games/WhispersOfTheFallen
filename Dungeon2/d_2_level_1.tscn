@@ -1,3 +1,26 @@
-[gd_scene format=3 uid="uid://dxbniaoahykji"]
+[gd_scene load_steps=5 format=3 uid="uid://dxbniaoahykji"]
+
+[ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_4gwj1"]
+[ext_resource type="PackedScene" uid="uid://ct5okf6whlhaa" path="res://accesories.tscn" id="2_o7yvl"]
+[ext_resource type="PackedScene" uid="uid://btokh1a8jjkbt" path="res://doors.tscn" id="3_x657v"]
+[ext_resource type="PackedScene" uid="uid://x58aru4mmlup" path="res://DungeonBrian.tscn" id="4_l1dc5"]
 
 [node name="D2 Level 1" type="Node2D"]
+y_sort_enabled = true
+
+[node name="TileMap" parent="." instance=ExtResource("1_4gwj1")]
+y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(720914, 6, 0, 1114142, 6, 0, 1507370, 65542, 0, 1900598, 131078, 0, 2293826, 131078, 0, 1900622, 131078, 0, 1507418, 131078, 0, 1114214, 131078, 0, 721010, 131078, 0, 1507394, 131078, 0, 1114190, 65542, 0, 1114166, 65542, 0, 720986, 65542, 0, 327782, 65542, 0, 720962, 65542, 0, 327758, 6, 0, -65446, 6, 0, 720938, 6, 268435456, 327734, 6, 0, -65470, 6, 0, 65560, 65536, 0, 65572, 0, 0, -327632, 0, 0, -720836, 0, 0, -720824, 196608, 0, -720812, 0, 0, -720800, 65536, 0, -327572, 65536, 0, 65656, 65540, 0, 65548, 4, 0)
+
+[node name="Accesories" parent="." instance=ExtResource("2_o7yvl")]
+y_sort_enabled = true
+layer_0/tile_data = PackedInt32Array(-786366, 6, 0, -720806, 6, 0, 327712, 6, 0, 43, 131078, 0, -393161, 196614, 0, -393115, 196614, 0, 65554, 65542, 0, -327631, 10, 0, -720800, 65547, 0, -655300, 11, 0, -327572, 65546, 0, 720966, 9, 0, 917570, 7, 0, 458816, 7, 0, 458825, 7, 0, -327598, 131080, 0, 2097219, 196616, 1342177280, 1900599, 65544, 0)
+
+[node name="Doors" parent="." instance=ExtResource("3_x657v")]
+layer_0/tile_data = PackedInt32Array(131084, 131074, 0, 131192, 196610, 0)
+
+[node name="DungeonBrian" parent="." instance=ExtResource("4_l1dc5")]
+y_sort_enabled = true
+
+[node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
+zoom = Vector2(2, 2)
