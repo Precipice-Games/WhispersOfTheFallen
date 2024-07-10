@@ -4,16 +4,12 @@ extends CharacterBody2D
 const SPEED = 300.0
 const speed = 300.0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 	
 func _physics_process(_delta):
 	var _direction = Vector3.ZERO
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var directionx = Input.get_axis("move_left", "move_right")
 	if directionx:
 		velocity.x = directionx * SPEED
@@ -51,5 +47,45 @@ func _process(_delta):
 		
 	if Input.is_action_pressed("main_attack"):
 		$AnimationPlayer.play("Attack")
-		
+	# DONE
+	
+	if Input.is_action_pressed("move_up"):
+		if Input.is_action_pressed("move_left"):
+			$BrianAnim.play('UL')
 
+		elif Input.is_action_pressed("move_right"):
+			$BrianAnim.play('UR')
+
+		else:
+			$BrianAnim.play('U')
+
+	if Input.is_action_pressed("move_down"):
+		if Input.is_action_pressed("move_left"):
+			$BrianAnim.play('DL')
+
+		elif Input.is_action_pressed("move_right"):
+			$BrianAnim.play('DR')
+
+		else:
+			$BrianAnim.play('D')
+			
+	
+	if Input.is_action_pressed("move_left"):
+		if Input.is_action_pressed("move_down"):
+			$BrianAnim.play('DL')
+
+		elif Input.is_action_pressed("move_up"):
+			$BrianAnim.play('UL')
+
+		else:
+			$BrianAnim.play('L')
+
+	if Input.is_action_pressed("move_right"):
+		if Input.is_action_pressed("move_down"):
+			$BrianAnim.play('DR')
+
+		elif Input.is_action_pressed("move_up"):
+			$BrianAnim.play('UR')
+
+		else:
+			$BrianAnim.play('R')
