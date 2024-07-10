@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ct5okf6whlhaa"]
+[gd_scene load_steps=34 format=3 uid="uid://ct5okf6whlhaa"]
 
 [ext_resource type="Texture2D" uid="uid://efa12wogjuec" path="res://ART/Isometric/IsometricProps/PurpleRug_CrossSection_01.png" id="1_dr2k5"]
 [ext_resource type="Texture2D" uid="uid://n27gy6y5hwxk" path="res://ART/Isometric/IsometricProps/RedRug_CrossSection_01.png" id="2_at5vn"]
@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bi2jb2b6563vo" path="res://ART/Isometric/IsometricProps/Stool_01.png" id="10_dfiax"]
 [ext_resource type="Texture2D" uid="uid://dtmad4fjcisbd" path="res://ART/Isometric/IsometricProps/Table_01.png" id="11_i7lnd"]
 [ext_resource type="Texture2D" uid="uid://b8arkljdetch0" path="res://ART/Isometric/IsometricProps/Table_02.png" id="12_v5cj2"]
-[ext_resource type="Script" path="res://accesories.gd" id="13_q1vdf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jl3ph"]
 texture = ExtResource("1_dr2k5")
@@ -8234,4 +8233,3 @@ y_sort_enabled = true
 tile_set = SubResource("TileSet_dbh7y")
 format = 2
 layer_0/y_sort_enabled = true
-script = ExtResource("13_q1vdf")

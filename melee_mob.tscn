@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://brcaorg6ybupl"]
+
+[ext_resource type="Script" path="res://melee_mob.gd" id="1_nfw8v"]
+[ext_resource type="Texture2D" uid="uid://drkb0h07kiixe" path="res://Melee swing image.webp" id="2_amuuh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r52a3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_amuuh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b73kv"]
+radius = 101.272
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sisi"]
+size = Vector2(49, 68)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6c2v1"]
+radius = 159.38
+
+[node name="MeleeMob" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_nfw8v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_r52a3")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("CircleShape2D_b73kv")
+metadata/_edit_lock_ = true
+
+[node name="PhysicsCollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+shape = SubResource("RectangleShape2D_8sisi")
+
+[node name="Detection_Area" type="Area2D" parent="."]
+collision_layer = 4
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]
+shape = SubResource("CircleShape2D_6c2v1")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

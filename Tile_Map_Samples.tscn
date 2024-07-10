@@ -10501,6 +10501,7 @@ sources/7 = SubResource("TileSetAtlasSource_eodpj")
 sources/8 = SubResource("TileSetAtlasSource_4e23x")
 
 [node name="TileMap" type="TileMap"]
+y_sort_enabled = true
 tile_set = SubResource("TileSet_b3edr")
 format = 2
 layer_0/y_sort_enabled = true
