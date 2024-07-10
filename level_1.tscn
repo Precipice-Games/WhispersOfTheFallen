@@ -1,52 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjvohwactraar"]
+[gd_scene format=3 uid="uid://cjvohwactraar"]
 
-[ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_u8uq2"]
-[ext_resource type="PackedScene" uid="uid://x58aru4mmlup" path="res://DungeonBrian.tscn" id="3_38rye"]
-[ext_resource type="Texture2D" uid="uid://da0vghli16wvh" path="res://ART/BrianCombatAssets/Fadeout.png" id="3_gdntm"]
+[node name="level1" type="Node2D"]
 
-[node name="Level 1" type="Node2D"]
-position = Vector2(246, -230)
-metadata/_edit_group_ = true
-
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -10
-z_as_relative = false
-offset_left = -306.0
-offset_right = -266.0
-offset_bottom = 40.0
-scale = Vector2(50.7147, 39.1985)
-color = Color(0, 0, 0, 1)
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(647, -74)
-
-[node name="TileMap" parent="Node2D" instance=ExtResource("1_u8uq2")]
-scale = Vector2(0.9965, 0.998528)
-layer_0/tile_data = PackedInt32Array(2818051, 6, 0, 3276791, 6, 0, 3669995, 6, 0, 4063199, 6, 0, 4456427, 65542, 0, 3604483, 65542, 0, 4063223, 65542, 0, 3211279, 6, 0, 3604507, 65542, 0, 3997711, 65542, 0, 4390915, 65542, 0, 4849655, 131078, 0, 3997735, 131078, 0, 4390939, 131078, 0, 4784143, 131078, 0, 5177347, 196614, 0, 2621425, 0, 0, 3407833, 0, 0, 3014629, 0, 0, 2228221, 131072, 0, 2162698, 196608, 0, 2949154, 65536, 0, 3342382, 65536, 0, 2555926, 65540, 0)
-
-[node name="DungeonBrian" parent="." instance=ExtResource("3_38rye")]
-position = Vector2(648, 792)
-scale = Vector2(0.8, 0.8)
-
-[node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
-position = Vector2(21.25, -20)
-zoom = Vector2(2, 2)
-process_callback = 0
-drag_horizontal_enabled = true
-drag_horizontal_offset = 0.1
-
-[node name="Border2" type="StaticBody2D" parent="."]
-position = Vector2(647, -72)
-collision_layer = 2
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Border2"]
-polygon = PackedVector2Array(65, 1378, 57, 1330, 833, 938, 833, 994)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border2"]
-scale = Vector2(1.00254, 1)
-polygon = PackedVector2Array(-709.2, 994, -709.2, 946, 56.8558, 1322, 56.8558, 1378)
-
-[node name="Fadeout" type="Sprite2D" parent="."]
-position = Vector2(672, 830)
-scale = Vector2(1.53045, 1.60456)
-texture = ExtResource("3_gdntm")
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
