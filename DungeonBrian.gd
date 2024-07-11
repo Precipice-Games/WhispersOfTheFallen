@@ -16,7 +16,9 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _process(_delta):
-		
+	var mouse_direction: Vector2 = (get_global_mouse_position() - self.global_position).normalized()
+	scythe.rotation = mouse_direction.angle()
+	
 	var velocity = Vector2.ZERO 
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -87,8 +89,7 @@ func _input(event):
 			canDash = false
 	
 	if event.is_action_pressed('main_attack'):
-		var mouse_direction: Vector2 = (get_global_mouse_position() - self.global_position).normalized()
-		scythe.rotation = mouse_direction.angle()
+		$WeaponAnimation.play("Attack")
 
 			
 
@@ -98,4 +99,8 @@ func _on_dash_timer_timeout():
 
 func _on_dash_cooldown_timeout():
 	canDash = true 
+
+
+
+
 
