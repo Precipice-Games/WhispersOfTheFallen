@@ -41,6 +41,7 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_b73kv")
+metadata/_edit_lock_ = true
 
 [node name="PhysicsCollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
@@ -59,7 +60,7 @@ metadata/_edit_lock_ = true
 script = ExtResource("4_y8pco")
 
 [node name="Detector" type="CollisionShape2D" parent="Melee_Hitbox"]
-position = Vector2(84, -1)
+position = Vector2(46, -38)
 shape = SubResource("RectangleShape2D_4gsch")
 disabled = true
 
