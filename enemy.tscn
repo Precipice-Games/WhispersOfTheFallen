@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_pd72w"]
 [ext_resource type="Texture2D" uid="uid://pwru3k7wwd34" path="res://ART/DungeonMobs/d56gk4z-7de82b77-71a2-4cff-be13-ca553d5faf1c.png" id="1_wg4ub"]
-[ext_resource type="PackedScene" uid="uid://b2rkp5xidb43r" path="res://soft_collision.tscn" id="3_stmfa"]
+[ext_resource type="PackedScene" path="res://soft_collision.tscn" id="3_stmfa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wthmk"]
 animations = [{
