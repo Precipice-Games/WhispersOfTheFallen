@@ -66,6 +66,7 @@ script = ExtResource("3_1drbi")
 script = ExtResource("4_y8pco")
 
 [node name="Detector" type="CollisionShape2D" parent="Melee_Hitbox"]
+position = Vector2(84, -1)
 shape = SubResource("RectangleShape2D_4gsch")
 disabled = true
 
