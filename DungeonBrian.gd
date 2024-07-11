@@ -6,6 +6,7 @@ const DASHSPEED = 4
 @export var dashing = false 
 var canDash = true 
 @onready var scythe: Node2D = get_node("Weapon/Scythe")
+@onready var weapon: Node2D = get_node("Weapon")
 
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -17,7 +18,8 @@ func _physics_process(_delta):
 
 func _process(_delta):
 	var mouse_direction: Vector2 = (get_global_mouse_position() - self.global_position).normalized()
-	scythe.rotation = mouse_direction.angle()
+	#scythe.rotation = mouse_direction.angle()
+	weapon.rotation = mouse_direction.angle()
 	
 	var velocity = Vector2.ZERO 
 	if Input.is_action_pressed("move_right"):
