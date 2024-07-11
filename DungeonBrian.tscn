@@ -308,31 +308,6 @@ scale = Vector2(0.999155, 1)
 collision_mask = 2
 script = ExtResource("1_d74oo")
 
-[node name="Weapon" type="Node2D" parent="."]
-y_sort_enabled = true
-position = Vector2(23.0195, -8)
-
-[node name="3" type="Sprite2D" parent="Weapon"]
-visible = false
-position = Vector2(190.161, -72)
-rotation = -0.031416
-scale = Vector2(12.174, -17)
-texture = ExtResource("32_qhb1e")
-hframes = 3
-frame = 2
-
-[node name="Scythe" parent="Weapon" instance=ExtResource("3_1hv5r")]
-position = Vector2(-23.0194, -88)
-
-[node name="Hitbox" type="Area2D" parent="Weapon/Scythe"]
-visible = false
-position = Vector2(30.0254, 96)
-rotation = -0.0763224
-script = ExtResource("4_yk00h")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Weapon/Scythe/Hitbox"]
-polygon = PackedVector2Array(33.0279, -88, 173.146, -104, 198.167, -48, 158.134, 0, 168.142, -56, 156.132, -88, 34.0288, -80)
-
 [node name="BrianAnim" type="AnimatedSprite2D" parent="."]
 position = Vector2(11.0093, -67)
 scale = Vector2(1, 0.995)
@@ -362,6 +337,32 @@ libraries = {
 "": SubResource("AnimationLibrary_pmjxl")
 }
 autoplay = "Attack"
+
+[node name="Weapon" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(23.0195, -8)
+scale = Vector2(1, 1)
+
+[node name="3" type="Sprite2D" parent="Weapon"]
+visible = false
+position = Vector2(190.161, -72)
+rotation = -0.031416
+scale = Vector2(12.174, -17)
+texture = ExtResource("32_qhb1e")
+hframes = 3
+frame = 2
+
+[node name="Scythe" parent="Weapon" instance=ExtResource("3_1hv5r")]
+position = Vector2(-23.0194, -88)
+
+[node name="Hitbox" type="Area2D" parent="Weapon/Scythe"]
+visible = false
+position = Vector2(30.0254, 96)
+rotation = -0.0763224
+script = ExtResource("4_yk00h")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Weapon/Scythe/Hitbox"]
+polygon = PackedVector2Array(33.0279, -88, 173.146, -104, 198.167, -48, 158.134, 0, 168.142, -56, 156.132, -88, 34.0288, -80)
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.2
