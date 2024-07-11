@@ -26,7 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 	body_inside = true
 	timer.start()
 	while body_inside:
-		_collide(body)
+		#_collide(body)
 		await timer.timeout
 
 
@@ -35,8 +35,10 @@ func _on_body_exited(_body: Node2D) -> void:
 	timer.stop()
 
 
-func _collide(body: Node2D) -> void:
-	if body == null or not body.has_method("take_damage"):
-		queue_free()
-	else:
-		body.take_damage(damage, knockback_direction, knockback_force)
+#func _collide(body: Node2D) -> void:
+	#if body == null or not body.has_method("take_damage"):
+		#pass
+		##queue_free()
+	#else:
+		#pass
+		##body.take_damage(damage, knockback_direction, knockback_force)

@@ -17,7 +17,7 @@ func get_push_vector():
 
 var push_velocity = Vector2()
 var direction = Vector2.ZERO
-@export var push_strength = 50
+@export var push_strength = 25
 
 func _physics_process(delta):
 	var overlapping_areas = get_overlapping_areas()

@@ -6,6 +6,7 @@ const DASHSPEED = 4
 @export var dashing = false 
 var canDash = true 
 @onready var weapon: Node2D = get_node("Weapon")
+var currentHealth: int = 500
 
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -89,10 +90,13 @@ func _input(event):
 			canDash = false
 	
 	if event.is_action_pressed('main_attack'):
+		$Weapon/Scythe/Hitbox/WeaponHitBox.set_disabled(false)
+		$AttackTimer.start
 		$WeaponAnimation.play("Attack")
 
-			
-
+func _on_attack_timer_timeout():
+	$Weapon/Scythe/Hitbox/WeaponHitBox.set_disabled(true)
+	
 func _on_dash_timer_timeout():
 	dashing = false
 	$DashTimer/DashCooldown.start()
@@ -101,6 +105,20 @@ func _on_dash_cooldown_timeout():
 	canDash = true 
 
 
+func _on_player_hitbox_body_entered(body):
+	if body.is_in_group("Mob"):
+		currentHealth -= 1  #add cooldown
+		print(currentHealth)
+	
+	if currentHealth <0:
+		visible = false
+
+
+func _on_hitbox_body_entered(body):
+	if body.is_in_group("Mob"):
+		body.take_damage()
+		print("enemy hit")
 
 
 
+	
