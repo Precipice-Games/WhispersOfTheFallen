@@ -3,25 +3,19 @@ extends CharacterBody2D
 
 var speed = 150
 var player_chase = false
-var player_null = null
-#@onready var Melee_Hitbox = $Melee_Hitbox
-@export var player:CharacterBody2D
+var player = get_tree().get_first_node_in_group("player")
 
 # var player_direction = player.position - self.position 
 func _physics_process(delta):
 	if player_chase:
-		position += (player.position - self.position).normalized() * speed * delta
+		self.position += (player.position - self.position).normalized() * speed * delta
 		move_and_collide(Vector2(0,0)) 
 		
-	#if Melee_Hitbox._is_colliding():
-		#velocity += Melee_Hitbox.get_push_vector() * delta * 400
 
-func _on_attack_area_body_entered(body):
+func _on_attack_area_body_entered(_body):
 	print("Attacking")
 	$Melee_Hitbox.activate() # attack player
 	
 
-func _on_detection_area_body_entered(body):
-	player_null =  $"../DungeonBrian"
+func _on_detection_area_body_entered(_body):
 	player_chase = true
-

@@ -3,14 +3,16 @@ extends CharacterBody2D
 
 var speed = 150
 var player_chase = false
-var player_null = null
+
 #@onready var Melee_Hitbox = $Melee_Hitbox
 @export var player:CharacterBody2D
+@export var Arrrow: PackedScene
+
 
 # var player_direction = player.position - self.position 
 func _physics_process(delta):
 	if player_chase:
-		position += (player_null.position - self.position).normalized() * speed * delta
+		self.position += (player.position - self.position).normalized() * speed * delta
 		move_and_collide(Vector2(0,0)) 
 		
 	#if Melee_Hitbox._is_colliding():
@@ -22,7 +24,13 @@ func _on_area_hit_box_body_entered(_body):
 	
 
 func _on_detection_area_body_entered(_body):
-	player_null =  $"../DungeonBrian"
+	player =  $"../DungeonBrian"
 	player_chase = true
 
 
+
+
+func _on_attack_timer_timeout():
+	var arrow = Arrrow.instantiate()
+	
+	var player_position = 

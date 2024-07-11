@@ -1,8 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://daqwl7u78d52j"]
+[gd_scene load_steps=8 format=3 uid="uid://daqwl7u78d52j"]
 
 [ext_resource type="Script" path="res://ranged_enemy.gd" id="1_73wih"]
 [ext_resource type="Texture2D" uid="uid://cbj81u67xdcif" path="res://skelly_boy-removebg-preview.png" id="1_xwrj3"]
-[ext_resource type="Script" path="res://Area_HitBox.gd" id="3_xprf7"]
+[ext_resource type="PackedScene" uid="uid://ifjbdsw14pu2" path="res://Arrrow.tscn" id="2_5o8qm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ku7rk"]
 animations = [{
@@ -24,10 +24,9 @@ size = Vector2(40.5, 26.25)
 [sub_resource type="CircleShape2D" id="CircleShape2D_bntoh"]
 radius = 2099.05
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_37ehb"]
-
 [node name="Ranged_enemy" type="CharacterBody2D"]
 script = ExtResource("1_73wih")
+Arrrow = ExtResource("2_5o8qm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.38419e-07, -86)
@@ -51,11 +50,7 @@ shape = SubResource("RectangleShape2D_hw366")
 shape = SubResource("CircleShape2D_bntoh")
 metadata/_edit_lock_ = true
 
-[node name="Area_HitBox" type="Area2D" parent="."]
-script = ExtResource("3_xprf7")
-
-[node name="Arrow" type="CollisionShape2D" parent="Area_HitBox"]
-shape = SubResource("RectangleShape2D_37ehb")
+[node name="Attack_Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Detection_Area" to="." method="_on_detection_area_body_entered"]
-[connection signal="body_entered" from="Area_HitBox" to="." method="_on_area_hit_box_body_entered"]
+[connection signal="timeout" from="Attack_Timer" to="." method="_on_attack_timer_timeout"]
