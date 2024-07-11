@@ -60,3 +60,6 @@ script = ExtResource("3_xprf7")
 
 [node name="Arrow" type="CollisionShape2D" parent="Area_HitBox"]
 shape = SubResource("RectangleShape2D_37ehb")
+
+[connection signal="body_entered" from="Detection_Area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="Area_HitBox" to="." method="_on_area_hit_box_body_entered"]

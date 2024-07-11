@@ -1,28 +1,28 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+var speed = 150
+var player_chase = false
+var player_null = null
+#@onready var Melee_Hitbox = $Melee_Hitbox
+@export var player:CharacterBody2D
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-
+# var player_direction = player.position - self.position 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
+	if player_chase:
+		position += (player.position - self.position).normalized() * speed * delta
+		move_and_collide(Vector2(0,0)) 
+		
+	#if Melee_Hitbox._is_colliding():
+		#velocity += Melee_Hitbox.get_push_vector() * delta * 400
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+func _on_area_hit_box_body_entered(_body):
+	print("Attacking")
+	$Area_HitBox.activate() # attack player
+	
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+func _on_detection_area_body_entered(_body):
+	player_null =  $"DungeonBrian"
+	player_chase = true
 
-	move_and_slide()
+
