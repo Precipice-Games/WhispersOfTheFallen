@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5hj7gomfnn7a"]
+[gd_scene load_steps=7 format=3 uid="uid://c5hj7gomfnn7a"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_pd72w"]
 [ext_resource type="Texture2D" uid="uid://pwru3k7wwd34" path="res://ART/DungeonMobs/d56gk4z-7de82b77-71a2-4cff-be13-ca553d5faf1c.png" id="1_wg4ub"]
-[ext_resource type="PackedScene" path="res://DungeonKol/soft_collision.tscn" id="3_6icji"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wthmk"]
 animations = [{
@@ -23,9 +22,6 @@ radius = 108.199
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xble2"]
 radius = 487.8
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r554c"]
-size = Vector2(20, 148)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -57,13 +53,5 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
 shape = SubResource("CircleShape2D_xble2")
-
-[node name="SoftCollision" parent="." instance=ExtResource("3_6icji")]
-scale = Vector2(4, 4)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="SoftCollision"]
-position = Vector2(4, 14)
-shape = SubResource("RectangleShape2D_r554c")
-disabled = true
 
 [connection signal="area_entered" from="Detection_Area" to="." method="_on_detection_area_area_entered"]

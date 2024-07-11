@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjvohwactraar"]
 
-[ext_resource type="PackedScene" path="res://garden.tscn" id="1_4ur37"]
+[ext_resource type="PackedScene" uid="uid://ef7wuo7convj" path="res://garden.tscn" id="1_4ur37"]
 [ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="1_ftkk4"]
 
 [node name="level1" type="Node2D"]
