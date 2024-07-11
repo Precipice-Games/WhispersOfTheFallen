@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5hj7gomfnn7a"]
+[gd_scene load_steps=8 format=3 uid="uid://c5hj7gomfnn7a"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_pd72w"]
 [ext_resource type="Texture2D" uid="uid://pwru3k7wwd34" path="res://ART/DungeonMobs/d56gk4z-7de82b77-71a2-4cff-be13-ca553d5faf1c.png" id="1_wg4ub"]
+[ext_resource type="PackedScene" uid="uid://b2rkp5xidb43r" path="res://soft_collision.tscn" id="3_stmfa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wthmk"]
 animations = [{
@@ -34,7 +35,6 @@ scale = Vector2(0.188727, 0.185647)
 sprite_frames = SubResource("SpriteFrames_wthmk")
 
 [node name="Detection_Area" type="Area2D" parent="."]
-visible = false
 position = Vector2(-1427, -136)
 collision_layer = 4
 
@@ -43,15 +43,18 @@ position = Vector2(1428, 136)
 shape = SubResource("CircleShape2D_5gw30")
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, -8)
 scale = Vector2(-0.417718, -0.635273)
 shape = SubResource("CircleShape2D_4ucc5")
 
 [node name="Attack Area" type="Area2D" parent="."]
-visible = false
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
 shape = SubResource("CircleShape2D_xble2")
 
+[node name="SoftCollision" parent="." instance=ExtResource("3_stmfa")]
+
 [connection signal="area_entered" from="Detection_Area" to="." method="_on_detection_area_area_entered"]
+
+[editable path="SoftCollision"]
