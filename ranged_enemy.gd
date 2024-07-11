@@ -10,7 +10,7 @@ var player_null = null
 # var player_direction = player.position - self.position 
 func _physics_process(delta):
 	if player_chase:
-		position += (player.position - self.position).normalized() * speed * delta
+		position += (player_null.position - self.position).normalized() * speed * delta
 		move_and_collide(Vector2(0,0)) 
 		
 	#if Melee_Hitbox._is_colliding():
@@ -22,7 +22,7 @@ func _on_area_hit_box_body_entered(_body):
 	
 
 func _on_detection_area_body_entered(_body):
-	player_null =  $"DungeonBrian"
+	player_null =  $"../DungeonBrian"
 	player_chase = true
 
 

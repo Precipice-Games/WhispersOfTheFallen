@@ -22,7 +22,7 @@ radius = 333.096
 size = Vector2(40.5, 26.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bntoh"]
-radius = 18500.7
+radius = 2099.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37ehb"]
 
@@ -36,20 +36,16 @@ sprite_frames = SubResource("SpriteFrames_ku7rk")
 animation = &"new_animation"
 
 [node name="Detection_Area" type="Area2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]
 position = Vector2(0, -75)
 shape = SubResource("CircleShape2D_b17ff")
-metadata/_edit_lock_ = true
 
 [node name="Wall_Coilider" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -7)
 shape = SubResource("RectangleShape2D_hw366")
-metadata/_edit_lock_ = true
 
 [node name="Area_Attack" type="Area2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Attack"]
 shape = SubResource("CircleShape2D_bntoh")
