@@ -19,7 +19,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
 position = Vector2(-6, -26)
 scale = Vector2(-141.196, 12.1971)
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 script = ExtResource("3_w55iy")
 
 [node name="Enemy" parent="." instance=ExtResource("3_0vr86")]
