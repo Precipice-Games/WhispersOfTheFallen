@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://du8op44k3ucst"]
+[gd_scene load_steps=6 format=3 uid="uid://du8op44k3ucst"]
 
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_adng7"]
 [ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="2_odvi8"]
 [ext_resource type="PackedScene" uid="uid://c5hj7gomfnn7a" path="res://enemy.tscn" id="3_0vr86"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="3_w55iy"]
+[ext_resource type="Texture2D" uid="uid://da0vghli16wvh" path="res://ART/BrianCombatAssets/Fadeout.png" id="5_dmyel"]
 
 [node name="TestArena" type="Node2D"]
-position = Vector2(-368, -104)
+position = Vector2(-320, -56)
 
 [node name="TileMap" parent="." instance=ExtResource("1_adng7")]
 position = Vector2(-8, 0)
@@ -47,97 +48,6 @@ position = Vector2(1184, 736)
 scale = Vector2(0.1, 0.1)
 collision_mask = 2
 
-[node name="Enemy6" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(1280, 736)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy7" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(662, 736)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy8" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(727, 736)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy9" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(560, 744)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy10" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(624, 688)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy11" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(496, 657)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy12" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(552, 624)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy13" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(440, 592)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy14" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(440, 680)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy15" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(336, 657)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy16" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(352, 720)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy17" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(232, 720)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy18" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(409, 776)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy19" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(560, 762)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy20" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(576, 832)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy21" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(672, 824)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy22" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(736, 784)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy23" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(816, 824)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
-
-[node name="Enemy24" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(848, 808)
-scale = Vector2(0.1, 0.1)
-collision_mask = 2
+[node name="Fadeout" type="Sprite2D" parent="."]
+position = Vector2(616, 664)
+texture = ExtResource("5_dmyel")

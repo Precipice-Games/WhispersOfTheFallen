@@ -171,7 +171,7 @@ height = 70.7562
 
 [sub_resource type="Animation" id="Animation_54dgi"]
 resource_name = "Attack"
-length = 1.2
+length = 0.8
 step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -180,7 +180,7 @@ tracks/0/path = NodePath("Weapon/3:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.54),
+"times": PackedFloat32Array(0, 0.24, 0.48),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -192,7 +192,7 @@ tracks/1/path = NodePath("Weapon/3:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 0.36, 0.4, 0.47, 0.52),
+"times": PackedFloat32Array(0.24, 0.3, 0.34, 0.41, 0.46),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(126.107, -7.62939e-06), Vector2(126.107, 2.08165e-12), Vector2(175.148, 2.08165e-12), Vector2(165.14, 2.08165e-12), Vector2(190.161, 2.08165e-12)]
@@ -204,7 +204,7 @@ tracks/2/path = NodePath("Weapon/3:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.3, 0.35, 0.4, 0.46, 0.5),
+"times": PackedFloat32Array(0.24, 0.29, 0.34, 0.4, 0.44),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [2, 1, 0, 1, 2]
@@ -216,7 +216,7 @@ tracks/3/path = NodePath("Weapon/Scythe:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.41, 1),
+"times": PackedFloat32Array(0, 0.09, 0.35, 0.77),
 "transitions": PackedFloat32Array(1, 4.2871, 0.812252, 1.86607),
 "update": 0,
 "values": [0.0, -1.23395, 1.41372, 0.0]
@@ -311,7 +311,7 @@ position = Vector2(14.0118, -80)
 
 [node name="3" type="Sprite2D" parent="Weapon"]
 visible = false
-position = Vector2(126.107, -7.62939e-06)
+position = Vector2(190.161, 0)
 rotation = -0.031416
 scale = Vector2(12.174, -17)
 texture = ExtResource("32_qhb1e")
@@ -320,7 +320,6 @@ frame = 2
 
 [node name="Scythe" parent="Weapon" instance=ExtResource("3_1hv5r")]
 position = Vector2(11.0093, -1)
-rotation = -0.575843
 
 [node name="Hitbox" type="Area2D" parent="Weapon/Scythe"]
 collision_mask = 4
@@ -336,6 +335,7 @@ wait_time = 0.2
 one_shot = true
 
 [node name="DashCooldown" type="Timer" parent="DashTimer"]
+wait_time = 0.5
 one_shot = true
 
 [node name="WeaponAnimation" type="AnimationPlayer" parent="."]
@@ -348,10 +348,14 @@ libraries = {
 script = ExtResource("34_x0pwi")
 
 [node name="AttackTimer" type="Timer" parent="."]
-wait_time = 1.2
+wait_time = 0.5
+
+[node name="Tick" type="Timer" parent="."]
+wait_time = 0.2
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_entered" from="Weapon/Scythe/Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashTimer/DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]

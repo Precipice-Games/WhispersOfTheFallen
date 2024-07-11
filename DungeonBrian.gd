@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 300
 const DASHSPEED = 4
 @export var dashing = false 
 var canDash = true 
 @onready var weapon: Node2D = get_node("Weapon")
-var currentHealth: int = 500
+var currentHealth: int = 50
 
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -91,7 +91,7 @@ func _input(event):
 	
 	if event.is_action_pressed('main_attack'):
 		$Weapon/Scythe/Hitbox/WeaponHitBox.set_disabled(false)
-		$AttackTimer.start
+		$AttackTimer.start()
 		$WeaponAnimation.play("Attack")
 
 func _on_attack_timer_timeout():
@@ -109,16 +109,18 @@ func _on_player_hitbox_body_entered(body):
 	if body.is_in_group("Mob"):
 		currentHealth -= 1  #add cooldown
 		print(currentHealth)
+		$BrianAnim.modulate = Color(1, 0, 0)
+		$Tick.start()
 	
 	if currentHealth <0:
-		visible = false
+		queue_free()
 
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Mob"):
 		body.take_damage()
-		print("enemy hit")
+		print('enemy HIT')
+		
 
-
-
-	
+func _on_tick_timeout():
+	$BrianAnim.modulate = Color(1, 1, 1)
