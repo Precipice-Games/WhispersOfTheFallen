@@ -89,6 +89,7 @@ func _input(event):
 	if event.is_action_pressed('main_attack'):
 		var mouse_direction: Vector2 = (get_global_mouse_position() - self.global_position).normalized()
 		scythe.rotation = mouse_direction.angle()
+		$WeaponAnimation.play("Attack")
 
 			
 

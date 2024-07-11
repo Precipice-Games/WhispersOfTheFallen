@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://3odee5v6h45t"]
+[gd_scene load_steps=5 format=3 uid="uid://bp0b3tjar1b30"]
 
 [ext_resource type="Texture2D" uid="uid://c60gk60ueub3k" path="res://ART/BrianCombatAssets/ScythePlaceHolder2.png" id="1_qidgw"]
+[ext_resource type="Script" path="res://Hitbox.gd" id="2_plarn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1wlj0"]
 animations = [{
@@ -13,6 +14,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ehxg"]
+radius = 6.08276
+
 [node name="Scythe" type="Area2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -21,4 +25,14 @@ rotation = -1.9521
 sprite_frames = SubResource("SpriteFrames_1wlj0")
 animation = &"attack"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(29.7705, -74.2544)
+rotation = 1.9521
+script = ExtResource("2_plarn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AnimatedSprite2D/Hitbox"]
+polygon = PackedVector2Array(118, -9, 132, 27, 124, 83, 157, 25, 142, -15, -6, -5, -6, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -3)
+shape = SubResource("CircleShape2D_5ehxg")
