@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d122qgesm2yqy"]
+[gd_scene load_steps=5 format=3 uid="uid://du8op44k3ucst"]
 
-[ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_adng7"]
-[ext_resource type="PackedScene" uid="uid://x58aru4mmlup" path="res://DungeonBrian.tscn" id="2_odvi8"]
+[ext_resource type="PackedScene" path="res://Tile_Map_Samples.tscn" id="1_adng7"]
+[ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="2_odvi8"]
 [ext_resource type="PackedScene" uid="uid://c5hj7gomfnn7a" path="res://enemy.tscn" id="3_0vr86"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="3_w55iy"]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://x58aru4mmlup"]
+[gd_scene load_steps=39 format=3 uid="uid://bvoupvxmm6q3d"]
 
 [ext_resource type="Script" path="res://DungeonBrian.gd" id="1_d74oo"]
 [ext_resource type="Texture2D" uid="uid://dlr7ecxm57dvc" path="res://ART/BrianCombatAssets/Brian1D.png" id="2_qisx4"]
-[ext_resource type="PackedScene" uid="uid://bp0b3tjar1b30" path="res://scythe.tscn" id="3_1hv5r"]
+[ext_resource type="PackedScene" uid="uid://bj5vh02mfbcpo" path="res://scythe.tscn" id="3_1hv5r"]
 [ext_resource type="Texture2D" uid="uid://bpra1i7f83klv" path="res://ART/IDLE/D IDLE/Folder 31.png" id="3_5amqp"]
 [ext_resource type="Texture2D" uid="uid://c1fsejr7s1k78" path="res://ART/IDLE/D IDLE/Folder 32.png" id="4_p4m7x"]
+[ext_resource type="Script" path="res://Hitbox.gd" id="4_yk00h"]
 [ext_resource type="Texture2D" uid="uid://d1iam6aqrmb2b" path="res://ART/IDLE/D IDLE/Folder 33.png" id="5_5t6hb"]
 [ext_resource type="Texture2D" uid="uid://de2g76t0yyj6p" path="res://ART/IDLE/D IDLE/Folder 34.png" id="6_skpva"]
 [ext_resource type="Texture2D" uid="uid://c4gdnoxskcfeu" path="res://ART/IDLE/IDLE PART 2/DRL IDLE/DRL IDLE1.png" id="7_1xid2"]
@@ -174,50 +175,62 @@ step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Weapon:rotation")
-tracks/0/interp = 2
+tracks/0/path = NodePath("Weapon/3:visible")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.2),
-"transitions": PackedFloat32Array(0.353554, 2.82843, 4.28709),
-"update": 2,
-"values": [0.0, 2.33001, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("3:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.44),
+"times": PackedFloat32Array(0, 0.3, 0.54),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon/3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.35, 0.4, 0.47, 0.52),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(111.094, -72), Vector2(163.138, -72), Vector2(175.148, -72), Vector2(165.14, -72), Vector2(190.161, -72)]
+}
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("3:position")
+tracks/2/path = NodePath("Weapon/3:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 0.25, 0.3, 0.37, 0.41),
+"times": PackedFloat32Array(0.3, 0.35, 0.4, 0.46, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(6.00507, 32), Vector2(-6, 72), Vector2(-6, 104), Vector2(-6, 104), Vector2(-6, 136)]
+"update": 1,
+"values": [2, 1, 0, 1, 2]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("3:frame")
+tracks/3/path = NodePath("Weapon/Scythe:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 0.25, 0.3, 0.36, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.41, 1),
+"transitions": PackedFloat32Array(1, 4.2871, 0.812252, 1.86607),
+"update": 0,
+"values": [0.0, -1.23395, 1.41372, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Weapon/Scythe/Hitbox:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.52),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [2, 1, 0, 1, 2]
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_5uxxb"]
@@ -225,50 +238,62 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Weapon:rotation")
+tracks/0/path = NodePath("Weapon/3:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.621337]
+"update": 1,
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("3:visible")
+tracks/1/path = NodePath("Weapon/3:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
+"update": 0,
+"values": [Vector2(93.0787, 32)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("3:position")
+tracks/2/path = NodePath("Weapon/3:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(93.0787, 32)]
+"update": 1,
+"values": [2]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("3:frame")
+tracks/3/path = NodePath("Weapon/Scythe:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Weapon/Scythe/Hitbox:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [2]
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pmjxl"]
@@ -282,6 +307,32 @@ position = Vector2(-8, 0)
 scale = Vector2(0.999155, 1)
 collision_mask = 2
 script = ExtResource("1_d74oo")
+
+[node name="Weapon" type="Node2D" parent="."]
+y_sort_enabled = true
+position = Vector2(23.0195, -8)
+scale = Vector2(1, 1)
+
+[node name="3" type="Sprite2D" parent="Weapon"]
+visible = false
+position = Vector2(190.161, -72)
+rotation = -0.031416
+scale = Vector2(12.174, -17)
+texture = ExtResource("32_qhb1e")
+hframes = 3
+frame = 2
+
+[node name="Scythe" parent="Weapon" instance=ExtResource("3_1hv5r")]
+position = Vector2(-23.0194, -88)
+
+[node name="Hitbox" type="Area2D" parent="Weapon/Scythe"]
+visible = false
+position = Vector2(30.0254, 96)
+rotation = -0.0763224
+script = ExtResource("4_yk00h")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Weapon/Scythe/Hitbox"]
+polygon = PackedVector2Array(33.0279, -88, 173.146, -104, 198.167, -48, 158.134, 0, 168.142, -56, 156.132, -88, 34.0288, -80)
 
 [node name="BrianAnim" type="AnimatedSprite2D" parent="."]
 position = Vector2(11.0093, -67)
@@ -297,6 +348,7 @@ shape = SubResource("CapsuleShape2D_6oilk")
 one_way_collision_margin = 0.0
 
 [node name="player_hitbox" type="Area2D" parent="."]
+visible = false
 position = Vector2(-8.00677, -16)
 collision_mask = 4
 
@@ -311,23 +363,6 @@ libraries = {
 "": SubResource("AnimationLibrary_pmjxl")
 }
 autoplay = "Attack"
-
-[node name="Weapon" type="Node2D" parent="."]
-y_sort_enabled = true
-position = Vector2(-24.0203, -88)
-rotation = 2.32446
-scale = Vector2(1, 1)
-
-[node name="Scythe" parent="Weapon" instance=ExtResource("3_1hv5r")]
-position = Vector2(-0.139737, 8.00554)
-
-[node name="3" type="Sprite2D" parent="."]
-position = Vector2(-6, 136)
-rotation = -1.60302
-scale = Vector2(-12.174, 17)
-texture = ExtResource("32_qhb1e")
-hframes = 3
-frame = 2
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.2
