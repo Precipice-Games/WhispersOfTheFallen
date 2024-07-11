@@ -7,6 +7,7 @@ const DASHSPEED = 4
 var canDash = true 
 @onready var weapon: Node2D = get_node("Weapon")
 var currentHealth: int = 50
+var damage_zone = false
 
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -20,6 +21,7 @@ func _process(_delta):
 	var mouse_direction: Vector2 = (get_global_mouse_position() - self.global_position).normalized()
 	weapon.rotation = mouse_direction.angle()
 	
+	@warning_ignore("shadowed_variable_base_class")
 	var velocity = Vector2.ZERO 
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
@@ -114,7 +116,7 @@ func _on_player_hitbox_body_entered(body):
 	
 	if currentHealth <0:
 		queue_free()
-
+	
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Mob"):

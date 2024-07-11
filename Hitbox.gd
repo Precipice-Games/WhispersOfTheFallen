@@ -22,7 +22,7 @@ func _ready() -> void:
 	add_child(timer)
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	body_inside = true
 	timer.start()
 	while body_inside:

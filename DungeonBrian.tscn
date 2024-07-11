@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bvoupvxmm6q3d"]
+[gd_scene load_steps=39 format=3 uid="uid://bvoupvxmm6q3d"]
 
 [ext_resource type="Script" path="res://DungeonBrian.gd" id="1_d74oo"]
 [ext_resource type="Texture2D" uid="uid://dlr7ecxm57dvc" path="res://ART/BrianCombatAssets/Brian1D.png" id="2_qisx4"]
@@ -33,7 +33,6 @@
 [ext_resource type="Texture2D" uid="uid://thkda608o01y" path="res://ART/IDLE/working i hope/URL IDLE/URL IDLE3.png" id="26_b6vg4"]
 [ext_resource type="Texture2D" uid="uid://ckqrpggysto67" path="res://ART/IDLE/working i hope/URL IDLE/URL IDLE4.png" id="27_g5cd3"]
 [ext_resource type="Texture2D" uid="uid://vajfbh0jfpyt" path="res://ART/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" id="32_qhb1e"]
-[ext_resource type="Script" path="res://Gary.gd" id="34_x0pwi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2fn2e"]
 animations = [{
@@ -219,7 +218,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.09, 0.35, 0.77),
 "transitions": PackedFloat32Array(1, 4.2871, 0.812252, 1.86607),
 "update": 0,
-"values": [0.0, -1.23395, 1.41372, 0.0]
+"values": [0.0, -1.6825, 2.19911, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_5uxxb"]
@@ -311,7 +310,7 @@ position = Vector2(14.0118, -80)
 
 [node name="3" type="Sprite2D" parent="Weapon"]
 visible = false
-position = Vector2(190.161, 0)
+position = Vector2(126.107, -7.62939e-06)
 rotation = -0.031416
 scale = Vector2(12.174, -17)
 texture = ExtResource("32_qhb1e")
@@ -327,7 +326,7 @@ script = ExtResource("4_yk00h")
 
 [node name="WeaponHitBox" type="CollisionPolygon2D" parent="Weapon/Scythe/Hitbox"]
 scale = Vector2(1.03195, 0.772475)
-polygon = PackedVector2Array(2.00174, -7.62939e-06, 205.173, -86, 202.171, 155, 5.00428, 80)
+polygon = PackedVector2Array(2.00174, -7.62939e-06, 198.846, -94.9984, 230.429, 26.1194, 186.698, 181.526, 5.00428, 80)
 disabled = true
 
 [node name="DashTimer" type="Timer" parent="."]
@@ -344,11 +343,10 @@ libraries = {
 "": SubResource("AnimationLibrary_pmjxl")
 }
 
-[node name="Gary" type="Node" parent="."]
-script = ExtResource("34_x0pwi")
-
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.5
+
+[node name="DamageTimer" type="Timer" parent="AttackTimer"]
 
 [node name="Tick" type="Timer" parent="."]
 wait_time = 0.2

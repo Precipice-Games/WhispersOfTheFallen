@@ -4,7 +4,7 @@ var speed = 150
 var player_chase = false
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var softCollision = $SoftCollision
-var currentHealth = 5
+var currentHealth = 10
 
 func _physics_process(delta):
 	if player_chase:

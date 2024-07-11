@@ -1,0 +1,107 @@
+[gd_scene load_steps=6 format=3 uid="uid://betm6cxs6dfu1"]
+
+[ext_resource type="Script" path="res://Overlays/pause_menu.gd" id="1_ahskw"]
+[ext_resource type="Texture2D" uid="uid://3rqal42oqudy" path="res://ART/Humble Gift - Player UI v1.1/PNG SpriteSheet/SpriteSheet.png" id="1_krjqe"]
+[ext_resource type="Script" path="res://Overlays/Pause.gd" id="2_n2p37"]
+[ext_resource type="FontFile" uid="uid://dwws8eiohlfbe" path="res://ART/monogram/ttf/monogram.ttf" id="2_w6ujk"]
+
+[sub_resource type="Theme" id="Theme_47ujv"]
+default_font = ExtResource("2_w6ujk")
+
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_ahskw")
+
+[node name="Pause" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_n2p37")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause"]
+offset_left = -11.0
+offset_top = 54.0
+offset_right = 29.0
+offset_bottom = 94.0
+alignment = 1
+
+[node name="Home2" type="Sprite2D" parent="Pause/VBoxContainer"]
+texture_filter = 1
+position = Vector2(992, 513)
+scale = Vector2(3, 3)
+texture = ExtResource("1_krjqe")
+hframes = 14
+vframes = 4
+frame = 4
+
+[node name="Button" type="Button" parent="Pause/VBoxContainer/Home2"]
+offset_left = -47.3334
+offset_top = 3.66667
+offset_right = 51.6666
+offset_bottom = 28.6667
+
+[node name="Label" type="Label" parent="Pause/VBoxContainer/Home2"]
+offset_left = -9.33335
+offset_top = 8.66667
+offset_right = 30.6666
+offset_bottom = 37.6667
+theme = SubResource("Theme_47ujv")
+text = "Home
+
+"
+
+[node name="Keybinds" type="Sprite2D" parent="Pause/VBoxContainer"]
+texture_filter = 1
+position = Vector2(990, 409)
+scale = Vector2(3, 3)
+texture = ExtResource("1_krjqe")
+hframes = 14
+vframes = 4
+frame = 4
+
+[node name="KeybindButton" type="Button" parent="Pause/VBoxContainer/Keybinds"]
+offset_left = -47.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 30.0
+
+[node name="Label" type="Label" parent="Pause/VBoxContainer/Keybinds"]
+offset_left = -19.0
+offset_top = 9.66667
+offset_right = 29.0
+offset_bottom = 32.6667
+theme = SubResource("Theme_47ujv")
+text = "Keybinds"
+
+[node name="Resume2" type="Sprite2D" parent="Pause/VBoxContainer"]
+texture_filter = 1
+position = Vector2(988, 307)
+scale = Vector2(3, 3)
+texture = ExtResource("1_krjqe")
+hframes = 14
+vframes = 4
+frame = 4
+
+[node name="ResumeButton" type="Button" parent="Pause/VBoxContainer/Resume2"]
+offset_left = -47.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 30.0
+
+[node name="Label" type="Label" parent="Pause/VBoxContainer/Resume2"]
+offset_left = -14.3333
+offset_top = 9.0
+offset_right = 33.6667
+offset_bottom = 38.0
+theme = SubResource("Theme_47ujv")
+text = "Resume
+
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Pause/VBoxContainer/Home2/Button" to="Pause" method="_on_button_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/Keybinds/KeybindButton" to="Pause" method="_on_keybind_button_pressed"]
+[connection signal="pressed" from="Pause/VBoxContainer/Resume2/ResumeButton" to="Pause" method="_on_resume_button_pressed"]
