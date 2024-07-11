@@ -1,13 +1,10 @@
 extends Camera2D
 
+@onready var topLeft = $Limits/TopLeft
+@onready var bottomRight = $Limits/BottomRight
 
-const Dead_Zone = 100
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		var _target = event.position - get_viewport().size * .1
-		if _target.length() < Dead_Zone:
-			self.position = Vector2(0,0)
-		else:
-			self.position = _target.normalized() * (_target.length() -  Dead_Zone) * 0.5
-	
+func _ready():
+	limit_top = topLeft.position.y
+	limit_left = topLeft.position.x
+	limit_bottom = bottomRight.position.y
+	limit_right = bottomRight.position.x
