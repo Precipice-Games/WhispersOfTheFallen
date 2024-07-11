@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_pd72w"]
 [ext_resource type="Texture2D" uid="uid://pwru3k7wwd34" path="res://ART/DungeonMobs/d56gk4z-7de82b77-71a2-4cff-be13-ca553d5faf1c.png" id="1_wg4ub"]
-[ext_resource type="PackedScene" path="res://soft_collision.tscn" id="3_stmfa"]
+[ext_resource type="PackedScene" uid="uid://b2rkp5xidb43r" path="res://soft_collision.tscn" id="3_stmfa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wthmk"]
 animations = [{
@@ -16,7 +16,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gw30"]
-radius = 8265.88
+radius = 48228.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ucc5"]
 radius = 115.598
@@ -35,11 +35,11 @@ scale = Vector2(0.188727, 0.185647)
 sprite_frames = SubResource("SpriteFrames_wthmk")
 
 [node name="Detection_Area" type="Area2D" parent="."]
-visible = false
 position = Vector2(-1427, -136)
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]
+visible = false
 position = Vector2(1428, 136)
 shape = SubResource("CircleShape2D_5gw30")
 
@@ -58,8 +58,12 @@ shape = SubResource("CircleShape2D_xble2")
 [node name="SoftCollision" parent="." instance=ExtResource("3_stmfa")]
 visible = false
 
+[node name="Tick" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="area_entered" from="Detection_Area" to="." method="_on_detection_area_area_entered"]
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="Attack_Area" to="." method="_on_attack_area_body_exited"]
+[connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]
 
 [editable path="SoftCollision"]
