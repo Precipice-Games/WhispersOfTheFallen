@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://b2rkp5xidb43r"]
 
-[ext_resource type="Script" path="res://DungeonKol/soft_collision.gd" id="1_jkj8g"]
+[ext_resource type="Script" path="res://soft_collision.gd" id="1_jkj8g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2qjlf"]
-radius = 58.0
+radius = 144.222
 
 [node name="SoftCollision" type="Area2D"]
 collision_layer = 16

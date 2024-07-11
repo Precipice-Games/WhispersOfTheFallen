@@ -322,37 +322,37 @@ shape = SubResource("CapsuleShape2D_6oilk")
 one_way_collision_margin = 0.0
 
 [node name="player_hitbox" type="Area2D" parent="."]
-visible = false
 position = Vector2(-8.00677, -16)
 collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player_hitbox"]
-position = Vector2(14.0118, 28)
+position = Vector2(27.0228, 34)
 scale = Vector2(2.55221, 1.15642)
 polygon = PackedVector2Array(8, -168.5, -8, -160.5, -27.8426, 0, 13.8458, 0.864738)
 
 [node name="Weapon" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(23.0195, -80)
+position = Vector2(14.0118, -80)
 
 [node name="3" type="Sprite2D" parent="Weapon"]
 visible = false
-position = Vector2(126.107, -7.62939e-06)
+position = Vector2(145.715, -3.8147e-06)
 rotation = -0.031416
 scale = Vector2(12.174, -17)
 texture = ExtResource("32_qhb1e")
 hframes = 3
-frame = 1
+frame = 2
 
 [node name="Scythe" parent="Weapon" instance=ExtResource("3_1hv5r")]
-position = Vector2(-4.95911e-05, -4.54747e-13)
+position = Vector2(11.0093, -1)
 
 [node name="Hitbox" type="Area2D" parent="Weapon/Scythe"]
 visible = false
 script = ExtResource("4_yk00h")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Weapon/Scythe/Hitbox"]
-polygon = PackedVector2Array(2.00174, -7.62939e-06, 184.156, -40, 199.168, 96, 5.00428, 80)
+[node name="WeaponHitBox" type="CollisionPolygon2D" parent="Weapon/Scythe/Hitbox"]
+scale = Vector2(1.03195, 0.772475)
+polygon = PackedVector2Array(2.00174, -7.62939e-06, 205.173, -86, 202.171, 155, 5.00428, 80)
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.2
@@ -366,7 +366,6 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_pmjxl")
 }
-autoplay = "Attack"
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashTimer/DashCooldown" to="." method="_on_dash_cooldown_timeout"]
