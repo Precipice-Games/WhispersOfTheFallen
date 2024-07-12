@@ -12,7 +12,7 @@ func _physics_process(delta):
 		move_and_collide(Vector2(0,0)) 
 	
 	if softCollision._is_colliding():
-		velocity += softCollision.get_push_vector() * delta * 400
+		velocity += softCollision.get_push_vector() * delta * 100
 	
 
 func _on_detection_area_area_entered(_body):

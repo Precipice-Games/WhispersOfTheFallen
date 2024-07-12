@@ -12,12 +12,11 @@ func get_push_vector():
 	if _is_colliding():
 		var area = areas[0]
 		push_vector = area.global_position.direction_to(global_position)
-		push_vector = push_vector.normalized()
 	return push_vector
 
 var push_velocity = Vector2()
 var direction = Vector2.ZERO
-@export var push_strength = 25
+@export var push_strength = 1
 
 func _physics_process(delta):
 	var overlapping_areas = get_overlapping_areas()
