@@ -10,7 +10,7 @@ y_sort_enabled = true
 
 [node name="DungeonBrian" parent="." instance=ExtResource("1_ftkk4")]
 y_sort_enabled = true
-position = Vector2(300, 149)
+position = Vector2(365, 108)
 scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
@@ -31,6 +31,78 @@ color = Color(0.508062, 0.715774, 0.86404, 1)
 metadata/_edit_lock_ = true
 
 [node name="Ranged_enemy" parent="." instance=ExtResource("3_rtcip")]
-position = Vector2(1522, 193)
+position = Vector2(1450, -1047)
 
 [node name="MeleeMob" parent="." instance=ExtResource("4_1xs6c")]
+position = Vector2(951, -500)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-195, 19, -17, 112, -207, 212)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2(753, 410)
+polygon = PackedVector2Array(-195, 19, 165, 205, -396, 119)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+position = Vector2(1318, 505)
+polygon = PackedVector2Array(-272, 53, 51, 217, -396, 119)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4"]
+position = Vector2(1661, 649)
+polygon = PackedVector2Array(-195, 19, -124, 62, -298, 75)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D5"]
+position = Vector2(622, -264)
+polygon = PackedVector2Array(-267, 183, -66, 87, -396, 119)
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D6"]
+position = Vector2(1938, 184)
+polygon = PackedVector2Array(-22, -89, -17, 323, -396, 119)
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D7"]
+position = Vector2(-174, -292)
+polygon = PackedVector2Array(178, 215, -20, 315, 25, 91)
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D8"]
+position = Vector2(72, -382)
+polygon = PackedVector2Array(160, 237, -17, 329, -216, 183)
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D9"]
+position = Vector2(-185, 308)
+polygon = PackedVector2Array(-22, -89, 543, 216, -251, 331)

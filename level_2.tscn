@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://8n1cdh8cb4h5"]
 
 [ext_resource type="PackedScene" uid="uid://ef7wuo7convj" path="res://garden.tscn" id="1_jm3ln"]
-[ext_resource type="PackedScene" uid="uid://x58aru4mmlup" path="res://DungeonBrian.tscn" id="2_u76es"]
+[ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="2_u76es"]
 
 [node name="Level_2" type="Node2D"]
 y_sort_enabled = true
