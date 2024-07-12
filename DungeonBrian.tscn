@@ -33,10 +33,11 @@
 [ext_resource type="Texture2D" uid="uid://thkda608o01y" path="res://ART/IDLE/working i hope/URL IDLE/URL IDLE3.png" id="26_b6vg4"]
 [ext_resource type="Texture2D" uid="uid://ckqrpggysto67" path="res://ART/IDLE/working i hope/URL IDLE/URL IDLE4.png" id="27_g5cd3"]
 [ext_resource type="Texture2D" uid="uid://vajfbh0jfpyt" path="res://ART/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" id="32_qhb1e"]
-[ext_resource type="Script" path="res://soft_collision.gd" id="34_iw6lf"]
 [ext_resource type="PackedScene" uid="uid://b8ax616x55ldl" path="res://Testing/magictake1.tscn" id="34_j3fj8"]
 [ext_resource type="Texture2D" uid="uid://k2cq4aekte33" path="res://ART/v1.1 dungeon crawler 16X16 pixel pack/ui (new)/health_ui.png" id="35_mn37c"]
 [ext_resource type="Texture2D" uid="uid://bv5tuakqvkj11" path="res://progress bar.png" id="36_amd33"]
+[ext_resource type="Texture2D" uid="uid://da0vghli16wvh" path="res://ART/BrianCombatAssets/Fadeout.png" id="38_hl4qg"]
+[ext_resource type="Texture2D" uid="uid://b14lrg4jn20ko" path="res://ART/12a5LZ.png" id="39_x6etd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2fn2e"]
 animations = [{
@@ -282,10 +283,6 @@ _data = {
 "RESET": SubResource("Animation_5uxxb")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_obqjb"]
-radius = 22.0186
-height = 134.0
-
 [node name="DungeonBrian" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-8, 0)
 collision_mask = 2
@@ -373,18 +370,25 @@ texture_progress = ExtResource("36_amd33")
 tint_progress = Color(0.473936, 0.131321, 0.090969, 1)
 radial_fill_degrees = 0.0
 
-[node name="softCollision" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 16
-script = ExtResource("34_iw6lf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="softCollision"]
-position = Vector2(14.0118, -67)
-shape = SubResource("CapsuleShape2D_obqjb")
-
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.4
 autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Fadeout" type="Sprite2D" parent="Camera2D"]
+z_index = 2
+position = Vector2(44.5, 45)
+scale = Vector2(1.73192, 1.73618)
+texture = ExtResource("38_hl4qg")
+
+[node name="Bleed" type="Sprite2D" parent="."]
+modulate = Color(0.447845, 0.150573, 0.150613, 1)
+z_index = 4
+position = Vector2(14, -1)
+scale = Vector2(0.879413, 1.10573)
+texture = ExtResource("39_x6etd")
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

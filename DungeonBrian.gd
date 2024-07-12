@@ -10,10 +10,12 @@ var currentHealth: int = 100
 var damage_zone = false
 var pending_damage: int = 0 
 @onready var test = $Test
+@onready var game_over = preload("res://Dungeon2/GAMEOVER.tscn")
 
 func _ready():
 	set_health_bar()
 	$Test.hide()
+	$Bleed.hide()
 	
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -138,6 +140,7 @@ func _on_hitbox_body_entered(body):
 
 func _on_tick_timeout():
 	$BrianAnim.modulate = Color(1, 1, 1)
+	$Bleed.hide()
 
 
 # dmage timer constant timeout, assign var values to everything
@@ -149,11 +152,14 @@ func _on_damage_timer_timeout():
 		currentHealth = currentHealth - pending_damage
 		print(currentHealth)
 		$BrianAnim.modulate = Color(1, 0, 0)
+		$Bleed.show()
 		$Tick.start()
 		set_health_bar() 
-
+	if currentHealth <30:
+		$Bleed.show()
+		$Bleed.modulate = Color(1,0,0)
 	if currentHealth <0:
-		$".".hide()
+		get_tree().change_scene_to_packed(game_over)
 
 
 func _on_player_hitbox_body_exited(body):

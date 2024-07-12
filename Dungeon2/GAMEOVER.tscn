@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccotaif5nuq05"]
+
+[ext_resource type="FontFile" uid="uid://dwws8eiohlfbe" path="res://ART/monogram/ttf/monogram.ttf" id="1_dxknf"]
+[ext_resource type="Script" path="res://Dungeon2/GAMEOVER.gd" id="1_ldhp8"]
+
+[sub_resource type="Theme" id="Theme_ccjju"]
+default_font = ExtResource("1_dxknf")
+default_font_size = 140
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_ldhp8")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -269.0
+offset_top = -60.0
+offset_right = 269.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ccjju")
+text = "try again?"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
