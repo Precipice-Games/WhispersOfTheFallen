@@ -6,7 +6,7 @@ const DASHSPEED = 4
 @export var dashing = false 
 var canDash = true 
 @onready var weapon: Node2D = get_node("Weapon")
-var currentHealth: int = 50
+var currentHealth: int = 100
 var damage_zone = false
 var pending_damage: int = 0 
 
@@ -113,15 +113,8 @@ func _on_dash_cooldown_timeout():
 
 func _on_player_hitbox_body_entered(body):
 	if body.is_in_group("Mob"):
-		currentHealth -= 1  #add cooldown
-		print(currentHealth)
-		$BrianAnim.modulate = Color(1, 0, 0)
-		$Tick.start()
-		set_health_bar() 
-	
-	if currentHealth <0:
-		$".".hide()
-	
+		pending_damage += body.damage
+
 func set_health_bar():
 	$HealthBar.value = currentHealth + 23
 	
@@ -140,5 +133,17 @@ func _on_tick_timeout():
 
 
 func _on_damage_timer_timeout():
-	currentHealth = currentHealth - pending_damage 
-	 # Replace with function body.
+	if pending_damage > 0:
+		currentHealth = currentHealth - pending_damage
+		print(currentHealth)
+		$BrianAnim.modulate = Color(1, 0, 0)
+		$Tick.start()
+		set_health_bar() 
+
+	if currentHealth <0:
+		$".".hide()
+
+
+func _on_player_hitbox_body_exited(body):
+	if body.is_in_group("Mob"):
+		pending_damage -= body.damage
