@@ -11,10 +11,14 @@ var player_chase = false
 
 # var player_direction = player.position - self.position 
 func _physics_process(delta):
+	var direction = (player.position - self.position).normalized()
 	if player_chase:
-		self.position += (player.position - self.position).normalized() * speed * delta
+		self.position += direction * speed * delta
 		move_and_collide(Vector2(0,0)) 
-		
+	if direction.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	elif direction.x > 0:
+		$AnimatedSprite2D.flip_h = false
 	#if Melee_Hitbox._is_colliding():
 		#velocity += Melee_Hitbox.get_push_vector() * delta * 400
 

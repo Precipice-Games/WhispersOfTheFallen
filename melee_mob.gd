@@ -21,6 +21,7 @@ func _physics_process(delta):
 func _on_attack_area_body_entered(_body):
 	print("Attacking")
 	$Melee_Hitbox.activate() # attack player
+	$AnimatedSprite2D.play('Attack')
 	
 
 func _on_detection_area_body_entered(_body):
