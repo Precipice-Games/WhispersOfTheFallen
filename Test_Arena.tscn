@@ -26,6 +26,7 @@ zoom = Vector2(4, 4)
 script = ExtResource("3_w55iy")
 
 [node name="Fadeout" type="Sprite2D" parent="."]
+z_index = 5
 position = Vector2(616, 664)
 texture = ExtResource("5_dmyel")
 

@@ -12,11 +12,10 @@ func _physics_process(delta):
 		move_and_collide(Vector2(0,0)) 
 	
 	if softCollision._is_colliding():
-		velocity += softCollision.get_push_vector() * delta * 100
+		velocity += softCollision.get_push_vector() * delta * 400
 	
 
 func _on_detection_area_area_entered(_body):
-	player =  $"../DungeonBrian" ##TODO we don't need to grab a reference to the player
 	player_chase = true
 
 func take_damage():

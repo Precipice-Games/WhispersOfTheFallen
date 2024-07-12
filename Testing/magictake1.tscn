@@ -1,18 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8ax616x55ldl"]
 
 [ext_resource type="Texture2D" uid="uid://crjepuwp7enis" path="res://ART/pngtree-mysterious-magic-circle-png-image_6532961.jpg" id="1_0tder"]
-[ext_resource type="Script" path="res://Testing/magic_circle_test.gd" id="2_30ca8"]
+[ext_resource type="Script" path="res://Testing/magictake1.gd" id="1_tmjxx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aftk5"]
 radius = 55.5443
 
-[node name="Test" type="CanvasLayer"]
+[node name="Test" type="Node2D"]
+script = ExtResource("1_tmjxx")
 
 [node name="Circle" type="Sprite2D" parent="."]
+z_index = -10
 position = Vector2(714, 564)
 scale = Vector2(0.686495, 0.652131)
 texture = ExtResource("1_0tder")
-script = ExtResource("2_30ca8")
 
 [node name="Area2D" type="Area2D" parent="Circle"]
 

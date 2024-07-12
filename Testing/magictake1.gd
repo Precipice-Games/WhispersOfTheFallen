@@ -1,10 +1,10 @@
-extends Sprite2D
+extends Node2D
 
-var lineColor := Color.darkorange
+var lineColor := Color.WHITE
 var antialiased := true
 
 var connectionPointRadius := 20.0
-var connectionPointColor := Color.darkcyan
+var connectionPointColor := Color.DARK_CYAN
 
 var connectionPointsCount := 20
 var connectionPoints := []
@@ -20,17 +20,17 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed:
+		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			var clickedConnectionPoint = findClosestConnectionPointTo(get_global_mouse_position(), connectionPointRadius)
 			if not clickedConnectionPoint:
 				return
 			updateCurrentLineWith(clickedConnectionPoint)
-			update()
+			queue_redraw()
 
 
 func _process(delta):
 	if currentLinePoints.size() == 1:
-		update()
+		queue_redraw()
 
 
 func _draw():
@@ -53,8 +53,8 @@ func generateRandomPoints(count: int, bounds: Rect2):
 	var points := []
 	for i in range(count):
 		var point := Vector2(
-			rand_range(bounds.position.x, bounds.end.x),
-			rand_range(bounds.position.y, bounds.end.y)
+			randf_range(bounds.position.x, bounds.end.x),
+			randf_range(bounds.position.y, bounds.end.y)
 		)
 		points.push_back(point)
 	return points
@@ -75,4 +75,4 @@ func findClosestConnectionPointTo(aPoint: Vector2, maxDistance: float):
 func updateCurrentLineWith(position: Vector2):
 	if currentLinePoints.size() >= 2:
 		currentLinePoints.clear()
-	currentLinePoints.push_back(position
+	currentLinePoints.push_back(position)
