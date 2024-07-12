@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ct5okf6whlhaa" path="res://accesories.tscn" id="2_o7yvl"]
 [ext_resource type="PackedScene" uid="uid://btokh1a8jjkbt" path="res://doors.tscn" id="3_x657v"]
 [ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="4_l1dc5"]
-[ext_resource type="PackedScene" uid="uid://c5hj7gomfnn7a" path="res://enemy.tscn" id="6_gj55i"]
+[ext_resource type="PackedScene" uid="uid://daqwl7u78d52j" path="res://ranged_enemy.tscn" id="6_6rj8c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0476"]
 size = Vector2(2011, 1269.5)
@@ -41,7 +41,6 @@ zoom = Vector2(2, 2)
 position = Vector2(1100, 181)
 shape = SubResource("RectangleShape2D_p0476")
 
-[node name="Enemy" parent="MobDetector" instance=ExtResource("6_gj55i")]
-position = Vector2(779, 203)
+[node name="Ranged_enemy" parent="." instance=ExtResource("6_6rj8c")]
 
 [connection signal="body_exited" from="MobDetector" to="." method="_on_mob_detector_body_exited"]

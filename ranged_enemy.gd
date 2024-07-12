@@ -31,9 +31,11 @@ func _on_detection_area_body_entered(_body):
 
 
 func _on_attack_timer_timeout():
-	var arrow = Arrrow.instantiate()
 	print("shoot arrow")
-	
+	var arrow = Arrrow.instantiate()
+	# set arrow's initial position (probably at the ranged enemy)
+	# set the arrow's direction/velocity
+	# add the arrow to the scene (as a child of the level node
 
 
 func _on_attack_area_body_entered(body):
