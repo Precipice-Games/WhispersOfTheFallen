@@ -32,5 +32,20 @@ func _on_detection_area_body_entered(_body):
 
 func _on_attack_timer_timeout():
 	var arrow = Arrrow.instantiate()
+	print("shoot arrow")
 	
-	var player_position = 
+
+
+func _on_attack_area_body_entered(body):
+		player =  $"../DungeonBrian"
+		player_chase = false
+		$Attack_Timer.start()
+
+
+func _on_attack_area_body_exited(body):
+	$Attack_Timer.stop()
+	player_chase = true
+
+
+func _on_detection_area_body_exited(body):
+	player_chase = false

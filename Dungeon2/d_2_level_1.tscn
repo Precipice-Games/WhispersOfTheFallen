@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_4gwj1"]
 [ext_resource type="PackedScene" uid="uid://ct5okf6whlhaa" path="res://accesories.tscn" id="2_o7yvl"]
 [ext_resource type="PackedScene" uid="uid://btokh1a8jjkbt" path="res://doors.tscn" id="3_x657v"]
-[ext_resource type="PackedScene" uid="uid://x58aru4mmlup" path="res://DungeonBrian.tscn" id="4_l1dc5"]
+[ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="4_l1dc5"]
 [ext_resource type="PackedScene" uid="uid://brcaorg6ybupl" path="res://melee_mob.tscn" id="5_mm7r0"]
 [ext_resource type="PackedScene" uid="uid://daqwl7u78d52j" path="res://ranged_enemy.tscn" id="6_6rj8c"]
 
@@ -27,10 +27,9 @@ scale = Vector2(0.5, 0.5)
 [node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
 zoom = Vector2(2, 2)
 
-[node name="MeleeMob" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_mm7r0")]
-player = NodePath("../DungeonBrian")
+[node name="MeleeMob" parent="." instance=ExtResource("5_mm7r0")]
 
 [node name="Ranged_enemy" parent="." instance=ExtResource("6_6rj8c")]
-position = Vector2(645, 332)
+position = Vector2(1499, 224)
 collision_layer = 4
 collision_mask = 7

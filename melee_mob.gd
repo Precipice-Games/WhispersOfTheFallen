@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var speed = 150
 var player_chase = false
-var player = get_tree().get_first_node_in_group("player")
+@onready var player = get_tree().get_first_node_in_group("player")
 
 # var player_direction = player.position - self.position 
 func _physics_process(delta):
