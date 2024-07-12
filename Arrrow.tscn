@@ -1,16 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://ifjbdsw14pu2"]
 
 [ext_resource type="Script" path="res://Area_HitBox.gd" id="1_u5ob3"]
-[ext_resource type="Texture2D" uid="uid://bn66syabhfeo1" path="res://Arrow-removebg-preview.png" id="2_mtqpv"]
+[ext_resource type="Texture2D" uid="uid://dvcf8dy1l0y04" path="res://6ab322ee48f646433681a2086ed3fa0f-removebg-preview.png" id="2_two23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37ehb"]
-size = Vector2(22, 5)
+size = Vector2(29, 10.26)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6vdj0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mtqpv")
+"texture": ExtResource("2_two23")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -21,11 +21,12 @@ animations = [{
 script = ExtResource("1_u5ob3")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+scale = Vector2(1.00215, 0.974657)
 shape = SubResource("RectangleShape2D_37ehb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8.47033e-22)
-scale = Vector2(0.0426077, 0.0647321)
+position = Vector2(-2.38419e-07, 0)
+scale = Vector2(0.0374938, 0.0288652)
 sprite_frames = SubResource("SpriteFrames_6vdj0")
 animation = &"new_animation"
+metadata/_edit_lock_ = true

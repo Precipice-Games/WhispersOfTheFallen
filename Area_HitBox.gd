@@ -3,7 +3,7 @@ extends Area2D
 var activation_time:float = 0
 var recovery_time:float = 0
 var attack_per_sec = 2
-var speed = 50
+var speed = 250
 
 func _physics_process(delta):
 	self.position += transform.x * speed * delta
