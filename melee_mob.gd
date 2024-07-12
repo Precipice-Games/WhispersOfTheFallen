@@ -8,8 +8,14 @@ var player_chase = false
 # var player_direction = player.position - self.position 
 func _physics_process(delta):
 	if player_chase:
-		self.position += (player.position - self.position).normalized() * speed * delta
+		var direction = (player.position - self.position).normalized()
+		self.position += direction * speed * delta
 		move_and_collide(Vector2(0,0)) 
+		if direction.x < 0:
+			$AnimatedSprite2D.flip_h = true
+		elif direction.x > 0:
+			$AnimatedSprite2D.flip_h = false
+		
 		
 
 func _on_attack_area_body_entered(_body):
@@ -19,3 +25,5 @@ func _on_attack_area_body_entered(_body):
 
 func _on_detection_area_body_entered(_body):
 	player_chase = true
+
+

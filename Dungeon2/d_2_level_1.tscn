@@ -46,7 +46,7 @@ texture = ExtResource("6_arihi")
 [node name="MobDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MobDetector"]
-position = Vector2(1100, 181)
+position = Vector2(856, 372)
 shape = SubResource("RectangleShape2D_p0476")
 
 [node name="MOB FOLDER" type="Node" parent="."]
