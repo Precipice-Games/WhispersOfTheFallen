@@ -1,18 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://ifjbdsw14pu2"]
 
 [ext_resource type="Script" path="res://Area_HitBox.gd" id="1_u5ob3"]
-[ext_resource type="Texture2D" uid="uid://do10aen2eonxd" path="res://sword.jpg" id="2_pwx5q"]
+[ext_resource type="Texture2D" uid="uid://bn66syabhfeo1" path="res://Arrow-removebg-preview.png" id="2_mtqpv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37ehb"]
+size = Vector2(22, 5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6vdj0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pwx5q")
+"texture": ExtResource("2_mtqpv")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -20,9 +21,11 @@ animations = [{
 script = ExtResource("1_u5ob3")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_37ehb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 2)
-scale = Vector2(0.0558036, 0.0647321)
+position = Vector2(0, -8.47033e-22)
+scale = Vector2(0.0426077, 0.0647321)
 sprite_frames = SubResource("SpriteFrames_6vdj0")
+animation = &"new_animation"

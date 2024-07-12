@@ -33,12 +33,14 @@ func _on_detection_area_body_entered(_body):
 
 func _on_attack_timer_timeout():
 	print("shoot arrow")
-	var arrow = Arrrow_Scene.instantiate()
+	var arrow:Area2D = Arrrow_Scene.instantiate()
+	owner.add_child(arrow)
 	var arrow_position = self.position
-	var player_direction = (player.position - self.position).normalized()
+	var player_direction:Vector2 = (player.position - self.position).normalized()
+	arrow.rotate(Vector2.RIGHT.angle_to(player_direction))
 	#player_direction = arrow
 	arrow.position = arrow_position
-	owner.add_child(arrow)
+	
 	# set arrow's initial position (probably at the ranged enemy)
 	# set the arrow's direction/velocity
 	# add the arrow to the scene (as a child of the level node
