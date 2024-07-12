@@ -39,7 +39,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="MeleeMob" type="CharacterBody2D"]
+[node name="MeleeMob" type="CharacterBody2D" groups=["Mob"]]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_nfw8v")

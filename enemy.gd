@@ -5,7 +5,7 @@ var speed = 150
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var softCollision = $SoftCollision
 var currentHealth = 10
-var damage = 1
+var damage = 2
 
 func _ready():
 	set_health_bar()

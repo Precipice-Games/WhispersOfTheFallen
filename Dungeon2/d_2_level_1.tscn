@@ -37,7 +37,6 @@ scale = Vector2(0.5, 0.5)
 zoom = Vector2(4, 4)
 
 [node name="Fadeout" type="Sprite2D" parent="DungeonBrian/Camera2D"]
-visible = false
 z_index = 100
 position = Vector2(42, 0)
 scale = Vector2(2, 2)
@@ -67,7 +66,7 @@ position = Vector2(1364, 215)
 position = Vector2(1170, 548)
 
 [node name="Enemy7" parent="MOB FOLDER" instance=ExtResource("6_gj55i")]
-position = Vector2(354, 215)
+position = Vector2(1167, 111)
 
 [node name="Enemy8" parent="MOB FOLDER" instance=ExtResource("6_gj55i")]
 position = Vector2(1727, 125)
@@ -79,7 +78,7 @@ position = Vector2(1715, 254)
 position = Vector2(1506, -25)
 
 [node name="Enemy11" parent="MOB FOLDER" instance=ExtResource("6_gj55i")]
-position = Vector2(496, 317)
+position = Vector2(1341, 346)
 
 [node name="Enemy12" parent="MOB FOLDER" instance=ExtResource("6_gj55i")]
 position = Vector2(771, 462)
