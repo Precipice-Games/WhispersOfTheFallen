@@ -2,7 +2,7 @@ extends Node2D
 
 var lineColor := Color.WHITE
 var antialiased := true
-
+const SPELL_LENGTH = 5
 var connectionPointRadius := 20.0
 var connectionPointColor := Color.DARK_CYAN
 
@@ -11,11 +11,13 @@ var connectionPoints := []
 
 var currentLinePoints := []
 
+#var SpellBook = Array[]
+
 
 func _ready():
 	randomize()
 	var bounds := get_viewport_rect()
-	connectionPoints = generateRandomPoints(connectionPointsCount, bounds)
+	connectionPoints = generatePoints(connectionPointsCount, bounds)
 
 
 func _unhandled_input(event):
@@ -38,18 +40,18 @@ func _draw():
 		draw_circle(connectionPoint, connectionPointRadius, connectionPointColor)
 	
 	var lineWidth = connectionPointRadius
-	if currentLinePoints.size() == 1:
-		var globalMousePosition = get_global_mouse_position()
-		var lineEndpoint = findClosestConnectionPointTo(globalMousePosition, connectionPointRadius)
-		if not lineEndpoint:
+	for i in range(currentLinePoints.size()):
+		var p = currentLinePoints[i]
+		if i == currentLinePoints.size() - 1:
+			var globalMousePosition = get_global_mouse_position()
+			var lineEndpoint = findClosestConnectionPointTo(globalMousePosition, connectionPointRadius)
+			#iFIX THIS 	
 			lineEndpoint = globalMousePosition
-		draw_line(currentLinePoints[0], lineEndpoint, lineColor, lineWidth, antialiased)
-	
-	elif currentLinePoints.size() == 2:
-		draw_line(currentLinePoints[0], currentLinePoints[1], lineColor, lineWidth, antialiased)
+			draw_line(currentLinePoints[i], lineEndpoint, lineColor, lineWidth, antialiased)
+		else:
+			draw_line(currentLinePoints[i], currentLinePoints[i + 1], lineColor, lineWidth, antialiased)
 
-
-func generateRandomPoints(count: int, bounds: Rect2):
+func generatePoints(count: int, bounds: Rect2):
 	var points := []
 	for i in range(count):
 		var point := Vector2(
@@ -73,6 +75,13 @@ func findClosestConnectionPointTo(aPoint: Vector2, maxDistance: float):
 
 
 func updateCurrentLineWith(position: Vector2):
-	if currentLinePoints.size() >= 2:
+	if currentLinePoints.size() > SPELL_LENGTH:
+		# check to see if the points match a known spell
 		currentLinePoints.clear()
 	currentLinePoints.push_back(position)
+
+func spellcheck():
+	pass
+
+# use loop for array 
+

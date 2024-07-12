@@ -15,18 +15,19 @@ position = Vector2(714, 564)
 scale = Vector2(0.686495, 0.652131)
 texture = ExtResource("1_0tder")
 
-[node name="Area2D" type="Area2D" parent="Circle"]
+[node name="Area2D9" type="Area2D" parent="Circle"]
+position = Vector2(-327.752, 352.69)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Circle/Area2D9"]
 position = Vector2(332.122, -331.222)
 shape = SubResource("CircleShape2D_aftk5")
 
-[node name="ColorRect" type="ColorRect" parent="Circle/Area2D"]
+[node name="ColorRect" type="ColorRect" parent="Circle/Area2D9"]
 offset_left = 307.358
 offset_top = -351.156
 offset_right = 347.358
 offset_bottom = -311.156
 color = Color(0.703834, 0.625868, 0.70533, 1)
 
-[connection signal="mouse_entered" from="Circle/Area2D" to="Circle" method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Circle/Area2D" to="Circle" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Circle/Area2D9" to="Circle" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Circle/Area2D9" to="Circle" method="_on_area_2d_mouse_exited"]

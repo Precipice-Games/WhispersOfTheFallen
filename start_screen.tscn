@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsvaihjdpu72t"]
+
+[ext_resource type="Script" path="res://Story/start_screen.gd" id="1_dgspn"]
+[ext_resource type="Texture2D" uid="uid://dcw51sqalmaik" path="res://ART/Free Pixel Art Forest/Preview/Background.png" id="2_bcsx4"]
+[ext_resource type="FontFile" uid="uid://dwws8eiohlfbe" path="res://ART/monogram/ttf/monogram.ttf" id="3_gdpu6"]
+
+[sub_resource type="Theme" id="Theme_i4o18"]
+default_font = ExtResource("3_gdpu6")
+default_font_size = 63
+
+[node name="StartScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_dgspn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -1127.0
+offset_right = 2076.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bcsx4")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 767.0
+offset_top = 213.0
+offset_right = 977.0
+offset_bottom = 277.0
+scale = Vector2(1.96157, 2.21327)
+size_flags_horizontal = 4
+theme = SubResource("Theme_i4o18")
+text = "CREDITS"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 17.0
+offset_top = -110.0
+offset_right = 17.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="CREDS" type="Label" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, -100)
+layout_direction = 1
+layout_mode = 2
+theme = SubResource("Theme_i4o18")
+text = "game by 
+MIKOLA HUANG 
+ AIDAN BATTAGLIA
+
+art assets
+MAX PARATA  ENDERMUNIZZ
+MIKOLA HUANG     KENNEY
+
+level design by
+AIDAN BATTAGLIA
+
+combat and mechanics by
+MIKOLA HUANG
+
+music by 
+INSERT HERE
+MIKOLA HUANG"
+horizontal_alignment = 1
+vertical_alignment = 1
