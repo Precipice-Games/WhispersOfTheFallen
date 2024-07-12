@@ -53,7 +53,7 @@ func _draw():
 	for connectionPoint in connectionPoints:
 		draw_circle(connectionPoint, connectionPointRadius, connectionPointColor)
 	
-	var lineWidth = connectionPointRadius
+	var lineWidth = connectionPointRadius - 10
 	for i in range(currentLinePoints.size()):
 		var p = currentLinePoints[i]
 		if i == currentLinePoints.size() - 1:
