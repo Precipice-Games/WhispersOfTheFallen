@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjvohwactraar"]
+[gd_scene load_steps=5 format=3 uid="uid://cjvohwactraar"]
 
 [ext_resource type="PackedScene" uid="uid://ef7wuo7convj" path="res://garden.tscn" id="1_4ur37"]
 [ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="1_ftkk4"]
 [ext_resource type="PackedScene" uid="uid://daqwl7u78d52j" path="res://ranged_enemy.tscn" id="3_rtcip"]
+[ext_resource type="PackedScene" uid="uid://brcaorg6ybupl" path="res://melee_mob.tscn" id="4_1xs6c"]
 
 [node name="level1" type="Node2D"]
 y_sort_enabled = true
@@ -31,3 +32,5 @@ metadata/_edit_lock_ = true
 
 [node name="Ranged_enemy" parent="." instance=ExtResource("3_rtcip")]
 position = Vector2(1522, 193)
+
+[node name="MeleeMob" parent="." instance=ExtResource("4_1xs6c")]
