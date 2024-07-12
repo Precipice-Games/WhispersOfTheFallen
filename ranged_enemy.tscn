@@ -1,18 +1,119 @@
-[gd_scene load_steps=8 format=3 uid="uid://daqwl7u78d52j"]
+[gd_scene load_steps=32 format=3 uid="uid://daqwl7u78d52j"]
 
 [ext_resource type="Script" path="res://ranged_enemy.gd" id="1_73wih"]
-[ext_resource type="Texture2D" uid="uid://cbj81u67xdcif" path="res://skelly_boy-removebg-preview.png" id="1_xwrj3"]
 [ext_resource type="PackedScene" uid="uid://ifjbdsw14pu2" path="res://Arrrow.tscn" id="2_5o8qm"]
+[ext_resource type="Texture2D" uid="uid://dofw7bop66dtl" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_1.png" id="3_lw40a"]
+[ext_resource type="Texture2D" uid="uid://dea2g8vxsdhrw" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_2.png" id="4_10vj6"]
+[ext_resource type="Texture2D" uid="uid://d1kak86bn2jv0" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_3.png" id="5_66uor"]
+[ext_resource type="Texture2D" uid="uid://csfv444djv8rl" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_4.png" id="6_njoum"]
+[ext_resource type="Texture2D" uid="uid://b673f6dpihxm3" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_5.png" id="7_4mfhy"]
+[ext_resource type="Texture2D" uid="uid://c6fwr8rye1xrp" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_6.png" id="8_5jvaa"]
+[ext_resource type="Texture2D" uid="uid://dl5tsmer3ktqb" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_7.png" id="9_1yavn"]
+[ext_resource type="Texture2D" uid="uid://gt8o0vc6275k" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_8.png" id="10_y4w7u"]
+[ext_resource type="Texture2D" uid="uid://bbp363mdnln2x" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_9.png" id="11_6leau"]
+[ext_resource type="Texture2D" uid="uid://dexhes0efdvdm" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_10.png" id="12_naiyk"]
+[ext_resource type="Texture2D" uid="uid://dq61ko2xoadgq" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_11.png" id="13_w4s4y"]
+[ext_resource type="Texture2D" uid="uid://cdvc320gvykt8" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_12.png" id="14_307t4"]
+[ext_resource type="Texture2D" uid="uid://gqlhg4arrsmj" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_13.png" id="15_2ppmu"]
+[ext_resource type="Texture2D" uid="uid://crcbr3hi0868a" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_14.png" id="16_kk0qv"]
+[ext_resource type="Texture2D" uid="uid://b4o7ccw38w3k1" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/2_atk/2_atk_15.png" id="17_jh0rj"]
+[ext_resource type="Texture2D" uid="uid://cwokue1ag0iqi" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_1.png" id="18_ggc0q"]
+[ext_resource type="Texture2D" uid="uid://bcehvbbffaow3" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_2.png" id="19_t1a5w"]
+[ext_resource type="Texture2D" uid="uid://dkvdlmoyvbcpj" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_3.png" id="20_k8x4b"]
+[ext_resource type="Texture2D" uid="uid://b1fikt5mruadc" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_4.png" id="21_evoov"]
+[ext_resource type="Texture2D" uid="uid://2rph4bsf01nn" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_5.png" id="22_tmk58"]
+[ext_resource type="Texture2D" uid="uid://b07ls0le8txt4" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_6.png" id="23_ohrke"]
+[ext_resource type="Texture2D" uid="uid://6smsk84iop25" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_7.png" id="24_rae4p"]
+[ext_resource type="Texture2D" uid="uid://di7w0g0mn103d" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_8.png" id="25_8dqwn"]
+[ext_resource type="Texture2D" uid="uid://b4o7ir1yk4hpn" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_9.png" id="26_ll5q1"]
+[ext_resource type="Texture2D" uid="uid://c2xr4b0kj4nd8" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_10.png" id="27_4k2bq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ku7rk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xwrj3")
+"texture": ExtResource("3_lw40a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_10vj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_66uor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_njoum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4mfhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5jvaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1yavn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y4w7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6leau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_naiyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_w4s4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_307t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2ppmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kk0qv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jh0rj")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"Attack",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_ggc0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_t1a5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_k8x4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_evoov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_tmk58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ohrke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_rae4p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8dqwn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ll5q1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4k2bq")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b17ff"]
@@ -31,28 +132,33 @@ script = ExtResource("1_73wih")
 Arrrow_Scene = ExtResource("2_5o8qm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2.38419e-07, -86)
-scale = Vector2(0.2, 0.2)
+position = Vector2(1, -66)
 sprite_frames = SubResource("SpriteFrames_ku7rk")
-animation = &"new_animation"
+animation = &"Run"
+autoplay = "Run"
+frame_progress = 0.115509
 
 [node name="Detection_Area" type="Area2D" parent="."]
 collision_layer = 4
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]
 position = Vector2(0, -75)
 shape = SubResource("CircleShape2D_b17ff")
+metadata/_edit_lock_ = true
 
 [node name="Wall_Coilider" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -7)
 shape = SubResource("RectangleShape2D_hw366")
+metadata/_edit_lock_ = true
 
 [node name="Attack_Area" type="Area2D" parent="."]
 collision_layer = 4
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Area"]
-position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_bntoh")
+metadata/_edit_lock_ = true
 
 [node name="Attack_Timer" type="Timer" parent="."]
 
