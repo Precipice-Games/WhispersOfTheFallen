@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bvoupvxmm6q3d"]
+[gd_scene load_steps=40 format=3 uid="uid://bvoupvxmm6q3d"]
 
 [ext_resource type="Script" path="res://DungeonBrian.gd" id="1_d74oo"]
 [ext_resource type="Texture2D" uid="uid://dlr7ecxm57dvc" path="res://ART/BrianCombatAssets/Brian1D.png" id="2_qisx4"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://thkda608o01y" path="res://ART/IDLE/working i hope/URL IDLE/URL IDLE3.png" id="26_b6vg4"]
 [ext_resource type="Texture2D" uid="uid://ckqrpggysto67" path="res://ART/IDLE/working i hope/URL IDLE/URL IDLE4.png" id="27_g5cd3"]
 [ext_resource type="Texture2D" uid="uid://vajfbh0jfpyt" path="res://ART/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" id="32_qhb1e"]
+[ext_resource type="PackedScene" uid="uid://brculoacct1t8" path="res://HealthBar.tscn" id="34_0isdf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2fn2e"]
 animations = [{
@@ -350,6 +351,12 @@ wait_time = 0.5
 
 [node name="Tick" type="Timer" parent="."]
 wait_time = 0.2
+
+[node name="UI" parent="." instance=ExtResource("34_0isdf")]
+layer = 10
+offset = Vector2(-33, -200)
+transform = Transform2D(1, 0, 0, 1, -33, -200)
+follow_viewport_enabled = true
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_entered" from="Weapon/Scythe/Hitbox" to="." method="_on_hitbox_body_entered"]

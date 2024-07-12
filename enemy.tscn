@@ -349,7 +349,7 @@ radius = 16.0
 y_sort_enabled = true
 scale = Vector2(2.5, 2.5)
 collision_layer = 4
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_pd72w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -360,6 +360,7 @@ animation = &"walk"
 frame_progress = 0.138296
 
 [node name="Detection_Area" type="Area2D" parent="."]
+visible = false
 position = Vector2(-1427, -136)
 collision_layer = 4
 

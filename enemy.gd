@@ -17,6 +17,7 @@ func _physics_process(delta):
 
 func _on_detection_area_area_entered(_body):
 	player_chase = true
+	$AnimatedSprite2D.play('walk')
 
 func take_damage():
 	currentHealth-=1
