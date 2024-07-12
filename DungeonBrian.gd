@@ -137,3 +137,8 @@ func _on_tick_timeout():
 
 # dmage timer constant timeout, assign var values to everything
 # removes dmg from pendign dmg timer after mobs exits body
+
+
+func _on_damage_timer_timeout():
+	currentHealth = currentHealth - pending_damage 
+	 # Replace with function body.
