@@ -86,4 +86,20 @@ position = Vector2(771, 462)
 [node name="Enemy2" parent="MOB FOLDER" instance=ExtResource("6_gj55i")]
 position = Vector2(1160, 328)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-349, 487)
+polygon = PackedVector2Array(204, -175, 455, -310, 1421, 174)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2(863, 830)
+polygon = PackedVector2Array(204, -175, 1170, -643, 569, -1)
+
 [connection signal="body_exited" from="MobDetector" to="." method="_on_mob_detector_body_exited"]
