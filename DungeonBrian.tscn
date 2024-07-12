@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bvoupvxmm6q3d"]
+[gd_scene load_steps=44 format=3 uid="uid://bvoupvxmm6q3d"]
 
 [ext_resource type="Script" path="res://DungeonBrian.gd" id="1_d74oo"]
 [ext_resource type="Texture2D" uid="uid://dlr7ecxm57dvc" path="res://ART/BrianCombatAssets/Brian1D.png" id="2_qisx4"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://ckqrpggysto67" path="res://ART/IDLE/working i hope/URL IDLE/URL IDLE4.png" id="27_g5cd3"]
 [ext_resource type="Texture2D" uid="uid://vajfbh0jfpyt" path="res://ART/v1.1 dungeon crawler 16X16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" id="32_qhb1e"]
 [ext_resource type="Script" path="res://soft_collision.gd" id="34_iw6lf"]
+[ext_resource type="PackedScene" uid="uid://b8ax616x55ldl" path="res://Testing/magictake1.tscn" id="34_j3fj8"]
 [ext_resource type="Texture2D" uid="uid://k2cq4aekte33" path="res://ART/v1.1 dungeon crawler 16X16 pixel pack/ui (new)/health_ui.png" id="35_mn37c"]
 [ext_resource type="Texture2D" uid="uid://bv5tuakqvkj11" path="res://progress bar.png" id="36_amd33"]
 
@@ -310,6 +311,11 @@ collision_mask = 4
 position = Vector2(27.0228, 34)
 scale = Vector2(2.55221, 1.15642)
 polygon = PackedVector2Array(8, -168.5, -8, -160.5, -27.8426, 0, 13.8458, 0.864738)
+
+[node name="Test" parent="." instance=ExtResource("34_j3fj8")]
+visible = false
+position = Vector2(14.0118, -80)
+scale = Vector2(1, 1)
 
 [node name="Weapon" type="Node2D" parent="."]
 y_sort_enabled = true

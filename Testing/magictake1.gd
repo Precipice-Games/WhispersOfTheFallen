@@ -104,7 +104,6 @@ func check_spell(current_spell, example_spell):
 	print(current_spell.size())
 	for i in range(current_spell.size()):
 		if not current_spell[i].is_equal_approx(example_spell[i]):
-		#if current_spell[i] != example_spell[i]:
 			print('test')
 			return false
 	return true 
