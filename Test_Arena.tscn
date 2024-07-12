@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://du8op44k3ucst"]
+[gd_scene load_steps=8 format=3 uid="uid://du8op44k3ucst"]
 
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_adng7"]
 [ext_resource type="Script" path="res://Test_Arena.gd" id="1_th8ye"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5hj7gomfnn7a" path="res://enemy.tscn" id="3_0vr86"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="3_w55iy"]
 [ext_resource type="Texture2D" uid="uid://da0vghli16wvh" path="res://ART/BrianCombatAssets/Fadeout.png" id="5_dmyel"]
+[ext_resource type="PackedScene" uid="uid://betm6cxs6dfu1" path="res://Overlays/pause_menu.tscn" id="5_gla1h"]
 
 [node name="TestArena" type="Node2D"]
 position = Vector2(-320, -56)
@@ -16,7 +17,7 @@ position = Vector2(-8, 0)
 layer_0/tile_data = PackedInt32Array(2752556, 6, 0, 3145784, 6, 0, 2359328, 6, 0, 2752531, 6, 0, 3145759, 6, 0, 2097165, 0, 0, 1703961, 0, 0, 1638437, 65536, 0, 2031665, 65536, 0, 2424893, 65536, 0)
 
 [node name="DungeonBrian" parent="." instance=ExtResource("2_odvi8")]
-position = Vector2(720, 669)
+position = Vector2(562, 693)
 scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
@@ -25,6 +26,8 @@ scale = Vector2(-141.196, 12.1971)
 zoom = Vector2(4, 4)
 script = ExtResource("3_w55iy")
 
+[node name="PauseMenu" parent="DungeonBrian/Camera2D" instance=ExtResource("5_gla1h")]
+
 [node name="Fadeout" type="Sprite2D" parent="."]
 visible = false
 z_index = 5
@@ -32,22 +35,22 @@ position = Vector2(616, 664)
 texture = ExtResource("5_dmyel")
 
 [node name="Enemy7" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(605, 642)
+position = Vector2(767, 715)
 
 [node name="Enemy8" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(466, 640)
+position = Vector2(470, 713)
 
 [node name="Enemy9" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(508, 603)
+position = Vector2(684, 582)
 
 [node name="Enemy10" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(419, 600)
+position = Vector2(488, 577)
 
 [node name="Enemy11" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(361, 642)
+position = Vector2(484, 630)
 
 [node name="Enemy12" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(423, 672)
+position = Vector2(596, 739)
 
 [node name="Enemy13" parent="." instance=ExtResource("3_0vr86")]
-position = Vector2(500, 665)
+position = Vector2(607, 586)
