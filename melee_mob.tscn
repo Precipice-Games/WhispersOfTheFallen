@@ -1,14 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://brcaorg6ybupl"]
+[gd_scene load_steps=11 format=3 uid="uid://brcaorg6ybupl"]
 
 [ext_resource type="Script" path="res://melee_mob.gd" id="1_nfw8v"]
-[ext_resource type="Texture2D" uid="uid://drkb0h07kiixe" path="res://Melee swing image.webp" id="2_amuuh"]
+[ext_resource type="Texture2D" uid="uid://6iaae8b51fph" path="res://knight-removebg-preview.png" id="2_08pbh"]
+[ext_resource type="Texture2D" uid="uid://bcsckd6gp0fe5" path="res://download-removebg-preview.png" id="4_q53t5"]
 [ext_resource type="Script" path="res://Melee_Hitbox.gd" id="4_y8pco"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r52a3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_amuuh")
+"texture": ExtResource("2_08pbh")
 }],
 "loop": true,
 "name": &"default",
@@ -25,6 +26,18 @@ size = Vector2(49, 68)
 radius = 159.38
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gsch"]
+size = Vector2(80, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yc7tl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q53t5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MeleeMob" type="CharacterBody2D"]
 collision_layer = 4
@@ -60,9 +73,14 @@ metadata/_edit_lock_ = true
 script = ExtResource("4_y8pco")
 
 [node name="Detector" type="CollisionShape2D" parent="Melee_Hitbox"]
-position = Vector2(46, -38)
+position = Vector2(68, 0)
 shape = SubResource("RectangleShape2D_4gsch")
 disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Melee_Hitbox"]
+position = Vector2(66.125, 0)
+scale = Vector2(0.2525, 0.196429)
+sprite_frames = SubResource("SpriteFrames_yc7tl")
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="Detection_Area" to="." method="_on_detection_area_body_entered"]
