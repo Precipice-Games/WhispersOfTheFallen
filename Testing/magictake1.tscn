@@ -4,16 +4,21 @@
 [ext_resource type="Script" path="res://Testing/magictake1.gd" id="1_tmjxx"]
 
 [node name="Test" type="Node2D"]
-scale = Vector2(0.5, 0.5)
+y_sort_enabled = true
+scale = Vector2(2, 2)
 script = ExtResource("1_tmjxx")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-6.00012, 17)
-scale = Vector2(0.686495, 0.652131)
-zoom = Vector2(2, 2)
 
 [node name="Circle" type="Sprite2D" parent="."]
 z_index = -10
 position = Vector2(-1, -9.53674e-07)
-scale = Vector2(0.686495, 0.652131)
+scale = Vector2(0.343, 0.326)
 texture = ExtResource("1_0tder")
+
+[node name="LineClear" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[connection signal="timeout" from="LineClear" to="." method="_on_line_clear_timeout"]

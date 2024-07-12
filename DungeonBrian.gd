@@ -9,6 +9,7 @@ var canDash = true
 var currentHealth: int = 100
 var damage_zone = false
 var pending_damage: int = 0 
+@onready var test = $Test
 
 func _ready():
 	set_health_bar()
@@ -102,10 +103,13 @@ func _input(event):
 		$WeaponAnimation.play("Attack")
 	
 	if Input.is_action_pressed("spellcast"):
-		var test = $Test
-		$Weapon/Scythe.hide()
-		$Test.show()
-		print('hello')
+		if $Test.visible:
+			$Weapon/Scythe.show()
+			$Test.hide()
+			print('hello')
+		else:
+			$Weapon/Scythe.hide()
+			$Test.show()		
 		
 
 func _on_attack_timer_timeout():

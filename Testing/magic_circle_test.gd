@@ -75,4 +75,4 @@ func findClosestConnectionPointTo(aPoint: Vector2, maxDistance: float):
 func updateCurrentLineWith(position: Vector2):
 	if currentLinePoints.size() >= 2:
 		currentLinePoints.clear()
-	currentLinePoints.push_back(position
+	currentLinePoints.push_back(position)

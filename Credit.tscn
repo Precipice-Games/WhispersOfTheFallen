@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://dclyeqy3lwp47"]
+[gd_scene load_steps=4 format=3 uid="uid://dclyeqy3lwp47"]
 
-[ext_resource type="Script" path="res://Story/start_screen.gd" id="1_no54h"]
 [ext_resource type="Texture2D" uid="uid://dcw51sqalmaik" path="res://ART/Free Pixel Art Forest/Preview/Background.png" id="2_to2eg"]
 [ext_resource type="FontFile" uid="uid://dwws8eiohlfbe" path="res://ART/monogram/ttf/monogram.ttf" id="3_mf46f"]
 
@@ -21,7 +20,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_no54h")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
