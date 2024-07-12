@@ -1,11 +1,15 @@
 extends CharacterBody2D
 
 var speed = 150
-var player_chase = false
+@export var player_chase = false
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var softCollision = $SoftCollision
 var currentHealth = 10
 
+func _ready():
+	set_health_bar()
+	$HealthRat.hide()
+	
 func _physics_process(delta):
 	if player_chase:
 		self.position += (player.position - self.position).normalized() * speed * delta
@@ -23,9 +27,17 @@ func take_damage():
 	currentHealth-=1
 	$AnimatedSprite2D.modulate = Color(1, 0, 0)
 	$Tick.start()
-	
+	$HealthRat.show()
+	set_health_bar()
+
 	if currentHealth <0:
-		queue_free() #TODO once the enemy loses a reference to the player we get a null instance error
+		queue_free()
+
+func set_health_bar():
+	$HealthRat.value = currentHealth 
+		
+		
+	#TODO once the enemy loses a reference to the player we get a null instance error
 #func _on_attack_area_body_entered(body):
 	#player_chase = false
 	

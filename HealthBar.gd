@@ -5,7 +5,7 @@ extends CanvasLayer
 
 const MIN_HEALTH: int = 23
 
-var max_hp: int = 1
+var max_hp: int = 123
 
 @onready var player: CharacterBody2D = get_parent().get_node("BrianDungeon")
 @onready var health_bar: TextureProgressBar = get_node("HealthBar")

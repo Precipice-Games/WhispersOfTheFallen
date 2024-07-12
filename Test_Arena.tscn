@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://du8op44k3ucst"]
+[gd_scene load_steps=7 format=3 uid="uid://du8op44k3ucst"]
 
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_adng7"]
 [ext_resource type="Script" path="res://Test_Arena.gd" id="1_th8ye"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c5hj7gomfnn7a" path="res://enemy.tscn" id="3_0vr86"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="3_w55iy"]
 [ext_resource type="Texture2D" uid="uid://da0vghli16wvh" path="res://ART/BrianCombatAssets/Fadeout.png" id="5_dmyel"]
-[ext_resource type="PackedScene" uid="uid://betm6cxs6dfu1" path="res://Overlays/pause_menu.tscn" id="5_gla1h"]
 
 [node name="TestArena" type="Node2D"]
 position = Vector2(-320, -56)
@@ -26,10 +25,7 @@ scale = Vector2(-141.196, 12.1971)
 zoom = Vector2(4, 4)
 script = ExtResource("3_w55iy")
 
-[node name="PauseMenu" parent="DungeonBrian/Camera2D" instance=ExtResource("5_gla1h")]
-
 [node name="Fadeout" type="Sprite2D" parent="."]
-visible = false
 z_index = 5
 position = Vector2(616, 664)
 texture = ExtResource("5_dmyel")

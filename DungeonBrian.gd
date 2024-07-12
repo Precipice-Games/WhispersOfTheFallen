@@ -8,7 +8,11 @@ var canDash = true
 @onready var weapon: Node2D = get_node("Weapon")
 var currentHealth: int = 50
 var damage_zone = false
+var pending_damage: int = 0 
 
+func _ready():
+	set_health_bar()
+	
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
@@ -113,11 +117,14 @@ func _on_player_hitbox_body_entered(body):
 		print(currentHealth)
 		$BrianAnim.modulate = Color(1, 0, 0)
 		$Tick.start()
+		set_health_bar() 
 	
 	if currentHealth <0:
-		queue_free()
+		$".".hide()
 	
-
+func set_health_bar():
+	$HealthBar.value = currentHealth + 23
+	
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Mob"):
 		body.take_damage()
@@ -126,3 +133,7 @@ func _on_hitbox_body_entered(body):
 
 func _on_tick_timeout():
 	$BrianAnim.modulate = Color(1, 1, 1)
+
+
+# dmage timer constant timeout, assign var values to everything
+# removes dmg from pendign dmg timer after mobs exits body

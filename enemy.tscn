@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://c5hj7gomfnn7a"]
+[gd_scene load_steps=53 format=3 uid="uid://c5hj7gomfnn7a"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_pd72w"]
 [ext_resource type="Texture2D" uid="uid://hc2pk6pslnlx" path="res://ART/Rat/frame_00_delay-0.1s.png" id="2_8470b"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://doma4i6u3d10n" path="res://ART/Rat/frame_07_delay-0.1s.png" id="8_b14c0"]
 [ext_resource type="Texture2D" uid="uid://no581nir1ng1" path="res://ART/Rat/frame_08_delay-0.1s.png" id="9_se0ho"]
 [ext_resource type="Texture2D" uid="uid://noxk74fthqsb" path="res://ART/Rat/frame_09_delay-0.1s.png" id="10_rx5fn"]
+[ext_resource type="Texture2D" uid="uid://bv5tuakqvkj11" path="res://progress bar.png" id="12_wat10"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jtcs4"]
 atlas = ExtResource("2_8470b")
@@ -386,9 +387,23 @@ shape = SubResource("CircleShape2D_xble2")
 [node name="Tick" type="Timer" parent="."]
 wait_time = 0.2
 
+[node name="Attack" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="HealthRat" type="TextureProgressBar" parent="."]
+offset_left = -9.6
+offset_top = -6.4
+offset_right = 70.4
+offset_bottom = 33.6
+scale = Vector2(0.298638, 0.0689233)
+max_value = 10.0
+texture_progress = ExtResource("12_wat10")
+tint_progress = Color(1, 0.14902, 0.239216, 1)
+
 [connection signal="area_entered" from="Detection_Area" to="." method="_on_detection_area_area_entered"]
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="Attack_Area" to="." method="_on_attack_area_body_exited"]
 [connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]
+[connection signal="timeout" from="Attack" to="." method="_on_timer_timeout"]
 
 [editable path="SoftCollision"]
