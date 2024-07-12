@@ -25,8 +25,10 @@ size = Vector2(40.5, 26.25)
 radius = 500.0
 
 [node name="Ranged_enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_73wih")
-Arrrow = ExtResource("2_5o8qm")
+Arrrow_Scene = ExtResource("2_5o8qm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.38419e-07, -86)
@@ -35,6 +37,7 @@ sprite_frames = SubResource("SpriteFrames_ku7rk")
 animation = &"new_animation"
 
 [node name="Detection_Area" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]
 position = Vector2(0, -75)
@@ -45,6 +48,7 @@ position = Vector2(-2, -7)
 shape = SubResource("RectangleShape2D_hw366")
 
 [node name="Attack_Area" type="Area2D" parent="."]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Area"]
 position = Vector2(0, 1)

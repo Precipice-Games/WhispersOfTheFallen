@@ -6,7 +6,7 @@ var player_chase = false
 
 #@onready var Melee_Hitbox = $Melee_Hitbox
 @export var player:CharacterBody2D
-@export var Arrrow: PackedScene
+@export var Arrrow_Scene: PackedScene
 
 
 # var player_direction = player.position - self.position 
@@ -25,6 +25,7 @@ func _on_area_hit_box_body_entered(_body):
 
 func _on_detection_area_body_entered(_body):
 	player =  $"../DungeonBrian"
+	print(_body.name)
 	player_chase = true
 
 
@@ -32,7 +33,11 @@ func _on_detection_area_body_entered(_body):
 
 func _on_attack_timer_timeout():
 	print("shoot arrow")
-	var arrow = Arrrow.instantiate()
+	var arrow = Arrrow_Scene.instantiate()
+	var arrow_position = self.position
+	var player_direction = (player.position - self.position).normalized()
+	arrow.position = arrow_position
+	add_child(arrow)
 	# set arrow's initial position (probably at the ranged enemy)
 	# set the arrow's direction/velocity
 	# add the arrow to the scene (as a child of the level node

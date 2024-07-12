@@ -1,11 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://ifjbdsw14pu2"]
+[gd_scene load_steps=5 format=3 uid="uid://ifjbdsw14pu2"]
 
 [ext_resource type="Script" path="res://Area_HitBox.gd" id="1_u5ob3"]
+[ext_resource type="Texture2D" uid="uid://do10aen2eonxd" path="res://sword.jpg" id="2_pwx5q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37ehb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vdj0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pwx5q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Arrow" type="Area2D"]
 script = ExtResource("1_u5ob3")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_37ehb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6vdj0")

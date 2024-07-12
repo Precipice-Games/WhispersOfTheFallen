@@ -81,6 +81,7 @@ draw={
 2d_physics/layer_3="mob"
 2d_physics/layer_4="Camera"
 2d_physics/layer_5="soft_collision"
+2d_physics/layer_6="detector"
 
 [rendering]
 
