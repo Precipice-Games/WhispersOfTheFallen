@@ -4,14 +4,24 @@ var lineColor := Color.WHITE
 var antialiased := true
 const SPELL_LENGTH = 5
 var connectionPointRadius := 20.0
+
 var connectionPointColor := Color.DARK_CYAN
 
-var connectionPointsCount := 20
+var point1pressed = false
+var point2pressed = false
+var point3pressed = false
+var point4pressed = false
+var point5pressed = false
+var point6pressed = false
+var point7pressed = false
+var point8pressed = false
+
+var connectionPointsCount := 8
 var connectionPoints := []
 
 var currentLinePoints := []
-
-#var SpellBook = Array[]
+var radius = 330
+var offset = 0
 
 
 func _ready():
@@ -45,7 +55,6 @@ func _draw():
 		if i == currentLinePoints.size() - 1:
 			var globalMousePosition = get_global_mouse_position()
 			var lineEndpoint = findClosestConnectionPointTo(globalMousePosition, connectionPointRadius)
-			#iFIX THIS 	
 			lineEndpoint = globalMousePosition
 			draw_line(currentLinePoints[i], lineEndpoint, lineColor, lineWidth, antialiased)
 		else:
@@ -53,14 +62,16 @@ func _draw():
 
 func generatePoints(count: int, bounds: Rect2):
 	var points := []
-	for i in range(count):
+	for i in range(8):
 		var point := Vector2(
-			randf_range(bounds.position.x, bounds.end.x),
-			randf_range(bounds.position.y, bounds.end.y)
+			radius * cos(i * PI/4 + offset),
+			radius * sin(i * PI/4 + offset)
 		)
 		points.push_back(point)
+	points.push_back(Vector2(offset, offset))
+	
 	return points
-
+#for loop counts i  from 0 up to 7: i * 45(deg) 
 
 func findClosestConnectionPointTo(aPoint: Vector2, maxDistance: float):
 	var closestPoint = null
@@ -76,12 +87,14 @@ func findClosestConnectionPointTo(aPoint: Vector2, maxDistance: float):
 
 func updateCurrentLineWith(position: Vector2):
 	if currentLinePoints.size() > SPELL_LENGTH:
-		# check to see if the points match a known spell
 		currentLinePoints.clear()
 	currentLinePoints.push_back(position)
 
-func spellcheck():
-	pass
+func spellcheck(attempt, known_spells):
+	for i in range(attempt.size()):
+		if attempt[i] != known_spells[i]:
+			return false
+			print('fail')
 
 # use loop for array 
 
