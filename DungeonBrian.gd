@@ -12,6 +12,7 @@ var pending_damage: int = 0
 
 func _ready():
 	set_health_bar()
+	$Test.hide()
 	
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -99,6 +100,13 @@ func _input(event):
 		$Weapon/Scythe/Hitbox/WeaponHitBox.set_disabled(false)
 		$AttackTimer.start()
 		$WeaponAnimation.play("Attack")
+	
+	if Input.is_action_pressed("spellcast"):
+		var test = $Test
+		$Weapon/Scythe.hide()
+		$Test.show()
+		print('hello')
+		
 
 func _on_attack_timer_timeout():
 	$Weapon/Scythe/Hitbox/WeaponHitBox.set_disabled(true)

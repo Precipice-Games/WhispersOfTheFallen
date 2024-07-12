@@ -2,19 +2,10 @@ extends Node2D
 
 var lineColor := Color.WHITE
 var antialiased := true
-const SPELL_LENGTH = 5
+const SPELL_LENGTH = 3
 var connectionPointRadius := 20.0
 
 var connectionPointColor := Color.DARK_CYAN
-
-var point1pressed = false
-var point2pressed = false
-var point3pressed = false
-var point4pressed = false
-var point5pressed = false
-var point6pressed = false
-var point7pressed = false
-var point8pressed = false
 
 var connectionPointsCount := 8
 var connectionPoints := []
@@ -23,6 +14,17 @@ var currentLinePoints := []
 var radius = 330
 var offset = 0
 
+var example_spell:Array = [Vector2(-330, 0),Vector2(233.3452, -233.3452),Vector2(-0, -330)] #476
+var example_spell_effect:Callable = fireball
+
+#(330, 0) 0
+#(233.3452, 233.3452) 1
+#(0, 330) 2
+#(-233.3452, 233.3452) 3
+#(-330, 0) 4    4 7  6
+#(-233.3452, -233.3452) 5
+#(-0, -330) 6
+#(233.3452, -233.3452) 7
 
 func _ready():
 	randomize()
@@ -34,6 +36,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			var clickedConnectionPoint = findClosestConnectionPointTo(get_global_mouse_position(), connectionPointRadius)
+			
 			if not clickedConnectionPoint:
 				return
 			updateCurrentLineWith(clickedConnectionPoint)
@@ -86,15 +89,24 @@ func findClosestConnectionPointTo(aPoint: Vector2, maxDistance: float):
 
 
 func updateCurrentLineWith(position: Vector2):
-	if currentLinePoints.size() > SPELL_LENGTH:
-		currentLinePoints.clear()
+	print(position)
 	currentLinePoints.push_back(position)
+	if currentLinePoints.size() >= SPELL_LENGTH:
+		var current_spell = currentLinePoints
+		if check_spell(current_spell, example_spell):
+			example_spell_effect.call() 
+		currentLinePoints.clear()
 
-func spellcheck(attempt, known_spells):
-	for i in range(attempt.size()):
-		if attempt[i] != known_spells[i]:
-			return false
-			print('fail')
 
 # use loop for array 
 
+func check_spell(current_spell, example_spell):
+	print(current_spell.size())
+	for i in range(current_spell.size()):
+		if not current_spell[i].is_equal_approx(example_spell[i]):
+			print('test')
+			return false
+	return true 
+
+func fireball():
+	print("Fireball!!!")
