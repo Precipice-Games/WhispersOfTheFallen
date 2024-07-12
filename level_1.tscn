@@ -34,7 +34,7 @@ metadata/_edit_lock_ = true
 position = Vector2(1450, -1047)
 
 [node name="MeleeMob" parent="." instance=ExtResource("4_1xs6c")]
-position = Vector2(951, -500)
+position = Vector2(823, -1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
