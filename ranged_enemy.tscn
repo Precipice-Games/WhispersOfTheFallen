@@ -78,7 +78,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Attack",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,25 +132,25 @@ script = ExtResource("1_73wih")
 Arrrow_Scene = ExtResource("2_5o8qm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -66)
+position = Vector2(1, -97)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_ku7rk")
-animation = &"Run"
+animation = &"Attack"
 autoplay = "Run"
-frame_progress = 0.115509
+frame_progress = 0.452312
 
 [node name="Detection_Area" type="Area2D" parent="."]
 collision_layer = 4
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]
-position = Vector2(0, -75)
+position = Vector2(6, -34)
 shape = SubResource("CircleShape2D_b17ff")
 metadata/_edit_lock_ = true
 
 [node name="Wall_Coilider" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -7)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_hw366")
-metadata/_edit_lock_ = true
 
 [node name="Attack_Area" type="Area2D" parent="."]
 collision_layer = 4

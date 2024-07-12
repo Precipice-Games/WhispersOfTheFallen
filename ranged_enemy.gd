@@ -26,6 +26,7 @@ func _on_area_hit_box_body_entered(_body):
 	print("Attacking")
 	$Area_HitBox.activate() # attack player
 	
+	
 
 func _on_detection_area_body_entered(_body):
 	player =  $"../DungeonBrian"
@@ -44,6 +45,7 @@ func _on_attack_timer_timeout():
 	arrow.rotate(Vector2.RIGHT.angle_to(player_direction))
 	#player_direction = arrow
 	arrow.position = arrow_position
+	$AnimatedSprite2D.play("Attack")
 	
 	# set arrow's initial position (probably at the ranged enemy)
 	# set the arrow's direction/velocity
