@@ -9,7 +9,7 @@ y_sort_enabled = true
 
 [node name="DungeonBrian" parent="." instance=ExtResource("1_ftkk4")]
 y_sort_enabled = true
-position = Vector2(470, 221)
+position = Vector2(300, 149)
 scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
@@ -21,12 +21,13 @@ layer_0/tile_data = PackedInt32Array(852063, 196614, 0, 393300, 6, 0, 786543, 19
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -10
 y_sort_enabled = true
-offset_left = -1576.0
-offset_top = -657.0
-offset_right = 840.0
-offset_bottom = 559.0
+offset_left = -1748.0
+offset_top = -720.0
+offset_right = 668.0
+offset_bottom = 496.0
 scale = Vector2(1.52193, 10.4779)
 color = Color(0.508062, 0.715774, 0.86404, 1)
+metadata/_edit_lock_ = true
 
 [node name="Ranged_enemy" parent="." instance=ExtResource("3_rtcip")]
 position = Vector2(1522, 193)
