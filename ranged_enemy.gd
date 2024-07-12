@@ -36,8 +36,9 @@ func _on_attack_timer_timeout():
 	var arrow = Arrrow_Scene.instantiate()
 	var arrow_position = self.position
 	var player_direction = (player.position - self.position).normalized()
+	#player_direction = arrow
 	arrow.position = arrow_position
-	add_child(arrow)
+	owner.add_child(arrow)
 	# set arrow's initial position (probably at the ranged enemy)
 	# set the arrow's direction/velocity
 	# add the arrow to the scene (as a child of the level node
