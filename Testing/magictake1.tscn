@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8ax616x55ldl"]
 
-[ext_resource type="Texture2D" uid="uid://crjepuwp7enis" path="res://ART/pngtree-mysterious-magic-circle-png-image_6532961.jpg" id="1_0tder"]
 [ext_resource type="Script" path="res://Testing/magictake1.gd" id="1_tmjxx"]
+[ext_resource type="Texture2D" path="res://ART/—Pngtree—mysterious magic circle_6532961.png" id="2_vagfs"]
 
 [node name="Test" type="Node2D"]
 y_sort_enabled = true
@@ -9,16 +9,13 @@ scale = Vector2(2, 2)
 script = ExtResource("1_tmjxx")
 
 [node name="Circle" type="Sprite2D" parent="."]
-z_index = -10
+z_index = -1
 position = Vector2(-1, -9.53674e-07)
 scale = Vector2(0.343, 0.326)
-texture = ExtResource("1_0tder")
+texture = ExtResource("2_vagfs")
 
 [node name="LineClear" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
 
 [connection signal="timeout" from="LineClear" to="." method="_on_line_clear_timeout"]

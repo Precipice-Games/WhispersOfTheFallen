@@ -10,12 +10,14 @@ var currentHealth: int = 100
 var pending_damage: int = 0 
 @onready var test = $Test
 @onready var game_over = preload("res://Dungeon2/GAMEOVER.tscn")
+var currentMana: int = 100
 
 
 func _ready():
 	set_health_bar()
 	$Test.hide()
 	$Bleed.hide()
+	set_mana_bar()
 
 	
 func _physics_process(_delta):
@@ -106,13 +108,16 @@ func _input(event):
 		$WeaponAnimation.play("Attack")
 	
 	if Input.is_action_pressed("spellcast"):
-		if $Test.visible:
-			$Weapon/Scythe.show()
-			$Test.hide()
-			print('hello')
-		else:
-			$Weapon/Scythe.hide()
-			$Test.show()		
+		if currentMana <50:
+			null
+		if currentMana >=50:
+			if $Test.visible:
+				$Weapon/Scythe.show()
+				$Test.hide()
+				print('hello')
+			else:
+				$Weapon/Scythe.hide()
+				$Test.show()
 		
 
 func _on_attack_timer_timeout():
@@ -132,6 +137,9 @@ func _on_player_hitbox_body_entered(body):
 
 func set_health_bar():
 	$HealthBar.value = currentHealth + 30
+
+func set_mana_bar():
+	$ManaBar.value = currentMana + 30
 	
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Mob"):
@@ -177,5 +185,12 @@ func _on_player_hitbox_area_entered(area):
 
 
 func _on_test_healspell():
-	currentHealth += 30
 	$Test.hide()
+	$Weapon/Scythe.show()
+	if currentMana >=50:
+		currentHealth += 50
+		currentMana -= 50 
+		set_mana_bar()
+		set_health_bar()
+		$BrianAnim.modulate = Color(0, 1, 0)
+		$Tick.start()

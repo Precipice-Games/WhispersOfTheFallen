@@ -370,6 +370,19 @@ texture_progress = ExtResource("36_amd33")
 tint_progress = Color(0.473936, 0.131321, 0.090969, 1)
 radial_fill_degrees = 0.0
 
+[node name="ManaBar" type="TextureProgressBar" parent="."]
+offset_left = -84.0
+offset_top = -237.0
+offset_right = -4.00001
+offset_bottom = -221.0
+scale = Vector2(2.54632, 0.542358)
+min_value = 30.0
+max_value = 130.0
+value = 50.0
+texture_progress = ExtResource("36_amd33")
+tint_progress = Color(0.203875, 0.63294, 1, 1)
+radial_fill_degrees = 0.0
+
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.4
 autostart = true

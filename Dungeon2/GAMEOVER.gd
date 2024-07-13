@@ -1,6 +1,6 @@
 extends ColorRect
 
-@onready var start_level = preload("res://Dungeon2/d_2_level_1.tscn")
+@onready var start_level = preload("res://Story/start_screen.tscn")
 
 func _ready():
 	pass # Replace with function body.

@@ -5,9 +5,9 @@ signal healspell
 var lineColor := Color.WHITE
 var antialiased := true
 const SPELL_LENGTH = 3
-var connectionPointRadius := 20.0
+var connectionPointRadius := 10.0
 
-var connectionPointColor := Color.DARK_CYAN
+var connectionPointColor := Color.WHITE
 
 var connectionPointsCount := 8
 var connectionPoints := []
@@ -55,7 +55,7 @@ func _draw():
 	for connectionPoint in connectionPoints:
 		draw_circle(connectionPoint, connectionPointRadius, connectionPointColor)
 	
-	var lineWidth = connectionPointRadius - 10
+	var lineWidth = connectionPointRadius - 5
 	for i in range(currentLinePoints.size()):
 		var p = currentLinePoints[i]
 		if i == currentLinePoints.size() - 1:
