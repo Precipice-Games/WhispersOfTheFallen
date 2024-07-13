@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c54ob23rihc8o" path="res://ART/—Pngtree—mysterious magic circle_6532961.png" id="2_vagfs"]
 
 [node name="Test" type="Node2D"]
+y_sort_enabled = true
 scale = Vector2(2, 2)
 script = ExtResource("1_tmjxx")
 
@@ -13,4 +14,8 @@ position = Vector2(-1, -9.53674e-07)
 scale = Vector2(0.343, 0.326)
 texture = ExtResource("2_vagfs")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="LineClear" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="LineClear" to="." method="_on_line_clear_timeout"]
