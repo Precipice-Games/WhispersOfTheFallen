@@ -15,7 +15,7 @@ y_sort_enabled = true
 position = Vector2(372, 239)
 scale = Vector2(0.5, 0.5)
 
-[node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
+[node name="Camera2D2" type="Camera2D" parent="DungeonBrian"]
 zoom = Vector2(2, 2)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

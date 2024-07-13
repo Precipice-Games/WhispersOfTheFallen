@@ -378,7 +378,6 @@ autostart = true
 zoom = Vector2(4, 4)
 
 [node name="Fadeout" type="Sprite2D" parent="Camera2D"]
-visible = false
 z_index = 2
 position = Vector2(44.5, 45)
 scale = Vector2(1.73192, 1.73618)

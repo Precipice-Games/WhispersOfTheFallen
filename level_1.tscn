@@ -30,6 +30,7 @@ color = Color(0.508062, 0.715774, 0.86404, 1)
 metadata/_edit_lock_ = true
 
 [node name="Ranged_enemy" parent="." instance=ExtResource("3_rtcip")]
+y_sort_enabled = true
 position = Vector2(1542, 190)
 
 [node name="MeleeMob" parent="." instance=ExtResource("4_1xs6c")]
