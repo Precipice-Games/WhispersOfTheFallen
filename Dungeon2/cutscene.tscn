@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://3ffds0dptb7i"]
+[gd_scene load_steps=6 format=3 uid="uid://3ffds0dptb7i"]
 
+[ext_resource type="Script" path="res://Dungeon2/cutscene.gd" id="1_cb5sa"]
 [ext_resource type="FontFile" uid="uid://dwws8eiohlfbe" path="res://ART/monogram/ttf/monogram.ttf" id="1_q6p3h"]
+
+[sub_resource type="Theme" id="Theme_esi8o"]
+default_font = ExtResource("1_q6p3h")
+default_font_size = 80
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lufaq"]
 
 [sub_resource type="Theme" id="Theme_ro3de"]
 default_font = ExtResource("1_q6p3h")
@@ -13,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_cb5sa")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -21,7 +29,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.309804)
+color = Color(0, 0, 0, 0.866667)
+
+[node name="go_on" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -255.0
+offset_top = 35.0001
+offset_right = 251.0
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.06907, 1.09494)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_esi8o")
+text = "delve deeper?"
+icon = SubResource("ViewportTexture_lufaq")
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -30,12 +59,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -498.0
-offset_top = -211.0
-offset_right = 490.0
-offset_bottom = 199.0
+offset_left = -710.0
+offset_top = -254.0
+offset_right = 902.0
+offset_bottom = 156.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.880254, 1)
 theme = SubResource("Theme_ro3de")
+text = "the door has opened once more. 
+your health and mana has been replenished
+"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="ColorRect/go_on" to="." method="_on_go_on_pressed"]

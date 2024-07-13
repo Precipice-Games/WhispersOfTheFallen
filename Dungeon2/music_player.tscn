@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwqg4marh2uet"]
+
+[ext_resource type="AudioStream" uid="uid://du4taxhqemh7s" path="res://Caverns.mp3" id="1_8og4s"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_8og4s")
+autoplay = true

@@ -1,7 +1,6 @@
 [gd_scene load_steps=44 format=3 uid="uid://bvoupvxmm6q3d"]
 
 [ext_resource type="Script" path="res://DungeonBrian.gd" id="1_d74oo"]
-[ext_resource type="Texture2D" uid="uid://dlr7ecxm57dvc" path="res://ART/BrianCombatAssets/Brian1D.png" id="2_qisx4"]
 [ext_resource type="PackedScene" uid="uid://bj5vh02mfbcpo" path="res://scythe.tscn" id="3_1hv5r"]
 [ext_resource type="Texture2D" uid="uid://bpra1i7f83klv" path="res://ART/IDLE/D IDLE/Folder 31.png" id="3_5amqp"]
 [ext_resource type="Texture2D" uid="uid://c1fsejr7s1k78" path="res://ART/IDLE/D IDLE/Folder 32.png" id="4_p4m7x"]
@@ -26,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bdeiafjq7tep5" path="res://ART/IDLE/IDLE PART 2/RL IDLE/RL IDLE2.png" id="20_il5g5"]
 [ext_resource type="Texture2D" uid="uid://b3gxmy2dklsxj" path="res://ART/IDLE/UR IDLE/URL IDLE3.png" id="21_lj1aj"]
 [ext_resource type="Texture2D" uid="uid://djvmou7wmdor4" path="res://ART/IDLE/IDLE PART 2/RL IDLE/RL IDLE3.png" id="21_ochsl"]
+[ext_resource type="Texture2D" uid="uid://baskfvwikh7g6" path="res://ART/IDLE/exports.png" id="22_1vvku"]
 [ext_resource type="Texture2D" uid="uid://cs1ar6lbh0ceb" path="res://ART/IDLE/UR IDLE/URL IDLE4.png" id="22_nslj0"]
 [ext_resource type="Texture2D" uid="uid://bhnvi4stb11pj" path="res://ART/IDLE/IDLE PART 2/RL IDLE/RL IDLE4.png" id="22_t4hmy"]
 [ext_resource type="Texture2D" uid="uid://cbn7a7hxcc01b" path="res://ART/IDLE/working i hope/URL IDLE/URL IDLE1.png" id="24_3ptsf"]
@@ -128,7 +128,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qisx4")
+"texture": ExtResource("22_1vvku")
 }],
 "loop": true,
 "name": &"U",
@@ -292,7 +292,7 @@ script = ExtResource("1_d74oo")
 position = Vector2(11.0093, -67)
 scale = Vector2(1, 0.995)
 sprite_frames = SubResource("SpriteFrames_2fn2e")
-animation = &"UL"
+animation = &"U"
 
 [node name="WallCollider" type="CollisionShape2D" parent="."]
 rotation = 1.25664
@@ -363,7 +363,7 @@ offset_right = -4.07104
 offset_bottom = -187.0
 scale = Vector2(2.59838, 2.79875)
 min_value = 30.0
-max_value = 130.0
+max_value = 180.0
 value = 30.0
 texture_over = ExtResource("35_mn37c")
 texture_progress = ExtResource("36_amd33")
@@ -391,7 +391,6 @@ autostart = true
 zoom = Vector2(4, 4)
 
 [node name="Fadeout" type="Sprite2D" parent="Camera2D"]
-visible = false
 z_index = 2
 position = Vector2(44.5, 45)
 scale = Vector2(1.73192, 1.73618)

@@ -13,7 +13,8 @@ func _ready():
 	
 func _physics_process(delta):
 	if player_chase:
-		self.position += (player.position - self.position).normalized() * speed * delta
+		var direction = (player.position - self.position).normalized()
+		self.position += direction * speed * delta
 		move_and_collide(Vector2(0,0)) 
 	
 	if softCollision._is_colliding():

@@ -124,7 +124,7 @@ radius = 1000.0
 size = Vector2(40.5, 26.25)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bntoh"]
-radius = 500.0
+radius = 441.917
 
 [node name="Ranged_enemy" type="CharacterBody2D" groups=["Mob"]]
 collision_layer = 4
@@ -141,6 +141,7 @@ autoplay = "Run"
 frame_progress = 0.452312
 
 [node name="Detection_Area" type="Area2D" parent="."]
+visible = false
 scale = Vector2(4.76, 4.6)
 collision_layer = 4
 
@@ -154,12 +155,12 @@ position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_hw366")
 
 [node name="Attack_Area" type="Area2D" parent="."]
+scale = Vector2(2.92, 2.64)
 collision_layer = 4
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_Area"]
+position = Vector2(11.6438, -4.16667)
 shape = SubResource("CircleShape2D_bntoh")
-metadata/_edit_lock_ = true
 
 [node name="Attack_Timer" type="Timer" parent="."]
 

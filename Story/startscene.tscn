@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://0gk12bqvfahi"]
+
+[ext_resource type="Script" path="res://Story/startscene.gd" id="1_6flcb"]
+[ext_resource type="FontFile" uid="uid://dwws8eiohlfbe" path="res://ART/monogram/ttf/monogram.ttf" id="1_scywu"]
+
+[sub_resource type="Theme" id="Theme_fdcio"]
+default_font = ExtResource("1_scywu")
+default_font_size = 80
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6flcb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.506771
+anchor_top = 0.512963
+anchor_right = 0.480208
+anchor_bottom = 0.512963
+offset_left = -617.0
+offset_top = -424.0
+offset_right = 617.0
+offset_bottom = 424.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fdcio")
+bbcode_enabled = true
+text = "You have always existed in the background. A barely-there presence. And yet you are essential. As time ticks on, a never ending clock, you remain stagant. You are the bridge between life and death. 
+
+People often say life flashes before your eyes in your final moments. They have you to thank for it. You are their final photographer. you find what's important to them. You show it to them, one last time. Today is no different. "
+fit_content = true
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

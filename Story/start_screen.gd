@@ -1,6 +1,6 @@
 extends Control
 
-@onready var start_level = preload("res://Dungeon2/d_2_level_1.tscn")
+@onready var start_level = preload("res://Story/startscene.tscn")
 @onready var credit = preload("res://Credit.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():

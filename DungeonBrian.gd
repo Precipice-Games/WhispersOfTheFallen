@@ -6,7 +6,7 @@ const DASHSPEED = 4
 @export var dashing = false 
 var canDash = true 
 @onready var weapon: Node2D = get_node("Weapon")
-var currentHealth: int = 100
+var currentHealth: int = 150
 var pending_damage: int = 0 
 @onready var test = $Test
 @onready var game_over = preload("res://Dungeon2/GAMEOVER.tscn")
@@ -108,9 +108,9 @@ func _input(event):
 		$WeaponAnimation.play("Attack")
 	
 	if Input.is_action_pressed("spellcast"):
-		if currentMana <50:
+		if currentMana <25:
 			null
-		if currentMana >=50:
+		if currentMana >=25:
 			if $Test.visible:
 				$Weapon/Scythe.show()
 				$Test.hide()
@@ -183,7 +183,7 @@ func _on_player_hitbox_body_exited(body):
 
 func _on_player_hitbox_area_entered(area):
 		if area.is_in_group("Projectile"):
-			currentHealth -= 10
+			currentHealth -= 7
 			set_health_bar()
 			$BrianAnim.modulate = Color(1, 0, 0)
 			$Bleed.show()
@@ -193,9 +193,9 @@ func _on_player_hitbox_area_entered(area):
 func _on_test_healspell():
 	$Test.hide()
 	$Weapon/Scythe.show()
-	if currentMana >=50:
+	if currentMana >=25:
 		currentHealth += 50
-		currentMana -= 50 
+		currentMana -= 25
 		set_mana_bar()
 		set_health_bar()
 		$BrianAnim.modulate = Color(0, 1, 0)

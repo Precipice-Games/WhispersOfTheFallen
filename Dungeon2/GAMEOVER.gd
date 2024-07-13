@@ -1,4 +1,5 @@
 extends ColorRect
+@onready var start_level = preload("res://Dungeon2/d_2_level_1.tscn")
 
 func _ready():
 	pass # Replace with function body.
@@ -10,5 +11,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	null
-		#get_tree().change_scene_to_packed(start_level)
+	get_tree().change_scene_to_packed(start_level)
+	

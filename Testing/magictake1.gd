@@ -18,6 +18,7 @@ var radius = 165
 var example_spell:Array
 var example_spell_effect:Callable = heal
 
+
 #(330, 0) 0
 #(233.3452, 233.3452) 1
 #(0, 330) 2
@@ -29,6 +30,7 @@ var example_spell_effect:Callable = heal
 
 func _ready():
 	example_spell = [Vector2(-165 , 0),Vector2(116.6726, -116.6726),Vector2(-0, -165)] #476
+
 
 	var bounds := get_viewport_rect()
 	connectionPoints = generatePoints(connectionPointsCount, bounds)
@@ -116,4 +118,4 @@ func check_spell(current_spell, example_spell):
 func heal():
 	emit_signal("healspell")
 
-
+	

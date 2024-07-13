@@ -269,6 +269,7 @@ shape = SubResource("RectangleShape2D_8sisi")
 metadata/_edit_lock_ = true
 
 [node name="Detection_Area" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]

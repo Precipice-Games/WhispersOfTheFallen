@@ -2,13 +2,17 @@ extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	get_tree().reload_current_scene
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func level_done():
+	$SceneFade.start()
+	$DungeonBrian/CUTSCENE.show()
+
 func _process(delta):
-	pass
+	var enemies = get_tree().get_nodes_in_group("Mob")
+	if enemies.size() == 0:
+		level_done()
 
 
-func _on_mob_detector_body_exited(body):
-		print('dead')
+func _on_scene_fade_timeout():
+		Engine.time_scale = 0
