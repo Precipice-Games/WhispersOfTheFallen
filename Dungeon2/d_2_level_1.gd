@@ -5,7 +5,7 @@ extends Node2D
 
 
 func level_done():
-	$SceneFade.start()
+
 	$DungeonBrian/CUTSCENE.show()
 
 func _process(delta):
@@ -13,6 +13,3 @@ func _process(delta):
 	if enemies.size() == 0:
 		level_done()
 
-
-func _on_scene_fade_timeout():
-		Engine.time_scale = 0
