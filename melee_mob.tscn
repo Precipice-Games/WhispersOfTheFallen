@@ -1,9 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://brcaorg6ybupl"]
+[gd_scene load_steps=42 format=3 uid="uid://brcaorg6ybupl"]
 
 [ext_resource type="Script" path="res://melee_mob.gd" id="1_nfw8v"]
 [ext_resource type="Texture2D" uid="uid://66vqmf4qe1gf" path="res://ART/MainCharacter(FreePack)/MainChar - walk.png" id="2_hpge6"]
 [ext_resource type="Texture2D" uid="uid://bwmeg24phyhuv" path="res://ART/MainCharacter(FreePack)/MainChar - attack(first).png" id="2_vye0g"]
 [ext_resource type="Script" path="res://Melee_Hitbox.gd" id="4_y8pco"]
+[ext_resource type="Script" path="res://soft_collision.gd" id="5_7oywj"]
+[ext_resource type="Texture2D" uid="uid://bv5tuakqvkj11" path="res://progress bar.png" id="6_ph8yh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pn8q"]
 atlas = ExtResource("2_vye0g")
@@ -153,7 +155,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Attack",
-"speed": 7.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -233,12 +235,15 @@ radius = 101.272
 size = Vector2(49, 68)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6c2v1"]
-radius = 159.38
+radius = 719.747
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gsch"]
 size = Vector2(80, 20)
 
-[node name="MeleeMob" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jjvu"]
+
+[node name="MeleeMob" type="CharacterBody2D" groups=["Mob"]]
+position = Vector2(-1, 0)
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_nfw8v")
@@ -265,7 +270,6 @@ metadata/_edit_lock_ = true
 
 [node name="Detection_Area" type="Area2D" parent="."]
 collision_layer = 4
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]
 shape = SubResource("CircleShape2D_6c2v1")
@@ -279,5 +283,28 @@ position = Vector2(68, 0)
 shape = SubResource("RectangleShape2D_4gsch")
 disabled = true
 
+[node name="softCollision" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("5_7oywj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="softCollision"]
+scale = Vector2(1.46208, 0.875211)
+shape = SubResource("CircleShape2D_4jjvu")
+
+[node name="HealthKnight" type="TextureProgressBar" parent="."]
+offset_left = -9.6
+offset_top = -6.4
+offset_right = 70.4
+offset_bottom = 33.6
+scale = Vector2(0.298638, 0.0689233)
+max_value = 10.0
+texture_progress = ExtResource("6_ph8yh")
+tint_progress = Color(1, 0.14902, 0.239216, 1)
+
+[node name="Tick" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_entered" from="Detection_Area" to="." method="_on_detection_area_body_entered"]
+[connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]

@@ -362,9 +362,9 @@ offset_top = -227.0
 offset_right = -4.07104
 offset_bottom = -187.0
 scale = Vector2(2.59838, 2.79875)
-min_value = 23.0
-max_value = 123.0
-value = 23.0
+min_value = 30.0
+max_value = 130.0
+value = 30.0
 texture_over = ExtResource("35_mn37c")
 texture_progress = ExtResource("36_amd33")
 tint_progress = Color(0.473936, 0.131321, 0.090969, 1)
@@ -378,6 +378,7 @@ autostart = true
 zoom = Vector2(4, 4)
 
 [node name="Fadeout" type="Sprite2D" parent="Camera2D"]
+visible = false
 z_index = 2
 position = Vector2(44.5, 45)
 scale = Vector2(1.73192, 1.73618)
@@ -390,8 +391,10 @@ position = Vector2(14, -1)
 scale = Vector2(0.879413, 1.10573)
 texture = ExtResource("39_x6etd")
 
+[connection signal="area_entered" from="player_hitbox" to="." method="_on_player_hitbox_area_entered"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
+[connection signal="healspell" from="Test" to="." method="_on_test_healspell"]
 [connection signal="body_entered" from="Weapon/Scythe/Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashTimer/DashCooldown" to="." method="_on_dash_cooldown_timeout"]

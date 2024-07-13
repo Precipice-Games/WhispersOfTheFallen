@@ -4,7 +4,7 @@ var speed = 150
 @export var player_chase = false
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var softCollision = $SoftCollision
-var currentHealth = 10
+var currentHealth = 5
 var damage = 2
 
 func _ready():
@@ -36,13 +36,7 @@ func take_damage():
 
 func set_health_bar():
 	$HealthRat.value = currentHealth 
-		
-		
-	#TODO once the enemy loses a reference to the player we get a null instance error
-#func _on_attack_area_body_entered(body):
-	#player_chase = false
 	
-
 
 func _on_tick_timeout():
 	$AnimatedSprite2D.modulate = Color(1, 1, 1)

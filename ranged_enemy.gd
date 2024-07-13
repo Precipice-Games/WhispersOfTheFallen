@@ -3,9 +3,11 @@ extends CharacterBody2D
 
 var speed = 150
 var player_chase = false
+var currentHealth = 7
+var damage = 15
+@onready var player = get_tree().get_first_node_in_group("player")
 
 #@onready var Melee_Hitbox = $Melee_Hitbox
-@export var player:CharacterBody2D
 @export var Arrrow_Scene: PackedScene
 
 
@@ -65,3 +67,20 @@ func _on_attack_area_body_exited(body):
 
 func _on_detection_area_body_exited(body):
 	player_chase = false
+
+func take_damage():
+	currentHealth-=1
+	$AnimatedSprite2D.modulate = Color(1, 0, 0)
+	$Tick.start()
+	$HealthShot.show()
+	set_health_bar()
+
+	if currentHealth <0:
+		queue_free()
+	
+func set_health_bar():
+	$HealthShot.value = currentHealth 
+	
+
+func _on_tick_timeout():
+	$AnimatedSprite2D.modulate = Color(1, 1, 1)

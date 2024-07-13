@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxbniaoahykji"]
+[gd_scene load_steps=8 format=3 uid="uid://dxbniaoahykji"]
 
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="1_4gwj1"]
 [ext_resource type="Script" path="res://Dungeon2/d_2_level_1.gd" id="1_ur25l"]
 [ext_resource type="PackedScene" uid="uid://ct5okf6whlhaa" path="res://accesories.tscn" id="2_o7yvl"]
 [ext_resource type="PackedScene" uid="uid://btokh1a8jjkbt" path="res://doors.tscn" id="3_x657v"]
 [ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="4_l1dc5"]
-[ext_resource type="Texture2D" uid="uid://da0vghli16wvh" path="res://ART/BrianCombatAssets/Fadeout.png" id="6_arihi"]
 [ext_resource type="PackedScene" uid="uid://c5hj7gomfnn7a" path="res://enemy.tscn" id="6_gj55i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0476"]
@@ -29,21 +28,13 @@ layer_0/tile_data = PackedInt32Array(131192, 196610, 0)
 layer_0/tile_data = PackedInt32Array(131192, 196610, 0, 131084, 131074, 0)
 
 [node name="DungeonBrian" parent="." instance=ExtResource("4_l1dc5")]
+visible = false
 y_sort_enabled = true
 position = Vector2(301, 191)
 scale = Vector2(0.5, 0.5)
 
-[node name="Camera2D" type="Camera2D" parent="DungeonBrian"]
-zoom = Vector2(4, 4)
-
-[node name="Fadeout" type="Sprite2D" parent="DungeonBrian/Camera2D"]
-visible = false
-z_index = 100
-position = Vector2(42, 0)
-scale = Vector2(2, 2)
-texture = ExtResource("6_arihi")
-
 [node name="MobDetector" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MobDetector"]
 position = Vector2(856, 372)

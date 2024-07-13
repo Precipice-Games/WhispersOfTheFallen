@@ -1,5 +1,7 @@
 extends Node2D
 
+signal healspell
+
 var lineColor := Color.WHITE
 var antialiased := true
 const SPELL_LENGTH = 3
@@ -14,7 +16,7 @@ var currentLinePoints := []
 var radius = 165
 
 var example_spell:Array
-var example_spell_effect:Callable = fireball
+var example_spell_effect:Callable = heal
 
 #(330, 0) 0
 #(233.3452, 233.3452) 1
@@ -98,7 +100,7 @@ func updateCurrentLineWith(position: Vector2):
 		var current_spell = currentLinePoints
 		if check_spell(current_spell, example_spell):
 			example_spell_effect.call() 
-		$LineClear.start()
+		currentLinePoints.clear()
 
 
 # use loop for array 
@@ -111,8 +113,8 @@ func check_spell(current_spell, example_spell):
 			return false
 	return true 
 
-func fireball():
-	print("Fireball!!!")
+func heal():
+	emit_signal("healspell")
 
 
 func _on_line_clear_timeout():

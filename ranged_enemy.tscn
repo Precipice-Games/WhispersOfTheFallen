@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://daqwl7u78d52j"]
+[gd_scene load_steps=33 format=3 uid="uid://daqwl7u78d52j"]
 
 [ext_resource type="Script" path="res://ranged_enemy.gd" id="1_73wih"]
 [ext_resource type="PackedScene" uid="uid://ifjbdsw14pu2" path="res://Arrrow.tscn" id="2_5o8qm"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://di7w0g0mn103d" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_8.png" id="25_8dqwn"]
 [ext_resource type="Texture2D" uid="uid://b4o7ir1yk4hpn" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_9.png" id="26_ll5q1"]
 [ext_resource type="Texture2D" uid="uid://c2xr4b0kj4nd8" path="res://ART/Elementals_Leaf_ranger_Free_v1.0/animations/PNG/run/run_10.png" id="27_4k2bq"]
+[ext_resource type="Texture2D" uid="uid://bv5tuakqvkj11" path="res://progress bar.png" id="28_2ywu6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ku7rk"]
 animations = [{
@@ -125,7 +126,7 @@ size = Vector2(40.5, 26.25)
 [sub_resource type="CircleShape2D" id="CircleShape2D_bntoh"]
 radius = 500.0
 
-[node name="Ranged_enemy" type="CharacterBody2D"]
+[node name="Ranged_enemy" type="CharacterBody2D" groups=["Mob"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_73wih")
@@ -140,8 +141,8 @@ autoplay = "Run"
 frame_progress = 0.452312
 
 [node name="Detection_Area" type="Area2D" parent="."]
+scale = Vector2(4.76, 4.6)
 collision_layer = 4
-metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_Area"]
 position = Vector2(6, -34)
@@ -162,8 +163,22 @@ metadata/_edit_lock_ = true
 
 [node name="Attack_Timer" type="Timer" parent="."]
 
+[node name="HealthShot" type="TextureProgressBar" parent="."]
+offset_left = -9.6
+offset_top = -6.4
+offset_right = 70.4
+offset_bottom = 33.6
+scale = Vector2(0.298638, 0.0689233)
+max_value = 10.0
+texture_progress = ExtResource("28_2ywu6")
+tint_progress = Color(1, 0.14902, 0.239216, 1)
+
+[node name="Tick" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="body_entered" from="Detection_Area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="Detection_Area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="Attack_Area" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="Attack_Area" to="." method="_on_attack_area_body_exited"]
 [connection signal="timeout" from="Attack_Timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Tick" to="." method="_on_tick_timeout"]

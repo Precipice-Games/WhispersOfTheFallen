@@ -17,16 +17,17 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Arrow" type="Area2D"]
+[node name="Arrow" type="Area2D" groups=["Projectile"]]
+collision_layer = 4
 script = ExtResource("1_u5ob3")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10)
 scale = Vector2(1.00215, 0.974657)
 shape = SubResource("RectangleShape2D_37ehb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-2.38419e-07, 0)
+position = Vector2(-1, -10)
 scale = Vector2(0.0374938, 0.0288652)
 sprite_frames = SubResource("SpriteFrames_6vdj0")
 animation = &"new_animation"
-metadata/_edit_lock_ = true

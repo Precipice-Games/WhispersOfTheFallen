@@ -7,15 +7,16 @@ const DASHSPEED = 4
 var canDash = true 
 @onready var weapon: Node2D = get_node("Weapon")
 var currentHealth: int = 100
-var damage_zone = false
 var pending_damage: int = 0 
 @onready var test = $Test
 @onready var game_over = preload("res://Dungeon2/GAMEOVER.tscn")
+
 
 func _ready():
 	set_health_bar()
 	$Test.hide()
 	$Bleed.hide()
+
 	
 func _physics_process(_delta):
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -130,7 +131,7 @@ func _on_player_hitbox_body_entered(body):
 		pending_damage += body.damage
 
 func set_health_bar():
-	$HealthBar.value = currentHealth + 23
+	$HealthBar.value = currentHealth + 30
 	
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Mob"):
@@ -156,7 +157,6 @@ func _on_damage_timer_timeout():
 		$Tick.start()
 		set_health_bar() 
 	if currentHealth <30:
-		$Bleed.show()
 		$Bleed.modulate = Color(1,0,0)
 	if currentHealth <0:
 		get_tree().change_scene_to_packed(game_over)
@@ -165,3 +165,17 @@ func _on_damage_timer_timeout():
 func _on_player_hitbox_body_exited(body):
 	if body.is_in_group("Mob"):
 		pending_damage -= body.damage
+
+
+func _on_player_hitbox_area_entered(area):
+		if area.is_in_group("Projectile"):
+			currentHealth -= 10
+			set_health_bar()
+			$BrianAnim.modulate = Color(1, 0, 0)
+			$Bleed.show()
+			$Tick.start()
+
+
+func _on_test_healspell():
+	currentHealth += 30
+	$Test.hide()
