@@ -1,7 +1,5 @@
 extends ColorRect
 
-@onready var start_level = preload("res://Story/start_screen.tscn")
-
 func _ready():
 	pass # Replace with function body.
 
@@ -12,4 +10,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-		get_tree().change_scene_to_packed(start_level)
+	null
+		#get_tree().change_scene_to_packed(start_level)

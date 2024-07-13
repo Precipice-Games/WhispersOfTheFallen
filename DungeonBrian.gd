@@ -137,6 +137,7 @@ func _on_player_hitbox_body_entered(body):
 
 func set_health_bar():
 	$HealthBar.value = currentHealth + 30
+	print(currentHealth)
 
 func set_mana_bar():
 	$ManaBar.value = currentMana + 30
@@ -150,6 +151,11 @@ func _on_hitbox_body_entered(body):
 func _on_tick_timeout():
 	$BrianAnim.modulate = Color(1, 1, 1)
 	$Bleed.hide()
+	
+func maximum_health():
+	if currentHealth > 100:
+		currentHealth = 100
+
 
 
 # dmage timer constant timeout, assign var values to everything

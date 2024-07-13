@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dclyeqy3lwp47"]
+[gd_scene load_steps=6 format=3 uid="uid://dclyeqy3lwp47"]
 
 [ext_resource type="Texture2D" uid="uid://dcw51sqalmaik" path="res://ART/Free Pixel Art Forest/Preview/Background.png" id="2_to2eg"]
 [ext_resource type="FontFile" uid="uid://dwws8eiohlfbe" path="res://ART/monogram/ttf/monogram.ttf" id="3_mf46f"]
@@ -6,6 +6,12 @@
 [sub_resource type="Theme" id="Theme_i4o18"]
 default_font = ExtResource("3_mf46f")
 default_font_size = 63
+
+[sub_resource type="Theme" id="Theme_bg2xb"]
+default_font = ExtResource("3_mf46f")
+default_font_size = 100
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cgtlw"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -88,3 +94,11 @@ INSERT HERE
 MIKOLA HUANG"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CREDITS" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_bg2xb")
+icon = SubResource("ViewportTexture_cgtlw")
