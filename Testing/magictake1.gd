@@ -117,6 +117,3 @@ func heal():
 	emit_signal("healspell")
 
 
-func _on_line_clear_timeout():
-	currentLinePoints.clear()
-	print('wow')
