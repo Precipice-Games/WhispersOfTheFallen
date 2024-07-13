@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dh8nw86crghl0"]
+[gd_scene load_steps=10 format=3 uid="uid://dh8nw86crghl0"]
 
 [ext_resource type="Script" path="res://Dungeon2/d_2_level_1.gd" id="1_mwujb"]
 [ext_resource type="PackedScene" uid="uid://bv13n5lwnexij" path="res://Tile_Map_Samples.tscn" id="2_050kc"]
 [ext_resource type="PackedScene" uid="uid://ct5okf6whlhaa" path="res://accesories.tscn" id="3_j1pmd"]
 [ext_resource type="PackedScene" uid="uid://btokh1a8jjkbt" path="res://doors.tscn" id="4_kvxua"]
 [ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="5_uxpgj"]
-[ext_resource type="PackedScene" uid="uid://3ffds0dptb7i" path="res://Dungeon2/cutscene.tscn" id="6_ry15o"]
 [ext_resource type="PackedScene" uid="uid://brcaorg6ybupl" path="res://melee_mob.tscn" id="7_4ui1v"]
 [ext_resource type="PackedScene" uid="uid://c5hj7gomfnn7a" path="res://enemy.tscn" id="7_jdc1f"]
 [ext_resource type="PackedScene" uid="uid://daqwl7u78d52j" path="res://ranged_enemy.tscn" id="8_hrdpx"]
@@ -35,9 +34,6 @@ y_sort_enabled = true
 position = Vector2(301, 191)
 scale = Vector2(0.5, 0.5)
 
-[node name="CUTSCENE2" parent="DungeonBrian" instance=ExtResource("6_ry15o")]
-visible = false
-
 [node name="MobDetector" type="Area2D" parent="."]
 visible = false
 
@@ -57,12 +53,53 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(991, 32)
 scale = Vector2(1.5, 1.5)
 
+[node name="MeleeMob5" parent="." instance=ExtResource("7_4ui1v")]
+position = Vector2(991, 32)
+scale = Vector2(1.5, 1.5)
+
 [node name="MeleeMob4" parent="." instance=ExtResource("7_4ui1v")]
-position = Vector2(1557, 285)
+position = Vector2(1492, 260)
+scale = Vector2(1.5, 1.5)
+
+[node name="MeleeMob6" parent="." instance=ExtResource("7_4ui1v")]
+position = Vector2(1310, 146)
+scale = Vector2(1.5, 1.5)
+
+[node name="MeleeMob7" parent="." instance=ExtResource("7_4ui1v")]
+position = Vector2(1127, -19)
+scale = Vector2(1.5, 1.5)
+
+[node name="MeleeMob8" parent="." instance=ExtResource("7_4ui1v")]
+position = Vector2(1052, 155)
+scale = Vector2(1.5, 1.5)
+
+[node name="MeleeMob9" parent="." instance=ExtResource("7_4ui1v")]
+position = Vector2(1259, 442)
 scale = Vector2(1.5, 1.5)
 
 [node name="Enemy7" parent="." instance=ExtResource("7_jdc1f")]
 position = Vector2(1167, 111)
+
+[node name="Enemy11" parent="." instance=ExtResource("7_jdc1f")]
+position = Vector2(1193, 243)
+
+[node name="Enemy12" parent="." instance=ExtResource("7_jdc1f")]
+position = Vector2(1143, 342)
+
+[node name="Enemy13" parent="." instance=ExtResource("7_jdc1f")]
+position = Vector2(1169, 186)
+
+[node name="Enemy14" parent="." instance=ExtResource("7_jdc1f")]
+position = Vector2(1357, 158)
+
+[node name="Enemy15" parent="." instance=ExtResource("7_jdc1f")]
+position = Vector2(1547, 251)
+
+[node name="Enemy16" parent="." instance=ExtResource("7_jdc1f")]
+position = Vector2(1534, 379)
+
+[node name="Enemy17" parent="." instance=ExtResource("7_jdc1f")]
+position = Vector2(1396, 420)
 
 [node name="Enemy8" parent="." instance=ExtResource("7_jdc1f")]
 position = Vector2(1727, 125)
@@ -82,8 +119,17 @@ position = Vector2(1684, 87)
 [node name="Ranged_enemy3" parent="." instance=ExtResource("8_hrdpx")]
 position = Vector2(1130, 531)
 
+[node name="Ranged_enemy6" parent="." instance=ExtResource("8_hrdpx")]
+position = Vector2(1506, -5)
+
+[node name="Ranged_enemy7" parent="." instance=ExtResource("8_hrdpx")]
+position = Vector2(1736, 233)
+
+[node name="Ranged_enemy8" parent="." instance=ExtResource("8_hrdpx")]
+position = Vector2(1621, 157)
+
 [node name="Ranged_enemy5" parent="." instance=ExtResource("8_hrdpx")]
-position = Vector2(1425, 173)
+position = Vector2(1378, 114)
 
 [node name="SceneFade" type="Timer" parent="."]
 wait_time = 0.4

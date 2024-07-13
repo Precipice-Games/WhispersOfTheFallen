@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cjvohwactraar"]
+[gd_scene load_steps=8 format=3 uid="uid://cjvohwactraar"]
 
 [ext_resource type="PackedScene" uid="uid://ef7wuo7convj" path="res://garden.tscn" id="1_4ur37"]
 [ext_resource type="PackedScene" uid="uid://bvoupvxmm6q3d" path="res://DungeonBrian.tscn" id="1_ftkk4"]
 [ext_resource type="Script" path="res://level_1.gd" id="1_k5o0s"]
 [ext_resource type="PackedScene" uid="uid://daqwl7u78d52j" path="res://ranged_enemy.tscn" id="3_rtcip"]
+[ext_resource type="PackedScene" uid="uid://45ryes6i2c3m" path="res://Story/cutscene.tscn" id="3_x0n55"]
 [ext_resource type="PackedScene" uid="uid://brcaorg6ybupl" path="res://melee_mob.tscn" id="4_1xs6c"]
 [ext_resource type="PackedScene" uid="uid://c5hj7gomfnn7a" path="res://enemy.tscn" id="5_m67ms"]
 
@@ -15,6 +16,9 @@ script = ExtResource("1_k5o0s")
 y_sort_enabled = true
 position = Vector2(365, 108)
 scale = Vector2(0.5, 0.5)
+
+[node name="CUTSCENE" parent="DungeonBrian" instance=ExtResource("3_x0n55")]
+visible = false
 
 [node name="garden" parent="." instance=ExtResource("1_4ur37")]
 layer_0/tile_data = PackedInt32Array(852063, 196614, 0, 393300, 6, 0, 786543, 196615, 0, -130991, 196623, 0, 65632, 196624, 0, 1441832, 131086, 0, -262033, 196632, 0, 983039, 6, 0, 131094, 6, 0, -262110, 6, 0, 131119, 6, 0, 1310777, 131078, 0, 917575, 131078, 0, 2097235, 196614, 0, 2490463, 196614, 0, 2097259, 196614, 0, 1769517, 131078, 0, 2162745, 196614, 0, 1769541, 196614, 0, 1638495, 196614, 0, 1310803, 196614, 0, 589835, 6, 0, 589859, 65542, 0, 983065, 65542, 0, 1376266, 131078, 0, 1769494, 196614, 0, 1376291, 65542, 0, 1769521, 23, 0, 1900608, 65559, 0, 1245265, 65559, 0, 720995, 131095, 0, 983130, 131095, 0, 1638473, 196631, 0, 393323, 6, 0, 327788, 23, 0, 2162713, 8, 0, 2687065, 196616, 0, 2490422, 196616, 0, 983143, 196616, 0, -327563, 196616, 0, 2556010, 196616, 0, 1572866, 8, 0, 1179639, 8, 0, 589932, 21, 0, 262243, 21, 0, 2293865, 21, 0, 1310725, 65557, 0, 262219, 65556, 1610612736, 262222, 65556, 0, 458831, 65556, 268435456, 917574, 16, 0, -917470, 65552, 0, -131021, 24, 0, 524346, 65542, 0, 917549, 65542, 0, -262106, 18, 0, 1507425, 65555, 0, 1703961, 65555, 0, 589897, 65555, 0, 131072, 6, 0, -131058, 6, 0, 1704006, 196614, 0, 1769513, 18, 0, 1703954, 18, 0, 1114111, 131092, 0, -786417, 65552, 0, 1048601, 131095, 0, 196608, 65559, 0, 2097210, 196624, 0, -327653, 21, 0, 1376269, 65555, 0, 2424919, 19, 0, 2293833, 17, 0, 2621523, 22, 0, 851961, 21, 0, 262173, 131095, 0, 1245229, 65559, 0)

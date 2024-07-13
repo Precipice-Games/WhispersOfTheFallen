@@ -1,9 +1,11 @@
 extends Node2D
 
+func _ready():
+	$DungeonBrian/CUTSCENE.hide()
 
 	
 func level_done():
-	$DungeonBrian/CUTSCENE2.show()
+	$DungeonBrian/CUTSCENE.show()
 
 func _process(delta):
 	var enemies = get_tree().get_nodes_in_group("Mob")
